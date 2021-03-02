@@ -11,8 +11,8 @@ trackerNetAPI = "http://cloud.tfl.gov.uk/TrackerNet"
 class tflAPI:
     """TFL API"""
 
-    def __init__(self):
-        self.app_key = 'fe322a272fe84ce7a1c3e0dbde31f992'
+    def __init__(self, app_key):
+        self.app_key = app_key
         self.stopPoint = stopPoint
 
     def sendRequestUnified(self, uri: str, params):
