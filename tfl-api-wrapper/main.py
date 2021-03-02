@@ -26,14 +26,16 @@ class tflAPI:
         fullURL = f"https://api.tfl.gov.uk:443{uri}?{urllib.parse.urlencode({'app_key': self.app_key})}"
 
         if params:
-            fullURL += f'&{urllib.parse.urlencode(params)}'
+            fullURL += f"&{urllib.parse.urlencode(params)}"
 
         print(fullURL)
 
         resource = urllib.request.urlopen(fullURL)
-        content = json.loads(resource.read().decode(resource.headers.get_content_charset()))
+        content = json.loads(
+            resource.read().decode(resource.headers.get_content_charset())
+        )
         return content
 
     @staticmethod
     def arrayToCSV(array):
-        ','.join(array)
+        ",".join(array)
