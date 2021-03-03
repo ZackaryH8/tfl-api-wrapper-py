@@ -1,10 +1,8 @@
-import urllib.request
-import urllib.parse
 import json
-
-
-unifiedAPI = "https://api.tfl.gov.uk"
-trackerNetAPI = "http://cloud.tfl.gov.uk/TrackerNet"
+import urllib.parse
+import urllib.request
+import urllib.error
+import xmltodict
 
 
 class tflAPI(object):
@@ -29,10 +27,21 @@ class tflAPI(object):
         print(fullURL)
 
         resource = urllib.request.urlopen(fullURL)
-        content = json.loads(
+        return json.loads(
             resource.read().decode(resource.headers.get_content_charset())
         )
-        return content
+
+    @staticmethod
+    def sendRequestTrackerNet(uri: str):
+        """
+        Send a HTTP GET request to the TrackerNet API
+
+        :param uri: The url which will be prepended to trackerNetAPI
+        :returns: API Data from TfL Unified API
+        """
+
+        data = urllib.request.urlopen(f"http://cloud.tfl.gov.uk/TrackerNet{uri}").read()
+        print(json.dumps(xmltodict.parse(data)))
 
     @staticmethod
     def arrayToCSV(array):
