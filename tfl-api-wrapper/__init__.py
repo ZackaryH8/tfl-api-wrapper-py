@@ -14,7 +14,9 @@ DESCRIPTION = "Describe your package in one sentence"
 LONG_DESCRIPTION = (HERE / "README.md").read_text()
 LONG_DESC_TYPE = "text/markdown"
 
-INSTALL_REQUIRES = []
+INSTALL_REQUIRES = [
+    "xmltodict"
+]
 
 setup(
     name=PACKAGE_NAME,
