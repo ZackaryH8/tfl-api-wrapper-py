@@ -6,3 +6,31 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![](https://img.shields.io/github/issues/ZackaryH8/tfl-api-wrapper-py)](https://github.com/ZackaryH8/tfl-api-wrapper-py/issues)
+
+
+## Installation
+```
+pip install tfl-api-wrapper
+```
+
+## Contribute
+
+There are many ways to contribute to this repo.
+* [Submit bugs](https://github.com/ZackaryH8/tfl-api-wrapper-py/issues) and help us verify fixes as they are checked in.
+* Review the [source code changes](https://github.com/ZackaryH8/tfl-api-wrapper-py/pulls).
+
+## Example Usage
+
+### StopPoint
+
+```py
+import tfl-api-wrapper
+
+stopPoint = StopPoint("YOUR_API_KEY_HERE")
+arrivals = stopPoint.getStationArrivals('940GZZLUAS')
+
+print(arrivals)
+```
+
+## Disclaimer
+This repository is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Transport for London (TfL) or it's parent organisation Greater London Authority (GLA)
