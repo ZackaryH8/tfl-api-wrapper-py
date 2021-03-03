@@ -3,3 +3,5 @@
     <h1 align="center">TfL API Wrapper</h1>
     <p align="center">An API wrapper for the TfL Unified API, made with Python.</p>
 </p>
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
