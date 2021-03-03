@@ -3,6 +3,7 @@ import urllib.parse
 import urllib.request
 import urllib.error
 import xmltodict
+import datetime
 
 
 class tflAPI(object):
@@ -46,3 +47,7 @@ class tflAPI(object):
     @staticmethod
     def arrayToCSV(array):
         ",".join(array)
+
+    @staticmethod
+    def getRFC3339(date_object):
+        return date_object.isoformat("T") + "Z"
