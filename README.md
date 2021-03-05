@@ -10,7 +10,7 @@
 
 ## Installation
 ```
-pip install tfl-api-wrapper
+pip install tflwrapper
 ```
 
 ## Contribute
