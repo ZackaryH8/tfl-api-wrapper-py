@@ -1,13 +1,13 @@
-from tfl import tflAPI
+from .tfl import tflAPI
 
 
-class Road(tflAPI):
+class road(tflAPI):
     """Road from Unified API"""
 
     def getAll(self):
         """Get all roads managed by TfL"""
 
-        return super(Road, self).sendRequestUnified(
+        return super(road, self).sendRequestUnified(
             '/Road', {}
         )
 
@@ -18,7 +18,7 @@ class Road(tflAPI):
         :param ids: ID(s) of the road(s). Eg. ['A1']
         """
 
-        return super(Road, self).sendRequestUnified(
+        return super(road, self).sendRequestUnified(
             f'/Road/{self.arrayToCSV(ids)}', {}
         )
 
@@ -31,7 +31,7 @@ class Road(tflAPI):
         :param endDate:
         """
 
-        return super(Road, self).sendRequestUnified(
+        return super(road, self).sendRequestUnified(
             f'/Road/{self.arrayToCSV(ids)}', {'startDate': self.getRFC3339(startDate), 'endDate': self.getRFC3339(endDate)}
         )
 
@@ -42,7 +42,7 @@ class Road(tflAPI):
         @param startDate:
         @param endDate:
         """
-        return super(Road, self).sendRequestUnified(
+        return super(road, self).sendRequestUnified(
             '/Road/all/Street/Disruption',
             {'startDate': self.getRFC3339(startDate), 'endDate': self.getRFC3339(endDate)}
         )
@@ -54,7 +54,7 @@ class Road(tflAPI):
         @param ids:
         @param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
         """
-        return super(Road, self).sendRequestUnified(
+        return super(road, self).sendRequestUnified(
             f'/Road/all/Disruption/{self.arrayToCSV(ids)}',
             {'stripContent': stripContent}
         )
@@ -62,7 +62,7 @@ class Road(tflAPI):
     def getCategories(self):
         """Gets a list of valid RoadDisruption categories"""
 
-        return super(Road, self).sendRequestUnified(
+        return super(road, self).sendRequestUnified(
             '/Road/Meta/Categories',
             {}
         )
@@ -70,7 +70,7 @@ class Road(tflAPI):
     def getSeverities(self):
         """Gets a list of valid RoadDisruption severity codes"""
 
-        return super(Road, self).sendRequestUnified(
+        return super(road, self).sendRequestUnified(
             '/Road/Meta/Severities',
             {}
         )
