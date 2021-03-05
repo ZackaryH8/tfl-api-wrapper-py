@@ -24,10 +24,12 @@ There are many ways to contribute to this repo.
 ### StopPoint
 
 ```py
-import tfl-api-wrapper
+from tflwrapper import stopPoint
 
-stopPoint = StopPoint("YOUR_API_KEY_HERE")
-arrivals = stopPoint.getStationArrivals('940GZZLUAS')
+app_key = "YOUR_API_KEY_HERE"
+
+stoppoint = stopPoint(app_key)
+arrivals = stoppoint.getStationArrivals('940GZZLUAS')
 
 print(arrivals)
 ```
