@@ -1,27 +1,27 @@
-from tfl import tflAPI
+from .tfl import tflAPI
 
 
-class StopPoint(tflAPI):
+class stopPoint(tflAPI):
     """Stop Point from Unified API"""
 
     def getCategories(self):
         """Gets the list of available StopPoint additional information categories"""
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             "/StopPoint/Meta/Categories", {}
         )
 
     def getTypes(self):
         """Gets the list of available StopPoint types"""
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             "/StopPoint/Meta/StopTypes", {}
         )
 
     def getModes(self):
         """Gets the list of available StopPoint modes"""
 
-        return super(StopPoint, self).sendRequestUnified(
-            "/StopPoint/Meta/Modes", {"f": "f"}
+        return super(stopPoint, self).sendRequestUnified(
+            "/StopPoint/Meta/Modes", {}
         )
 
     def getByIDs(self, ids, includeCrowdingData: bool):
@@ -32,7 +32,7 @@ class StopPoint(tflAPI):
         :param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/{','.join(ids)}", {includeCrowdingData}
         )
 
@@ -43,8 +43,8 @@ class StopPoint(tflAPI):
         :param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint
         """
 
-        return super(StopPoint, self).sendRequestUnified(
-            f"/StopPoint/{super(StopPoint, self).arrayToCSV(array)}", {}
+        return super(stopPoint, self).sendRequestUnified(
+            f"/StopPoint/{super(stopPoint, self).arrayToCSV(array)}", {}
         )
 
     def getServiceTypesByID(self, stopPointID: str, lineIds, modes):
@@ -56,7 +56,7 @@ class StopPoint(tflAPI):
         :param modes:
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/ServiceTypes",
             {"id": stopPointID, "lineIds": lineIds, "modes": modes},
         )
@@ -66,12 +66,12 @@ class StopPoint(tflAPI):
         Search StopPoints by their common name. Will not return a valid NaPTAN for HUB
 
         :param name: Name of station
-        :param modes: Eg. ['tfl', 'dlr']
+        :param modes: Eg. ['tflwrapper', 'dlr']
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/Search/${name}",
-            {"modes": super(StopPoint, self).arrayToCSV(modes)},
+            {"modes": super(stopPoint, self).arrayToCSV(modes)},
         )
 
     def getStationArrivals(self, naptanID: str):
@@ -81,7 +81,7 @@ class StopPoint(tflAPI):
         :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"StopPoint/${naptanID}/Arrivals", {}
         )
 
@@ -90,10 +90,10 @@ class StopPoint(tflAPI):
         A StopPoint id (station naptan code e.g. 940GZZLUAS)
 
         :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-        :param lineIds: List of line ids e.g. ['tfl-rail', 'london-overground', 'thameslink']
+        :param lineIds: List of line ids e.g. ['tflwrapper-rail', 'london-overground', 'thameslink']
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"StopPoint/${naptanID}/ArrivalsDepartures", {lineIds}
         )
 
@@ -113,8 +113,8 @@ class StopPoint(tflAPI):
         :param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)
         """
 
-        return super(StopPoint, self).sendRequestUnified(
-            f"/StopPoint/{super(StopPoint, self).arrayToCSV(ids)}/Disruption",
+        return super(stopPoint, self).sendRequestUnified(
+            f"/StopPoint/{super(stopPoint, self).arrayToCSV(ids)}/Disruption",
             {getFamily, includeRouteBlockedStops, flattenResponse},
         )
 
@@ -125,8 +125,8 @@ class StopPoint(tflAPI):
         :param modes: An array of modes e.g. ['tube', 'dlr']
         :param includeRouteBlockedStops:
         """
-        return super(StopPoint, self).sendRequestUnified(
-            f"/StopPoint/Mode/{super(StopPoint, self).arrayToCSV(modes)}/Disruption",
+        return super(stopPoint, self).sendRequestUnified(
+            f"/StopPoint/Mode/{super(stopPoint, self).arrayToCSV(modes)}/Disruption",
             {includeRouteBlockedStops},
         )
 
@@ -141,9 +141,9 @@ class StopPoint(tflAPI):
 
         if serviceTypes is None:
             serviceTypes = ["Regular"]
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/{naptanID}/CanReachOnLine/{lineID}",
-            {"serviceTypes": super(StopPoint, self).arrayToCSV(serviceTypes)},
+            {"serviceTypes": super(stopPoint, self).arrayToCSV(serviceTypes)},
         )
 
     def getRouteSectionByID(self, naptanID: str, serviceTypes):
@@ -154,9 +154,9 @@ class StopPoint(tflAPI):
         :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/{naptanID}/Route",
-            {"serviceTypes": super(StopPoint, self).arrayToCSV(serviceTypes)},
+            {"serviceTypes": super(stopPoint, self).arrayToCSV(serviceTypes)},
         )
 
     def getInRadius(
@@ -183,14 +183,14 @@ class StopPoint(tflAPI):
         :param longitude:
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             "/StopPoint",
             {
-                "stopTypes": super(StopPoint, self).arrayToCSV(stopTypes),
+                "stopTypes": super(stopPoint, self).arrayToCSV(stopTypes),
                 "radius": radius,
                 "useStopPointHierarchy": useStopPointHierarchy,
-                "modes": super(StopPoint, self).arrayToCSV(modes),
-                "categories": super(StopPoint, self).arrayToCSV(categories),
+                "modes": super(stopPoint, self).arrayToCSV(modes),
+                "categories": super(stopPoint, self).arrayToCSV(categories),
                 "returnLines": returnLines,
                 "latitude": latitude,
                 "longitude": longitude,
@@ -205,7 +205,7 @@ class StopPoint(tflAPI):
         :param output: If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/Sms/{smsID}", {output}
         )
 
@@ -216,7 +216,7 @@ class StopPoint(tflAPI):
         :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/{naptanID}/TaxiRanks", {}
         )
 
@@ -227,6 +227,6 @@ class StopPoint(tflAPI):
         :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         """
 
-        return super(StopPoint, self).sendRequestUnified(
+        return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/{naptanID}/CarParks", {}
         )
