@@ -25,8 +25,6 @@ class tflAPI(object):
         if params:
             fullURL += f"&{urllib.parse.urlencode(params)}"
 
-        print(fullURL)
-
         resource = urllib.request.urlopen(fullURL)
         return json.loads(
             resource.read().decode(resource.headers.get_content_charset())
