@@ -5,7 +5,7 @@ class bikePoint(tflAPI):
     """Bike point from Unified API"""
 
     def getAll(self):
-        """Gets all bike point locations."""
+        """Gets all bike point locations"""
         return super(bikePoint, self).sendRequestUnified(
             "/BikePoint", {}
         )
