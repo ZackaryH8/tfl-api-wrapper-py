@@ -17,8 +17,6 @@ jobs:
               run: |
                     pip3 install pdoc3
                     pip3 install xmltodict
-            - name: Swap to pages branch
-              run: git checkout -b gh-pages
             - name: Build Documentation
               run: pdoc --html tflwrapper
             - name: Track new files
@@ -37,4 +35,4 @@ jobs:
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./docs
+                  publish_dir: ./html/tflwrapper
