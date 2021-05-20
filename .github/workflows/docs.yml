@@ -1,0 +1,38 @@
+name: Python Documentation Generation
+on:
+    pull_request:
+        branches: [master]
+        types: [closed]
+
+    workflow_dispatch:
+
+jobs:
+    build-docs:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            - name: Install Dependencies
+              run: |
+                    pip3 install pdoc3
+                    pip3 install xmltodict
+            - name: Build Documentation
+              run: pdoc --force --html tflwrapper
+            - name: Track new files
+              run: git add -A
+            - name: Commit files
+              run: |
+                  git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git config --local user.name "github-actions[bot]"
+                  git commit -m "Updated Documentation" -a
+            - name: GitHub Push
+              uses: ad-m/github-push-action@v0.6.0
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: ${{ github.ref }}
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./html/tflwrapper
