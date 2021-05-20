@@ -50,3 +50,15 @@ class line(tflAPI):
         return super(line, self).sendRequestUnified(
             f"/Line/Mode/{self.arrayToCSV(lineIDs)}/Status", {'detail': detail}
         )
+
+    def getRouteByIDs(self, lineIDs, serviceTypes):
+        """
+        Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route.
+
+        :param lineIDs: A list of line ids e.g. ['victoria', 'circle']
+        :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified
+        """
+        return super(line, self).sendRequestUnified(
+            f"/Line/{self.arrayToCSV(lineIDs)}/Route", {
+                'serviceTypes': serviceTypes}
+        )
