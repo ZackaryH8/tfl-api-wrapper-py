@@ -21,6 +21,8 @@ jobs:
               run: git checkout -b gh-pages
             - name: Build Documentation
               run: pdoc --html tflwrapper
+            - name: Track new files
+              run: git add -A
             - name: Commit files
               run: |
                   git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
