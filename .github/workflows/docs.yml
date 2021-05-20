@@ -16,7 +16,7 @@ jobs:
             - name: Install pdoc3
               run: pip3 install pdoc3
             - name: Swap to pages branch
-              run: git checkout gh-pages
+              run: git checkout -b gh-pages
             - name: Build Documentation
               run: pdoc --html tflwrapper
             - name: Commit files
