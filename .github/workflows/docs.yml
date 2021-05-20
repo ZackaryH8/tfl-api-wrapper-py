@@ -13,8 +13,10 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v2
-            - name: Install pdoc3
-              run: pip3 install pdoc3
+            - name: Install Dependencies
+              run: |
+                    pip3 install pdoc3
+                    pip3 install xmltodict
             - name: Swap to pages branch
               run: git checkout -b gh-pages
             - name: Build Documentation
