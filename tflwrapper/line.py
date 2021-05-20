@@ -39,3 +39,14 @@ class line(tflAPI):
         return super(line, self).sendRequestUnified(
             f"/Line/Mode/{self.arrayToCSV(modes)}/Status", {}
         )
+
+    def getStatusByID(self, lineIDs, detail: bool):
+        """
+        Gets the line status of for all lines for the given modes
+
+        :param lineIDs: A comma-separated list of line ids e.g. ['victoria', 'circle']
+        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        """
+        return super(line, self).sendRequestUnified(
+            f"/Line/Mode/{self.arrayToCSV(lineIDs)}/Status", {'detail': detail}
+        )
