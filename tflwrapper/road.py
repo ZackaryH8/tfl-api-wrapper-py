@@ -32,27 +32,29 @@ class road(tflAPI):
         """
 
         return super(road, self).sendRequestUnified(
-            f'/Road/{self.arrayToCSV(ids)}', {'startDate': self.getRFC3339(startDate), 'endDate': self.getRFC3339(endDate)}
+            f'/Road/{self.arrayToCSV(ids)}', {'startDate': self.getRFC3339(
+                startDate), 'endDate': self.getRFC3339(endDate)}
         )
 
     def getAllStreetDisruption(self, startDate, endDate):
         """
         Gets a list of disrupted streets
 
-        @param startDate:
-        @param endDate:
+        :param startDate: Optional, the start time to filter on
+        :param endDate: Optional, the end time to filter on
         """
         return super(road, self).sendRequestUnified(
             '/Road/all/Street/Disruption',
-            {'startDate': self.getRFC3339(startDate), 'endDate': self.getRFC3339(endDate)}
+            {'startDate': self.getRFC3339(
+                startDate), 'endDate': self.getRFC3339(endDate)}
         )
 
     def getAllDisruptionsByID(self, ids, stripContent: bool):
         """
         Gets a list of disrupted streets
 
-        @param ids:
-        @param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+        :param ids: ID(s) of the road(s). Eg. ['A1']
+        :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
         """
         return super(road, self).sendRequestUnified(
             f'/Road/all/Disruption/{self.arrayToCSV(ids)}',

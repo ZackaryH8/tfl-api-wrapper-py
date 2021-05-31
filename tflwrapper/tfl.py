@@ -39,12 +39,13 @@ class tflAPI(object):
         :returns: API Data from TfL Unified API
         """
 
-        data = urllib.request.urlopen(f"http://cloud.tfl.gov.uk/TrackerNet{uri}").read()
+        data = urllib.request.urlopen(
+            f"http://cloud.tfl.gov.uk/TrackerNet{uri}").read()
         print(json.dumps(xmltodict.parse(data)))
 
     @staticmethod
     def arrayToCSV(array):
-        ",".join(array)
+        return ",".join(array)
 
     @staticmethod
     def getRFC3339(date_object):
