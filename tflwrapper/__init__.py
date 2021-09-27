@@ -15,7 +15,6 @@ __all__ = [
     'crowding'
     'line',
     'mode',
-    'mode',
     'occupancy',
     'road',
     'stopPoint'
