@@ -10,9 +10,9 @@ from .tfl import tflAPI
 from .trackerNet import trackerNet
 
 __all__ = [
-    'accidentStats'
-    'bikePoint'
-    'crowding'
+    'accidentStats',
+    'bikePoint',
+    'crowding',
     'line',
     'mode',
     'occupancy',
