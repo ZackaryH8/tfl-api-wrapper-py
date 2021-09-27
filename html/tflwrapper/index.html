@@ -1,0 +1,1508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>tflwrapper API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>tflwrapper</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from .tfl import tflAPI
+from .trackerNet import trackerNet
+from .stopPoint import stopPoint
+from .mode import mode
+from .road import road
+
+__all__ = [
+    &#39;tflAPI&#39;,
+    &#39;trackerNet&#39;,
+    &#39;stopPoint&#39;,
+    &#39;mode&#39;,
+    &#39;road&#39;
+]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="tflwrapper.accidentStats" href="accidentStats.html">tflwrapper.accidentStats</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="tflwrapper.bikePoint" href="bikePoint.html">tflwrapper.bikePoint</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="tflwrapper.crowding" href="crowding.html">tflwrapper.crowding</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="tflwrapper.line" href="line.html">tflwrapper.line</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="tflwrapper.occupancy" href="occupancy.html">tflwrapper.occupancy</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="tflwrapper.tfl" href="tfl.html">tflwrapper.tfl</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="tflwrapper.mode"><code class="flex name class">
+<span>class <span class="ident">mode</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Mode API, /mode</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class mode(tflAPI):
+    &#34;&#34;&#34;Mode API, /mode&#34;&#34;&#34;
+
+    def getActiveServiceTypes(self):
+        &#34;&#34;&#34;Returns the service type active for a mode, currently only supports tube&#34;&#34;&#34;
+
+        return super(mode, self).sendRequestUnified(
+            &#34;/Mode/ActiveServiceTypes&#34;, {}
+        )
+
+    def getArrivalPredictionsAllStops(self, modes: str, count: str):
+        &#34;&#34;&#34;
+        Returns arrival predictions for all stops
+
+        :param modes: A mode name e.g. tube, dlr
+        :param count: A number of arrivals to return for each stop, -1 to return all available
+        &#34;&#34;&#34;
+
+        return super(mode, self).sendRequestUnified(
+            f&#34;/Mode/{modes}/Arrivals&#34;, {&#39;count&#39;: count}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.mode.getActiveServiceTypes"><code class="name flex">
+<span>def <span class="ident">getActiveServiceTypes</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the service type active for a mode, currently only supports tube</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getActiveServiceTypes(self):
+    &#34;&#34;&#34;Returns the service type active for a mode, currently only supports tube&#34;&#34;&#34;
+
+    return super(mode, self).sendRequestUnified(
+        &#34;/Mode/ActiveServiceTypes&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.mode.getArrivalPredictionsAllStops"><code class="name flex">
+<span>def <span class="ident">getArrivalPredictionsAllStops</span></span>(<span>self, modes: str, count: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns arrival predictions for all stops</p>
+<p>:param modes: A mode name e.g. tube, dlr
+:param count: A number of arrivals to return for each stop, -1 to return all available</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getArrivalPredictionsAllStops(self, modes: str, count: str):
+    &#34;&#34;&#34;
+    Returns arrival predictions for all stops
+
+    :param modes: A mode name e.g. tube, dlr
+    :param count: A number of arrivals to return for each stop, -1 to return all available
+    &#34;&#34;&#34;
+
+    return super(mode, self).sendRequestUnified(
+        f&#34;/Mode/{modes}/Arrivals&#34;, {&#39;count&#39;: count}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.road"><code class="flex name class">
+<span>class <span class="ident">road</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Road from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class road(tflAPI):
+    &#34;&#34;&#34;Road from Unified API&#34;&#34;&#34;
+
+    def getAll(self):
+        &#34;&#34;&#34;Get all roads managed by TfL&#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            &#39;/Road&#39;, {}
+        )
+
+    def getByID(self, ids):
+        &#34;&#34;&#34;
+        Get the road with the specified ID (Eg. A1)
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        &#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {}
+        )
+
+    def getStatusByID(self, ids, startDate, endDate):
+        &#34;&#34;&#34;
+        Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        :param startDate:
+        :param endDate:
+        &#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {&#39;startDate&#39;: self.getRFC3339(
+                startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+        )
+
+    def getAllStreetDisruption(self, startDate, endDate):
+        &#34;&#34;&#34;
+        Gets a list of disrupted streets
+
+        :param startDate: Optional, the start time to filter on
+        :param endDate: Optional, the end time to filter on
+        &#34;&#34;&#34;
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/all/Street/Disruption&#39;,
+            {&#39;startDate&#39;: self.getRFC3339(
+                startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+        )
+
+    def getAllDisruptionsByID(self, ids, stripContent: bool):
+        &#34;&#34;&#34;
+        Gets a list of disrupted streets
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+        &#34;&#34;&#34;
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
+            {&#39;stripContent&#39;: stripContent}
+        )
+
+    def getCategories(self):
+        &#34;&#34;&#34;Gets a list of valid RoadDisruption categories&#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/Meta/Categories&#39;,
+            {}
+        )
+
+    def getSeverities(self):
+        &#34;&#34;&#34;Gets a list of valid RoadDisruption severity codes&#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/Meta/Severities&#39;,
+            {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.road.getAll"><code class="name flex">
+<span>def <span class="ident">getAll</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all roads managed by TfL</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAll(self):
+    &#34;&#34;&#34;Get all roads managed by TfL&#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        &#39;/Road&#39;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getAllDisruptionsByID"><code class="name flex">
+<span>def <span class="ident">getAllDisruptionsByID</span></span>(<span>self, ids, stripContent: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of disrupted streets</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']
+:param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,
+startDate, endDate, corridor details, location and comments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllDisruptionsByID(self, ids, stripContent: bool):
+    &#34;&#34;&#34;
+    Gets a list of disrupted streets
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+    &#34;&#34;&#34;
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
+        {&#39;stripContent&#39;: stripContent}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getAllStreetDisruption"><code class="name flex">
+<span>def <span class="ident">getAllStreetDisruption</span></span>(<span>self, startDate, endDate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of disrupted streets</p>
+<p>:param startDate: Optional, the start time to filter on
+:param endDate: Optional, the end time to filter on</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllStreetDisruption(self, startDate, endDate):
+    &#34;&#34;&#34;
+    Gets a list of disrupted streets
+
+    :param startDate: Optional, the start time to filter on
+    :param endDate: Optional, the end time to filter on
+    &#34;&#34;&#34;
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/all/Street/Disruption&#39;,
+        {&#39;startDate&#39;: self.getRFC3339(
+            startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getByID"><code class="name flex">
+<span>def <span class="ident">getByID</span></span>(<span>self, ids)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the road with the specified ID (Eg. A1)</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getByID(self, ids):
+    &#34;&#34;&#34;
+    Get the road with the specified ID (Eg. A1)
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    &#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getCategories"><code class="name flex">
+<span>def <span class="ident">getCategories</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid RoadDisruption categories</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCategories(self):
+    &#34;&#34;&#34;Gets a list of valid RoadDisruption categories&#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/Meta/Categories&#39;,
+        {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getSeverities"><code class="name flex">
+<span>def <span class="ident">getSeverities</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid RoadDisruption severity codes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getSeverities(self):
+    &#34;&#34;&#34;Gets a list of valid RoadDisruption severity codes&#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/Meta/Severities&#39;,
+        {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getStatusByID"><code class="name flex">
+<span>def <span class="ident">getStatusByID</span></span>(<span>self, ids, startDate, endDate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']
+:param startDate:
+:param endDate:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStatusByID(self, ids, startDate, endDate):
+    &#34;&#34;&#34;
+    Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    :param startDate:
+    :param endDate:
+    &#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {&#39;startDate&#39;: self.getRFC3339(
+            startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.stopPoint"><code class="flex name class">
+<span>class <span class="ident">stopPoint</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Stop Point from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class stopPoint(tflAPI):
+    &#34;&#34;&#34;Stop Point from Unified API&#34;&#34;&#34;
+
+    def getCategories(self):
+        &#34;&#34;&#34;Gets the list of available StopPoint additional information categories&#34;&#34;&#34;
+        return super(stopPoint, self).sendRequestUnified(
+            &#34;/StopPoint/Meta/Categories&#34;, {}
+        )
+
+    def getTypes(self):
+        &#34;&#34;&#34;Gets the list of available StopPoint types&#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            &#34;/StopPoint/Meta/StopTypes&#34;, {}
+        )
+
+    def getModes(self):
+        &#34;&#34;&#34;Gets the list of available StopPoint modes&#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            &#34;/StopPoint/Meta/Modes&#34;, {}
+        )
+
+    def getByIDs(self, ids, includeCrowdingData: bool):
+        &#34;&#34;&#34;
+        Gets a list of StopPoints corresponding to the given list of stop ids
+
+        :param ids: A list of stop point ids (station naptan code e.g. 940GZZLUASL).
+        :param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/{&#39;,&#39;.join(ids)}&#34;, {includeCrowdingData}
+        )
+
+    def getAllByStopType(self, array):
+        &#34;&#34;&#34;
+        Gets all stop points of a given type
+
+        :param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/{super(stopPoint, self).arrayToCSV(array)}&#34;, {}
+        )
+
+    def getServiceTypesByID(self, stopPointID: str, lineIds, modes):
+        &#34;&#34;&#34;
+        Gets the service types for a given Stop Point
+
+        :param stopPointID:
+        :param lineIds:
+        :param modes:
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/ServiceTypes&#34;,
+            {&#34;id&#34;: stopPointID, &#34;lineIds&#34;: lineIds, &#34;modes&#34;: modes},
+        )
+
+    def search(self, name: str, modes):
+        &#34;&#34;&#34;
+        Search StopPoints by their common name. Will not return a valid NaPTAN for HUB
+
+        :param name: Name of station
+        :param modes: Eg. [&#39;tflwrapper&#39;, &#39;dlr&#39;]
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/Search/${name}&#34;,
+            {&#34;modes&#34;: super(stopPoint, self).arrayToCSV(modes)},
+        )
+
+    def getStationArrivals(self, naptanID: str):
+        &#34;&#34;&#34;
+        Get all service arrivals
+
+        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;StopPoint/${naptanID}/Arrivals&#34;, {}
+        )
+
+    def getArrivalDepartures(self, naptanID: str, lineIds):
+        &#34;&#34;&#34;
+        A StopPoint id (station naptan code e.g. 940GZZLUAS)
+
+        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        :param lineIds: List of line ids e.g. [&#39;tflwrapper-rail&#39;, &#39;london-overground&#39;, &#39;thameslink&#39;]
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;StopPoint/${naptanID}/ArrivalsDepartures&#34;, {lineIds}
+        )
+
+    def getDisruptionsByID(
+        self,
+        ids,
+        getFamily: bool,
+        includeRouteBlockedStops: bool,
+        flattenResponse: bool,
+    ):
+        &#34;&#34;&#34;
+        Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have
+
+        :param ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+        :param getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
+        :param includeRouteBlockedStops:
+        :param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/{super(stopPoint, self).arrayToCSV(ids)}/Disruption&#34;,
+            {getFamily, includeRouteBlockedStops, flattenResponse},
+        )
+
+    def getDisruptionsByMode(self, modes, includeRouteBlockedStops: bool):
+        &#34;&#34;&#34;
+        Gets a distinct list of disrupted stop points for the given modes
+
+        :param modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
+        :param includeRouteBlockedStops:
+        &#34;&#34;&#34;
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/Mode/{super(stopPoint, self).arrayToCSV(modes)}/Disruption&#34;,
+            {includeRouteBlockedStops},
+        )
+
+    def getReachableStationsByID(self, naptanID: str, lineID: str, serviceTypes=None):
+        &#34;&#34;&#34;
+        Gets Stop points that are reachable from a station/line combination
+
+        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        :param lineID: Line id of the line to filter by (e.g. victoria)
+        :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+        &#34;&#34;&#34;
+
+        if serviceTypes is None:
+            serviceTypes = [&#34;Regular&#34;]
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/{naptanID}/CanReachOnLine/{lineID}&#34;,
+            {&#34;serviceTypes&#34;: super(stopPoint, self).arrayToCSV(serviceTypes)},
+        )
+
+    def getRouteSectionByID(self, naptanID: str, serviceTypes):
+        &#34;&#34;&#34;
+        Get the route sections for all the lines that service the given stop point id#
+
+        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/{naptanID}/Route&#34;,
+            {&#34;serviceTypes&#34;: super(stopPoint, self).arrayToCSV(serviceTypes)},
+        )
+
+    def getInRadius(
+        self,
+        stopTypes,
+        radius: int,
+        useStopPointHierarchy: bool,
+        modes,
+        categories,
+        returnLines: bool,
+        latitude: int,
+        longitude: int,
+    ):
+        &#34;&#34;&#34;
+        Gets a list of StopPoints within {radius} by the specified criteria
+
+        :param stopTypes: A list of stopTypes that should be returned
+        :param radius: The radius of the bounding circle in metres (default : 200)
+        :param useStopPointHierarchy: Re-arrange the output into a parent/child hierarchy.
+        :param modes: modes The list of modes to search eg. [&#39;tube&#39;, &#39;dlr&#39;]
+        :param categories: an optional list of comma separated property categories to return in the StopPoint&#39;s property bag. If null or empty, all categories of property are returned. Pass the keyword &#34;none&#34; to return no properties.Pass the keyword &#34;none&#34; to return no properties.
+        :param returnLines: True to return the lines that each stop point serves as a nested resource.
+        :param latitude:
+        :param longitude:
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            &#34;/StopPoint&#34;,
+            {
+                &#34;stopTypes&#34;: super(stopPoint, self).arrayToCSV(stopTypes),
+                &#34;radius&#34;: radius,
+                &#34;useStopPointHierarchy&#34;: useStopPointHierarchy,
+                &#34;modes&#34;: super(stopPoint, self).arrayToCSV(modes),
+                &#34;categories&#34;: super(stopPoint, self).arrayToCSV(categories),
+                &#34;returnLines&#34;: returnLines,
+                &#34;latitude&#34;: latitude,
+                &#34;longitude&#34;: longitude,
+            },
+        )
+
+    def getBySMSCode(self, smsID: str, output: str):
+        &#34;&#34;&#34;
+        Gets a StopPoint for a given sms code
+
+        :param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.
+        :param output: If set to &#34;web&#34;, a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/Sms/{smsID}&#34;, {output}
+        )
+
+    def getTaxiRanksByID(self, naptanID: str):
+        &#34;&#34;&#34;
+        Gets a list of taxi ranks corresponding to the given stop point id
+
+        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/{naptanID}/TaxiRanks&#34;, {}
+        )
+
+    def getCarParksByID(self, naptanID: str):
+        &#34;&#34;&#34;
+        Get car parks corresponding to the given stop point id
+
+        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        &#34;&#34;&#34;
+
+        return super(stopPoint, self).sendRequestUnified(
+            f&#34;/StopPoint/{naptanID}/CarParks&#34;, {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.stopPoint.getAllByStopType"><code class="name flex">
+<span>def <span class="ident">getAllByStopType</span></span>(<span>self, array)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets all stop points of a given type</p>
+<p>:param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllByStopType(self, array):
+    &#34;&#34;&#34;
+    Gets all stop points of a given type
+
+    :param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/{super(stopPoint, self).arrayToCSV(array)}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getArrivalDepartures"><code class="name flex">
+<span>def <span class="ident">getArrivalDepartures</span></span>(<span>self, naptanID: str, lineIds)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A StopPoint id (station naptan code e.g. 940GZZLUAS)</p>
+<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+:param lineIds: List of line ids e.g. ['tflwrapper-rail', 'london-overground', 'thameslink']</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getArrivalDepartures(self, naptanID: str, lineIds):
+    &#34;&#34;&#34;
+    A StopPoint id (station naptan code e.g. 940GZZLUAS)
+
+    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    :param lineIds: List of line ids e.g. [&#39;tflwrapper-rail&#39;, &#39;london-overground&#39;, &#39;thameslink&#39;]
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;StopPoint/${naptanID}/ArrivalsDepartures&#34;, {lineIds}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getByIDs"><code class="name flex">
+<span>def <span class="ident">getByIDs</span></span>(<span>self, ids, includeCrowdingData: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of StopPoints corresponding to the given list of stop ids</p>
+<p>:param ids: A list of stop point ids (station naptan code e.g. 940GZZLUASL).
+:param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getByIDs(self, ids, includeCrowdingData: bool):
+    &#34;&#34;&#34;
+    Gets a list of StopPoints corresponding to the given list of stop ids
+
+    :param ids: A list of stop point ids (station naptan code e.g. 940GZZLUASL).
+    :param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/{&#39;,&#39;.join(ids)}&#34;, {includeCrowdingData}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getBySMSCode"><code class="name flex">
+<span>def <span class="ident">getBySMSCode</span></span>(<span>self, smsID: str, output: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a StopPoint for a given sms code</p>
+<p>:param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.
+:param output: If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getBySMSCode(self, smsID: str, output: str):
+    &#34;&#34;&#34;
+    Gets a StopPoint for a given sms code
+
+    :param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.
+    :param output: If set to &#34;web&#34;, a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/Sms/{smsID}&#34;, {output}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getCarParksByID"><code class="name flex">
+<span>def <span class="ident">getCarParksByID</span></span>(<span>self, naptanID: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get car parks corresponding to the given stop point id</p>
+<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCarParksByID(self, naptanID: str):
+    &#34;&#34;&#34;
+    Get car parks corresponding to the given stop point id
+
+    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/{naptanID}/CarParks&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getCategories"><code class="name flex">
+<span>def <span class="ident">getCategories</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the list of available StopPoint additional information categories</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCategories(self):
+    &#34;&#34;&#34;Gets the list of available StopPoint additional information categories&#34;&#34;&#34;
+    return super(stopPoint, self).sendRequestUnified(
+        &#34;/StopPoint/Meta/Categories&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getDisruptionsByID"><code class="name flex">
+<span>def <span class="ident">getDisruptionsByID</span></span>(<span>self, ids, getFamily: bool, includeRouteBlockedStops: bool, flattenResponse: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have</p>
+<p>:param ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+:param getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
+:param includeRouteBlockedStops:
+:param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getDisruptionsByID(
+    self,
+    ids,
+    getFamily: bool,
+    includeRouteBlockedStops: bool,
+    flattenResponse: bool,
+):
+    &#34;&#34;&#34;
+    Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have
+
+    :param ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+    :param getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
+    :param includeRouteBlockedStops:
+    :param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/{super(stopPoint, self).arrayToCSV(ids)}/Disruption&#34;,
+        {getFamily, includeRouteBlockedStops, flattenResponse},
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getDisruptionsByMode"><code class="name flex">
+<span>def <span class="ident">getDisruptionsByMode</span></span>(<span>self, modes, includeRouteBlockedStops: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a distinct list of disrupted stop points for the given modes</p>
+<p>:param modes: An array of modes e.g. ['tube', 'dlr']
+:param includeRouteBlockedStops:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getDisruptionsByMode(self, modes, includeRouteBlockedStops: bool):
+    &#34;&#34;&#34;
+    Gets a distinct list of disrupted stop points for the given modes
+
+    :param modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
+    :param includeRouteBlockedStops:
+    &#34;&#34;&#34;
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/Mode/{super(stopPoint, self).arrayToCSV(modes)}/Disruption&#34;,
+        {includeRouteBlockedStops},
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getInRadius"><code class="name flex">
+<span>def <span class="ident">getInRadius</span></span>(<span>self, stopTypes, radius: int, useStopPointHierarchy: bool, modes, categories, returnLines: bool, latitude: int, longitude: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of StopPoints within {radius} by the specified criteria</p>
+<p>:param stopTypes: A list of stopTypes that should be returned
+:param radius: The radius of the bounding circle in metres (default : 200)
+:param useStopPointHierarchy: Re-arrange the output into a parent/child hierarchy.
+:param modes: modes The list of modes to search eg. ['tube', 'dlr']
+:param categories: an optional list of comma separated property categories to return in the StopPoint's property bag. If null or empty, all categories of property are returned. Pass the keyword "none" to return no properties.Pass the keyword "none" to return no properties.
+:param returnLines: True to return the lines that each stop point serves as a nested resource.
+:param latitude:
+:param longitude:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getInRadius(
+    self,
+    stopTypes,
+    radius: int,
+    useStopPointHierarchy: bool,
+    modes,
+    categories,
+    returnLines: bool,
+    latitude: int,
+    longitude: int,
+):
+    &#34;&#34;&#34;
+    Gets a list of StopPoints within {radius} by the specified criteria
+
+    :param stopTypes: A list of stopTypes that should be returned
+    :param radius: The radius of the bounding circle in metres (default : 200)
+    :param useStopPointHierarchy: Re-arrange the output into a parent/child hierarchy.
+    :param modes: modes The list of modes to search eg. [&#39;tube&#39;, &#39;dlr&#39;]
+    :param categories: an optional list of comma separated property categories to return in the StopPoint&#39;s property bag. If null or empty, all categories of property are returned. Pass the keyword &#34;none&#34; to return no properties.Pass the keyword &#34;none&#34; to return no properties.
+    :param returnLines: True to return the lines that each stop point serves as a nested resource.
+    :param latitude:
+    :param longitude:
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        &#34;/StopPoint&#34;,
+        {
+            &#34;stopTypes&#34;: super(stopPoint, self).arrayToCSV(stopTypes),
+            &#34;radius&#34;: radius,
+            &#34;useStopPointHierarchy&#34;: useStopPointHierarchy,
+            &#34;modes&#34;: super(stopPoint, self).arrayToCSV(modes),
+            &#34;categories&#34;: super(stopPoint, self).arrayToCSV(categories),
+            &#34;returnLines&#34;: returnLines,
+            &#34;latitude&#34;: latitude,
+            &#34;longitude&#34;: longitude,
+        },
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getModes"><code class="name flex">
+<span>def <span class="ident">getModes</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the list of available StopPoint modes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getModes(self):
+    &#34;&#34;&#34;Gets the list of available StopPoint modes&#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        &#34;/StopPoint/Meta/Modes&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getReachableStationsByID"><code class="name flex">
+<span>def <span class="ident">getReachableStationsByID</span></span>(<span>self, naptanID: str, lineID: str, serviceTypes=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets Stop points that are reachable from a station/line combination</p>
+<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+:param lineID: Line id of the line to filter by (e.g. victoria)
+:param serviceTypes: List of service types to filter on. Supported values: Regular, Night.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getReachableStationsByID(self, naptanID: str, lineID: str, serviceTypes=None):
+    &#34;&#34;&#34;
+    Gets Stop points that are reachable from a station/line combination
+
+    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    :param lineID: Line id of the line to filter by (e.g. victoria)
+    :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+    &#34;&#34;&#34;
+
+    if serviceTypes is None:
+        serviceTypes = [&#34;Regular&#34;]
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/{naptanID}/CanReachOnLine/{lineID}&#34;,
+        {&#34;serviceTypes&#34;: super(stopPoint, self).arrayToCSV(serviceTypes)},
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getRouteSectionByID"><code class="name flex">
+<span>def <span class="ident">getRouteSectionByID</span></span>(<span>self, naptanID: str, serviceTypes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the route sections for all the lines that service the given stop point id#</p>
+<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+:param serviceTypes: List of service types to filter on. Supported values: Regular, Night.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getRouteSectionByID(self, naptanID: str, serviceTypes):
+    &#34;&#34;&#34;
+    Get the route sections for all the lines that service the given stop point id#
+
+    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/{naptanID}/Route&#34;,
+        {&#34;serviceTypes&#34;: super(stopPoint, self).arrayToCSV(serviceTypes)},
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getServiceTypesByID"><code class="name flex">
+<span>def <span class="ident">getServiceTypesByID</span></span>(<span>self, stopPointID: str, lineIds, modes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the service types for a given Stop Point</p>
+<p>:param stopPointID:
+:param lineIds:
+:param modes:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getServiceTypesByID(self, stopPointID: str, lineIds, modes):
+    &#34;&#34;&#34;
+    Gets the service types for a given Stop Point
+
+    :param stopPointID:
+    :param lineIds:
+    :param modes:
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/ServiceTypes&#34;,
+        {&#34;id&#34;: stopPointID, &#34;lineIds&#34;: lineIds, &#34;modes&#34;: modes},
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getStationArrivals"><code class="name flex">
+<span>def <span class="ident">getStationArrivals</span></span>(<span>self, naptanID: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all service arrivals</p>
+<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStationArrivals(self, naptanID: str):
+    &#34;&#34;&#34;
+    Get all service arrivals
+
+    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;StopPoint/${naptanID}/Arrivals&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getTaxiRanksByID"><code class="name flex">
+<span>def <span class="ident">getTaxiRanksByID</span></span>(<span>self, naptanID: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of taxi ranks corresponding to the given stop point id</p>
+<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getTaxiRanksByID(self, naptanID: str):
+    &#34;&#34;&#34;
+    Gets a list of taxi ranks corresponding to the given stop point id
+
+    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/{naptanID}/TaxiRanks&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.getTypes"><code class="name flex">
+<span>def <span class="ident">getTypes</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the list of available StopPoint types</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getTypes(self):
+    &#34;&#34;&#34;Gets the list of available StopPoint types&#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        &#34;/StopPoint/Meta/StopTypes&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.stopPoint.search"><code class="name flex">
+<span>def <span class="ident">search</span></span>(<span>self, name: str, modes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Search StopPoints by their common name. Will not return a valid NaPTAN for HUB</p>
+<p>:param name: Name of station
+:param modes: Eg. ['tflwrapper', 'dlr']</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def search(self, name: str, modes):
+    &#34;&#34;&#34;
+    Search StopPoints by their common name. Will not return a valid NaPTAN for HUB
+
+    :param name: Name of station
+    :param modes: Eg. [&#39;tflwrapper&#39;, &#39;dlr&#39;]
+    &#34;&#34;&#34;
+
+    return super(stopPoint, self).sendRequestUnified(
+        f&#34;/StopPoint/Search/${name}&#34;,
+        {&#34;modes&#34;: super(stopPoint, self).arrayToCSV(modes)},
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.tflAPI"><code class="flex name class">
+<span>class <span class="ident">tflAPI</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>TFL API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class tflAPI(object):
+    &#34;&#34;&#34;TFL API&#34;&#34;&#34;
+
+    def __init__(self, app_key):
+        self.app_key = app_key
+
+    def sendRequestUnified(self, uri: str, params):
+        &#34;&#34;&#34;
+        Send a HTTP GET request to the TFL Unified API using your API Key
+
+        :param uri: The url which will be prepended to unifiedAPI
+        :param params: An object containg any extra parameters
+        :returns: API Data from TfL Unified API
+        &#34;&#34;&#34;
+        fullURL = f&#34;https://api.tfl.gov.uk:443{uri}?{urllib.parse.urlencode({&#39;app_key&#39;: self.app_key})}&#34;
+
+        if params:
+            fullURL += f&#34;&amp;{urllib.parse.urlencode(params)}&#34;
+
+        resource = urllib.request.urlopen(fullURL)
+        return json.loads(
+            resource.read().decode(resource.headers.get_content_charset())
+        )
+
+    @staticmethod
+    def sendRequestTrackerNet(uri: str):
+        &#34;&#34;&#34;
+        Send a HTTP GET request to the TrackerNet API
+
+        :param uri: The url which will be prepended to trackerNetAPI
+        :returns: API Data from TfL Unified API
+        &#34;&#34;&#34;
+
+        data = urllib.request.urlopen(
+            f&#34;http://cloud.tfl.gov.uk/TrackerNet{uri}&#34;).read()
+        print(json.dumps(xmltodict.parse(data)))
+
+    @staticmethod
+    def arrayToCSV(array):
+        return &#34;,&#34;.join(array)
+
+    @staticmethod
+    def getRFC3339(date_object):
+        return date_object.isoformat(&#34;T&#34;) + &#34;Z&#34;</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.accidentStats.accidentStats" href="accidentStats.html#tflwrapper.accidentStats.accidentStats">accidentStats</a></li>
+<li><a title="tflwrapper.bikePoint.bikePoint" href="bikePoint.html#tflwrapper.bikePoint.bikePoint">bikePoint</a></li>
+<li><a title="tflwrapper.crowding.crowding" href="crowding.html#tflwrapper.crowding.crowding">crowding</a></li>
+<li><a title="tflwrapper.line.line" href="line.html#tflwrapper.line.line">line</a></li>
+<li>tflwrapper.mode.mode</li>
+<li><a title="tflwrapper.occupancy.occupancy" href="occupancy.html#tflwrapper.occupancy.occupancy">occupancy</a></li>
+<li>tflwrapper.road.road</li>
+<li>tflwrapper.stopPoint.stopPoint</li>
+<li>tflwrapper.trackerNet.trackerNet</li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="tflwrapper.tflAPI.arrayToCSV"><code class="name flex">
+<span>def <span class="ident">arrayToCSV</span></span>(<span>array)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def arrayToCSV(array):
+    return &#34;,&#34;.join(array)</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.tflAPI.getRFC3339"><code class="name flex">
+<span>def <span class="ident">getRFC3339</span></span>(<span>date_object)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def getRFC3339(date_object):
+    return date_object.isoformat(&#34;T&#34;) + &#34;Z&#34;</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.tflAPI.sendRequestTrackerNet"><code class="name flex">
+<span>def <span class="ident">sendRequestTrackerNet</span></span>(<span>uri: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send a HTTP GET request to the TrackerNet API</p>
+<p>:param uri: The url which will be prepended to trackerNetAPI
+:returns: API Data from TfL Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def sendRequestTrackerNet(uri: str):
+    &#34;&#34;&#34;
+    Send a HTTP GET request to the TrackerNet API
+
+    :param uri: The url which will be prepended to trackerNetAPI
+    :returns: API Data from TfL Unified API
+    &#34;&#34;&#34;
+
+    data = urllib.request.urlopen(
+        f&#34;http://cloud.tfl.gov.uk/TrackerNet{uri}&#34;).read()
+    print(json.dumps(xmltodict.parse(data)))</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.tflAPI.sendRequestUnified"><code class="name flex">
+<span>def <span class="ident">sendRequestUnified</span></span>(<span>self, uri: str, params)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Send a HTTP GET request to the TFL Unified API using your API Key</p>
+<p>:param uri: The url which will be prepended to unifiedAPI
+:param params: An object containg any extra parameters
+:returns: API Data from TfL Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sendRequestUnified(self, uri: str, params):
+    &#34;&#34;&#34;
+    Send a HTTP GET request to the TFL Unified API using your API Key
+
+    :param uri: The url which will be prepended to unifiedAPI
+    :param params: An object containg any extra parameters
+    :returns: API Data from TfL Unified API
+    &#34;&#34;&#34;
+    fullURL = f&#34;https://api.tfl.gov.uk:443{uri}?{urllib.parse.urlencode({&#39;app_key&#39;: self.app_key})}&#34;
+
+    if params:
+        fullURL += f&#34;&amp;{urllib.parse.urlencode(params)}&#34;
+
+    resource = urllib.request.urlopen(fullURL)
+    return json.loads(
+        resource.read().decode(resource.headers.get_content_charset())
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="tflwrapper.trackerNet"><code class="flex name class">
+<span>class <span class="ident">trackerNet</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>TrackerNet API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class trackerNet(tflAPI):
+    &#34;&#34;&#34;TrackerNet API&#34;&#34;&#34;
+
+    def getPredictionSummary(self, line: str):
+        &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/PredictionSummary/${line}&#34;
+        )
+
+    def getPredictionDetailed(self, line: str, stationCode: str):
+        &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/PredictionDetailed/{line}/{stationCode}&#34;
+        )
+
+    def getAllLinesStatus(self, incidentsOnly: bool):
+        &#34;&#34;&#34;
+        Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.
+
+        :param incidentsOnly: Get station status information for stations with incidents only
+        &#34;&#34;&#34;
+
+        incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/LineStatus{incidentsOnlyCheck}&#34;
+        )
+
+    def getAllStationStatus(self, incidentsOnly: bool):
+        &#34;&#34;&#34;
+        Get station status information for all stations
+
+        :param incidentsOnly: Get station status information for stations with incidents only
+        &#34;&#34;&#34;
+
+        incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/StationStatus{incidentsOnlyCheck}&#34;
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.trackerNet.getAllLinesStatus"><code class="name flex">
+<span>def <span class="ident">getAllLinesStatus</span></span>(<span>self, incidentsOnly: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.</p>
+<p>:param incidentsOnly: Get station status information for stations with incidents only</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllLinesStatus(self, incidentsOnly: bool):
+    &#34;&#34;&#34;
+    Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.
+
+    :param incidentsOnly: Get station status information for stations with incidents only
+    &#34;&#34;&#34;
+
+    incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/LineStatus{incidentsOnlyCheck}&#34;
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.trackerNet.getAllStationStatus"><code class="name flex">
+<span>def <span class="ident">getAllStationStatus</span></span>(<span>self, incidentsOnly: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get station status information for all stations</p>
+<p>:param incidentsOnly: Get station status information for stations with incidents only</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllStationStatus(self, incidentsOnly: bool):
+    &#34;&#34;&#34;
+    Get station status information for all stations
+
+    :param incidentsOnly: Get station status information for stations with incidents only
+    &#34;&#34;&#34;
+
+    incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/StationStatus{incidentsOnlyCheck}&#34;
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.trackerNet.getPredictionDetailed"><code class="name flex">
+<span>def <span class="ident">getPredictionDetailed</span></span>(<span>self, line: str, stationCode: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getPredictionDetailed(self, line: str, stationCode: str):
+    &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/PredictionDetailed/{line}/{stationCode}&#34;
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.trackerNet.getPredictionSummary"><code class="name flex">
+<span>def <span class="ident">getPredictionSummary</span></span>(<span>self, line: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getPredictionSummary(self, line: str):
+    &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/PredictionSummary/${line}&#34;
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="tflwrapper.accidentStats" href="accidentStats.html">tflwrapper.accidentStats</a></code></li>
+<li><code><a title="tflwrapper.bikePoint" href="bikePoint.html">tflwrapper.bikePoint</a></code></li>
+<li><code><a title="tflwrapper.crowding" href="crowding.html">tflwrapper.crowding</a></code></li>
+<li><code><a title="tflwrapper.line" href="line.html">tflwrapper.line</a></code></li>
+<li><code><a title="tflwrapper.occupancy" href="occupancy.html">tflwrapper.occupancy</a></code></li>
+<li><code><a title="tflwrapper.tfl" href="tfl.html">tflwrapper.tfl</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="tflwrapper.mode" href="#tflwrapper.mode">mode</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.mode.getActiveServiceTypes" href="#tflwrapper.mode.getActiveServiceTypes">getActiveServiceTypes</a></code></li>
+<li><code><a title="tflwrapper.mode.getArrivalPredictionsAllStops" href="#tflwrapper.mode.getArrivalPredictionsAllStops">getArrivalPredictionsAllStops</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.road" href="#tflwrapper.road">road</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.road.getAll" href="#tflwrapper.road.getAll">getAll</a></code></li>
+<li><code><a title="tflwrapper.road.getAllDisruptionsByID" href="#tflwrapper.road.getAllDisruptionsByID">getAllDisruptionsByID</a></code></li>
+<li><code><a title="tflwrapper.road.getAllStreetDisruption" href="#tflwrapper.road.getAllStreetDisruption">getAllStreetDisruption</a></code></li>
+<li><code><a title="tflwrapper.road.getByID" href="#tflwrapper.road.getByID">getByID</a></code></li>
+<li><code><a title="tflwrapper.road.getCategories" href="#tflwrapper.road.getCategories">getCategories</a></code></li>
+<li><code><a title="tflwrapper.road.getSeverities" href="#tflwrapper.road.getSeverities">getSeverities</a></code></li>
+<li><code><a title="tflwrapper.road.getStatusByID" href="#tflwrapper.road.getStatusByID">getStatusByID</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.stopPoint" href="#tflwrapper.stopPoint">stopPoint</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.stopPoint.getAllByStopType" href="#tflwrapper.stopPoint.getAllByStopType">getAllByStopType</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getArrivalDepartures" href="#tflwrapper.stopPoint.getArrivalDepartures">getArrivalDepartures</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getByIDs" href="#tflwrapper.stopPoint.getByIDs">getByIDs</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getBySMSCode" href="#tflwrapper.stopPoint.getBySMSCode">getBySMSCode</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getCarParksByID" href="#tflwrapper.stopPoint.getCarParksByID">getCarParksByID</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getCategories" href="#tflwrapper.stopPoint.getCategories">getCategories</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getDisruptionsByID" href="#tflwrapper.stopPoint.getDisruptionsByID">getDisruptionsByID</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getDisruptionsByMode" href="#tflwrapper.stopPoint.getDisruptionsByMode">getDisruptionsByMode</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getInRadius" href="#tflwrapper.stopPoint.getInRadius">getInRadius</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getModes" href="#tflwrapper.stopPoint.getModes">getModes</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getReachableStationsByID" href="#tflwrapper.stopPoint.getReachableStationsByID">getReachableStationsByID</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getRouteSectionByID" href="#tflwrapper.stopPoint.getRouteSectionByID">getRouteSectionByID</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getServiceTypesByID" href="#tflwrapper.stopPoint.getServiceTypesByID">getServiceTypesByID</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getStationArrivals" href="#tflwrapper.stopPoint.getStationArrivals">getStationArrivals</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getTaxiRanksByID" href="#tflwrapper.stopPoint.getTaxiRanksByID">getTaxiRanksByID</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.getTypes" href="#tflwrapper.stopPoint.getTypes">getTypes</a></code></li>
+<li><code><a title="tflwrapper.stopPoint.search" href="#tflwrapper.stopPoint.search">search</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.tflAPI" href="#tflwrapper.tflAPI">tflAPI</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.tflAPI.arrayToCSV" href="#tflwrapper.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tflAPI.getRFC3339" href="#tflwrapper.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tflAPI.sendRequestTrackerNet" href="#tflwrapper.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tflAPI.sendRequestUnified" href="#tflwrapper.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.trackerNet" href="#tflwrapper.trackerNet">trackerNet</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.trackerNet.getAllLinesStatus" href="#tflwrapper.trackerNet.getAllLinesStatus">getAllLinesStatus</a></code></li>
+<li><code><a title="tflwrapper.trackerNet.getAllStationStatus" href="#tflwrapper.trackerNet.getAllStationStatus">getAllStationStatus</a></code></li>
+<li><code><a title="tflwrapper.trackerNet.getPredictionDetailed" href="#tflwrapper.trackerNet.getPredictionDetailed">getPredictionDetailed</a></code></li>
+<li><code><a title="tflwrapper.trackerNet.getPredictionSummary" href="#tflwrapper.trackerNet.getPredictionSummary">getPredictionSummary</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
