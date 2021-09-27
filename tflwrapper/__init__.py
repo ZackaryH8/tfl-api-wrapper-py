@@ -3,7 +3,7 @@ from .bikePoint import bikePoint
 from .crowding import crowding
 from .line import line
 from .mode import mode
-from .occupancy import oocupancy
+from .occupancy import occupancy
 from .road import road
 from .stopPoint import stopPoint
 from .tfl import tflAPI
