@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="generator" content="pdoc 0.10.0" />
 <title>tflwrapper.line API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
@@ -66,6 +66,29 @@ class line(tflAPI):
         &#34;&#34;&#34;Gets the line status of for all lines for the given modes&#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/Mode/{self.arrayToCSV(modes)}/Status&#34;, {}
+        )
+
+    def getStatusByID(self, lineIDs, detail: bool):
+        &#34;&#34;&#34;
+        Gets the line status of for all lines for the given modes
+
+        :param lineIDs: A comma-separated list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/Mode/{self.arrayToCSV(lineIDs)}/Status&#34;, {&#39;detail&#39;: detail}
+        )
+
+    def getRouteByIDs(self, lineIDs, serviceTypes):
+        &#34;&#34;&#34;
+        Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route.
+
+        :param lineIDs: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{self.arrayToCSV(lineIDs)}/Route&#34;, {
+                &#39;serviceTypes&#39;: serviceTypes}
         )</code></pre>
 </details>
 </section>
@@ -125,6 +148,29 @@ class line(tflAPI):
         &#34;&#34;&#34;Gets the line status of for all lines for the given modes&#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/Mode/{self.arrayToCSV(modes)}/Status&#34;, {}
+        )
+
+    def getStatusByID(self, lineIDs, detail: bool):
+        &#34;&#34;&#34;
+        Gets the line status of for all lines for the given modes
+
+        :param lineIDs: A comma-separated list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/Mode/{self.arrayToCSV(lineIDs)}/Status&#34;, {&#39;detail&#39;: detail}
+        )
+
+    def getRouteByIDs(self, lineIDs, serviceTypes):
+        &#34;&#34;&#34;
+        Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route.
+
+        :param lineIDs: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{self.arrayToCSV(lineIDs)}/Route&#34;, {
+                &#39;serviceTypes&#39;: serviceTypes}
         )</code></pre>
 </details>
 <h3>Ancestors</h3>
@@ -181,6 +227,30 @@ class line(tflAPI):
     )</code></pre>
 </details>
 </dd>
+<dt id="tflwrapper.line.line.getRouteByIDs"><code class="name flex">
+<span>def <span class="ident">getRouteByIDs</span></span>(<span>self, lineIDs, serviceTypes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route.</p>
+<p>:param lineIDs: A list of line ids e.g. ['victoria', 'circle']
+:param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getRouteByIDs(self, lineIDs, serviceTypes):
+    &#34;&#34;&#34;
+    Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route.
+
+    :param lineIDs: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+    :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/{self.arrayToCSV(lineIDs)}/Route&#34;, {
+            &#39;serviceTypes&#39;: serviceTypes}
+    )</code></pre>
+</details>
+</dd>
 <dt id="tflwrapper.line.line.getServiceTypes"><code class="name flex">
 <span>def <span class="ident">getServiceTypes</span></span>(<span>self)</span>
 </code></dt>
@@ -210,6 +280,29 @@ class line(tflAPI):
     &#34;&#34;&#34;Gets a list of valid severity codes&#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         &#34;/Line/Meta/Severity&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.line.getStatusByID"><code class="name flex">
+<span>def <span class="ident">getStatusByID</span></span>(<span>self, lineIDs, detail: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the line status of for all lines for the given modes</p>
+<p>:param lineIDs: A comma-separated list of line ids e.g. ['victoria', 'circle']
+:param detail: Include details of the disruptions that are causing the line status including the affected stops and routes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStatusByID(self, lineIDs, detail: bool):
+    &#34;&#34;&#34;
+    Gets the line status of for all lines for the given modes
+
+    :param lineIDs: A comma-separated list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+    :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/Mode/{self.arrayToCSV(lineIDs)}/Status&#34;, {&#39;detail&#39;: detail}
     )</code></pre>
 </details>
 </dd>
@@ -262,8 +355,10 @@ class line(tflAPI):
 <li><code><a title="tflwrapper.line.line.getAllFromMode" href="#tflwrapper.line.line.getAllFromMode">getAllFromMode</a></code></li>
 <li><code><a title="tflwrapper.line.line.getDisruptionCategories" href="#tflwrapper.line.line.getDisruptionCategories">getDisruptionCategories</a></code></li>
 <li><code><a title="tflwrapper.line.line.getModes" href="#tflwrapper.line.line.getModes">getModes</a></code></li>
+<li><code><a title="tflwrapper.line.line.getRouteByIDs" href="#tflwrapper.line.line.getRouteByIDs">getRouteByIDs</a></code></li>
 <li><code><a title="tflwrapper.line.line.getServiceTypes" href="#tflwrapper.line.line.getServiceTypes">getServiceTypes</a></code></li>
 <li><code><a title="tflwrapper.line.line.getSeverityCodes" href="#tflwrapper.line.line.getSeverityCodes">getSeverityCodes</a></code></li>
+<li><code><a title="tflwrapper.line.line.getStatusByID" href="#tflwrapper.line.line.getStatusByID">getStatusByID</a></code></li>
 <li><code><a title="tflwrapper.line.line.getStatusByModes" href="#tflwrapper.line.line.getStatusByModes">getStatusByModes</a></code></li>
 </ul>
 </li>
@@ -273,7 +368,7 @@ class line(tflAPI):
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
 </footer>
 </body>
 </html>
