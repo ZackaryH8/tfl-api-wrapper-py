@@ -4,7 +4,7 @@ from .tfl import tflAPI
 class crowding(tflAPI):
     """Crowding from Unified API"""
 
-    def getallByNaptan(self, id):
+    def getAllByNaptan(self, id):
         """
         Get crowding information for Naptan
         :param id: naptanID ID of the stop (eg. 940GZZLUASL)
