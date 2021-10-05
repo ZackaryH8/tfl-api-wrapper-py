@@ -1,6 +1,7 @@
 from .accidentStats import accidentStats
 from .bikePoint import bikePoint
 from .crowding import crowding
+from .disruptions import disruptions
 from .line import line
 from .mode import mode
 from .occupancy import occupancy
@@ -13,6 +14,7 @@ __all__ = [
     'accidentStats',
     'bikePoint',
     'crowding',
+    'disruptions',
     'line',
     'mode',
     'occupancy',
