@@ -1,4 +1,5 @@
 from .accidentStats import accidentStats
+from .airQuality import airQuality
 from .bikePoint import bikePoint
 from .crowding import crowding
 from .disruptions import disruptions
@@ -9,9 +10,11 @@ from .road import road
 from .stopPoint import stopPoint
 from .tfl import tflAPI
 from .trackerNet import trackerNet
+from .travelTimes import travelTimes
 
 __all__ = [
     'accidentStats',
+    'airQuality',
     'bikePoint',
     'crowding',
     'disruptions',
@@ -21,5 +24,6 @@ __all__ = [
     'road',
     'stopPoint'
     'tflAPI',
-    'trackerNet'
+    'trackerNet',
+    'travelTimes'
 ]
