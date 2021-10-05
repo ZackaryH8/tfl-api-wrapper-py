@@ -85,9 +85,9 @@ class stopPoint(tflAPI):
             f"StopPoint/${naptanID}/Arrivals", {}
         )
 
-    def getArrivalDepartures(self, naptanID: str, lineIds):
+    def getArrivalsDepartures(self, naptanID: str, lineIds):
         """
-        A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        Get all service arrivals and departures
 
         :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         :param lineIds: List of line ids e.g. ['tflwrapper-rail', 'london-overground', 'thameslink']
@@ -202,7 +202,7 @@ class stopPoint(tflAPI):
         Gets a StopPoint for a given sms code
 
         :param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.
-        :param output: If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
+        # :param output: If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
         """
 
         return super(stopPoint, self).sendRequestUnified(
