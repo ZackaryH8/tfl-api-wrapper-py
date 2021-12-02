@@ -2,7 +2,7 @@ from .tfl import tflAPI
 
 
 class line(tflAPI):
-    """Bike point from Unified API"""
+    """Line from Unified API"""
 
     def getModes(self):
         """Gets a list of valid modes"""
