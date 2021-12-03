@@ -45,8 +45,20 @@ class tflAPI(object):
 
     @staticmethod
     def arrayToCSV(array):
+        """
+        Convert array to a comma-separated string
+
+        :param array: Array to convert to a comma-separated string
+        :returns: A comma-separated string
+        """
         return ",".join(array)
 
     @staticmethod
     def getRFC3339(date_object):
+        """
+        Convert date object to RFC3339 standard
+
+        :param date_object: A date object to convert to RFC3339 standard
+        :returns: A RFC3339 formatted string
+        """
         return date_object.isoformat("T") + "Z"
