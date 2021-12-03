@@ -2,23 +2,22 @@ from .tfl import tflAPI
 
 
 class crowding(tflAPI):
-    """Crowding API"""
+    """Crowding from Unified API"""
 
-    def getByNaptan(self, naptanID: str):
-        """Returns crowding information for Naptan"""
-
+    def getAllByNaptan(self, id):
+        """
+        Get crowding information for Naptan
+        :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+        """
         return super(crowding, self).sendRequestUnified(
-            f"/Crowding/{naptanID}", {}
+            f"/Crowding/{id}", {}
         )
 
-    def getByNaptanDay(self, naptanID: str, dayOfTheWeek: str):
+    def getByNaptanDay(self, id, day):
         """
-        Returns crowding information for Naptan for a specified day of week
-
-        :param naptanID: ID of the stop (eg. 940GZZLUASL)
-        :param dayOfTheWeek: The day of which you would like data to return (eg. MON, TUE, WED, THU, FRI, SAT, SUN)
+        Get crowding information for Naptan for a specified day of week
+        :param day: The day of which you would like data to return (eg. MON, TUE)
         """
-
         return super(crowding, self).sendRequestUnified(
-            f"/Crowding/{naptanID}/{dayOfTheWeek}", {}
+            f"/Crowding/{id}/{day}", {}
         )
