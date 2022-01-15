@@ -85,17 +85,17 @@ class stopPoint(tflAPI):
             f"StopPoint/${naptanID}/Arrivals", {}
         )
 
-    def getArrivalsDepartures(self, naptanID: str, lineIds):
-        """
-        Get all service arrivals and departures
+    # def getArrivalsDepartures(self, naptanID: str, lineIds):
+    #     """
+    #     Get all service arrivals and departures
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-        :param lineIds: List of line ids e.g. ['tflwrapper-rail', 'london-overground', 'thameslink']
-        """
+    #     :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    #     :param lineIds: List of line ids e.g. ['tflwrapper-rail', 'london-overground', 'thameslink']
+    #     """
 
-        return super(stopPoint, self).sendRequestUnified(
-            f"StopPoint/${naptanID}/ArrivalsDepartures", {lineIds}
-        )
+    #     return super(stopPoint, self).sendRequestUnified(
+    #         f"StopPoint/${naptanID}/ArrivalsDepartures", {lineIds}
+    #     )
 
     def getDisruptionsByID(
         self,
