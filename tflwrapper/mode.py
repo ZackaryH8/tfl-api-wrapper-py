@@ -11,7 +11,7 @@ class mode(tflAPI):
             "/Mode/ActiveServiceTypes", {}
         )
 
-    def getArrivalPredictionsAllStops(self, modes: str, count: str):
+    def getAllArrivalPredictions(self, modes: str, count: str):
         """
         Returns arrival predictions for all stops
 
