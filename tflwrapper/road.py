@@ -4,6 +4,22 @@ from .tfl import tflAPI
 class road(tflAPI):
     """Road from Unified API"""
 
+    def getCategories(self):
+        """Gets a list of valid RoadDisruption categories"""
+        
+        return super(road, self).sendRequestUnified(
+            '/Road/Meta/Categories',
+            {}
+        )
+
+    def getSeverities(self):
+        """Gets a list of valid RoadDisruption severity codes"""
+
+        return super(road, self).sendRequestUnified(
+            '/Road/Meta/Severities',
+            {}
+        )
+
     def getAll(self):
         """Get all roads managed by TfL"""
 
@@ -59,20 +75,4 @@ class road(tflAPI):
         return super(road, self).sendRequestUnified(
             f'/Road/all/Disruption/{self.arrayToCSV(ids)}',
             {'stripContent': stripContent}
-        )
-
-    def getCategories(self):
-        """Gets a list of valid RoadDisruption categories"""
-
-        return super(road, self).sendRequestUnified(
-            '/Road/Meta/Categories',
-            {}
-        )
-
-    def getSeverities(self):
-        """Gets a list of valid RoadDisruption severity codes"""
-
-        return super(road, self).sendRequestUnified(
-            '/Road/Meta/Severities',
-            {}
         )
