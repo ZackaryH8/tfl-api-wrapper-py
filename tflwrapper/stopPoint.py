@@ -82,7 +82,7 @@ class stopPoint(tflAPI):
         """
 
         return super(stopPoint, self).sendRequestUnified(
-            f"/StopPoint/${naptanID}/Arrivals", {}
+            f"/StopPoint/{naptanID}/Arrivals", {}
         )
 
     # def getArrivalsDepartures(self, naptanID: str, lineIds):
