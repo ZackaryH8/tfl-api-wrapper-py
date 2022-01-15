@@ -17,7 +17,7 @@ class bikePoint(tflAPI):
         )
 
     def getByName(self, name):
-        """Search for bike stations by their name"""
+        """Search for bike points by their name"""
         return super(bikePoint, self).sendRequestUnified(
             f"/BikePoint/Search", {'query': name}
         )
