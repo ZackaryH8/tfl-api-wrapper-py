@@ -8,7 +8,7 @@ class trackerNet(tflAPI):
         """Get detailed train prediction information for a nominated station on a nominated line within 100 minute range"""
 
         return super(trackerNet, self).sendRequestTrackerNet(
-            f"/PredictionSummary/${line}"
+            f"/PredictionSummary/{line}"
         )
 
     def getPredictionDetailed(self, line: str, stationCode: str):
