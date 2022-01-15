@@ -1,0 +1,2106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>tflwrapper API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>tflwrapper</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from .accidentStats import accidentStats
+from .airQuality import airQuality
+from .bikePoint import bikePoint
+from .crowding import crowding
+from .disruptions import disruptions
+from .line import line
+from .mode import mode
+from .occupancy import occupancy
+from .road import road
+from .stopPoint import stopPoint
+from .tfl import tflAPI
+from .trackerNet import trackerNet
+from .travelTimes import travelTimes
+
+__all__ = [
+    &#39;accidentStats&#39;,
+    &#39;airQuality&#39;,
+    &#39;bikePoint&#39;,
+    &#39;crowding&#39;,
+    &#39;disruptions&#39;,
+    &#39;line&#39;,
+    &#39;mode&#39;,
+    &#39;occupancy&#39;,
+    &#39;road&#39;,
+    &#39;stopPoint&#39;
+    &#39;tflAPI&#39;,
+    &#39;trackerNet&#39;,
+    &#39;travelTimes&#39;
+]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="tflwrapper.stopPoint" href="stopPoint.html">tflwrapper.stopPoint</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="tflwrapper.tfl" href="tfl.html">tflwrapper.tfl</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="tflwrapper.accidentStats"><code class="flex name class">
+<span>class <span class="ident">accidentStats</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Accident from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class accidentStats(tflAPI):
+    &#34;&#34;&#34;Accident from Unified API&#34;&#34;&#34;
+
+    def getAllByYear(self, year: int):
+        &#34;&#34;&#34;
+        Gets all accident details for accidents occuring in the specified year
+
+        :param year: The year for which to filter the accidents on.
+        &#34;&#34;&#34;
+        return super(accidentStats, self).sendRequestUnified(
+            f&#34;/AccidentStats/{year}&#34;, {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.accidentStats.getAllByYear"><code class="name flex">
+<span>def <span class="ident">getAllByYear</span></span>(<span>self, year: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets all accident details for accidents occuring in the specified year</p>
+<p>:param year: The year for which to filter the accidents on.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllByYear(self, year: int):
+    &#34;&#34;&#34;
+    Gets all accident details for accidents occuring in the specified year
+
+    :param year: The year for which to filter the accidents on.
+    &#34;&#34;&#34;
+    return super(accidentStats, self).sendRequestUnified(
+        f&#34;/AccidentStats/{year}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.airQuality"><code class="flex name class">
+<span>class <span class="ident">airQuality</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Air Quality from the TFL Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class airQuality(tflAPI):
+    &#34;&#34;&#34;Air Quality from the TFL Unified API&#34;&#34;&#34;
+
+    def getAirQuality(self):
+        &#34;&#34;&#34;
+        Get all current and future air quality forecast
+        &#34;&#34;&#34;
+        return super(airQuality, self).sendRequestUnified(
+            f&#34;/AirQuality&#34;, {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.airQuality.getAirQuality"><code class="name flex">
+<span>def <span class="ident">getAirQuality</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all current and future air quality forecast</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAirQuality(self):
+    &#34;&#34;&#34;
+    Get all current and future air quality forecast
+    &#34;&#34;&#34;
+    return super(airQuality, self).sendRequestUnified(
+        f&#34;/AirQuality&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.bikePoint"><code class="flex name class">
+<span>class <span class="ident">bikePoint</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Bike point from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class bikePoint(tflAPI):
+    &#34;&#34;&#34;Bike point from Unified API&#34;&#34;&#34;
+
+    def getAll(self):
+        &#34;&#34;&#34;Gets all bike point locations&#34;&#34;&#34;
+        return super(bikePoint, self).sendRequestUnified(
+            &#34;/BikePoint&#34;, {}
+        )
+
+    def getByID(self, ID):
+        &#34;&#34;&#34;Gets the bike point by the given id&#34;&#34;&#34;
+        return super(bikePoint, self).sendRequestUnified(
+            f&#34;/BikePoint/{ID}&#34;, {}
+        )
+
+    def getByName(self, name):
+        &#34;&#34;&#34;Search for bike points by their name&#34;&#34;&#34;
+        return super(bikePoint, self).sendRequestUnified(
+            f&#34;/BikePoint/Search&#34;, {&#39;query&#39;: name}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.bikePoint.getAll"><code class="name flex">
+<span>def <span class="ident">getAll</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets all bike point locations</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAll(self):
+    &#34;&#34;&#34;Gets all bike point locations&#34;&#34;&#34;
+    return super(bikePoint, self).sendRequestUnified(
+        &#34;/BikePoint&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.bikePoint.getByID"><code class="name flex">
+<span>def <span class="ident">getByID</span></span>(<span>self, ID)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the bike point by the given id</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getByID(self, ID):
+    &#34;&#34;&#34;Gets the bike point by the given id&#34;&#34;&#34;
+    return super(bikePoint, self).sendRequestUnified(
+        f&#34;/BikePoint/{ID}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.bikePoint.getByName"><code class="name flex">
+<span>def <span class="ident">getByName</span></span>(<span>self, name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Search for bike points by their name</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getByName(self, name):
+    &#34;&#34;&#34;Search for bike points by their name&#34;&#34;&#34;
+    return super(bikePoint, self).sendRequestUnified(
+        f&#34;/BikePoint/Search&#34;, {&#39;query&#39;: name}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.crowding"><code class="flex name class">
+<span>class <span class="ident">crowding</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crowding from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class crowding(tflAPI):
+    &#34;&#34;&#34;Crowding from Unified API&#34;&#34;&#34;
+
+    def getAllByNaptan(self, id):
+        &#34;&#34;&#34;
+        Get crowding information for Naptan
+        :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+        &#34;&#34;&#34;
+        return super(crowding, self).sendRequestUnified(
+            f&#34;/Crowding/{id}&#34;, {}
+        )
+
+    def getByNaptanDay(self, id, day):
+        &#34;&#34;&#34;
+        Get crowding information for Naptan for a specified day of week
+        :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+        :param day: The day of which you would like data to return (eg. MON, TUE)
+        &#34;&#34;&#34;
+        return super(crowding, self).sendRequestUnified(
+            f&#34;/Crowding/{id}/{day}&#34;, {}
+        )
+
+    def getLiveByNaptan(self, id):
+        &#34;&#34;&#34;
+        Get crowding information for Naptan for a specified day of week
+        :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+        &#34;&#34;&#34;
+        return super(crowding, self).sendRequestUnified(
+            f&#34;/Crowding/{id}/Live&#34;, {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.crowding.getAllByNaptan"><code class="name flex">
+<span>def <span class="ident">getAllByNaptan</span></span>(<span>self, id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get crowding information for Naptan
+:param id: naptanID ID of the stop (eg. 940GZZLUASL)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllByNaptan(self, id):
+    &#34;&#34;&#34;
+    Get crowding information for Naptan
+    :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+    &#34;&#34;&#34;
+    return super(crowding, self).sendRequestUnified(
+        f&#34;/Crowding/{id}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.crowding.getByNaptanDay"><code class="name flex">
+<span>def <span class="ident">getByNaptanDay</span></span>(<span>self, id, day)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get crowding information for Naptan for a specified day of week
+:param id: naptanID ID of the stop (eg. 940GZZLUASL)
+:param day: The day of which you would like data to return (eg. MON, TUE)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getByNaptanDay(self, id, day):
+    &#34;&#34;&#34;
+    Get crowding information for Naptan for a specified day of week
+    :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+    :param day: The day of which you would like data to return (eg. MON, TUE)
+    &#34;&#34;&#34;
+    return super(crowding, self).sendRequestUnified(
+        f&#34;/Crowding/{id}/{day}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.crowding.getLiveByNaptan"><code class="name flex">
+<span>def <span class="ident">getLiveByNaptan</span></span>(<span>self, id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get crowding information for Naptan for a specified day of week
+:param id: naptanID ID of the stop (eg. 940GZZLUASL)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getLiveByNaptan(self, id):
+    &#34;&#34;&#34;
+    Get crowding information for Naptan for a specified day of week
+    :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+    &#34;&#34;&#34;
+    return super(crowding, self).sendRequestUnified(
+        f&#34;/Crowding/{id}/Live&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.disruptions"><code class="flex name class">
+<span>class <span class="ident">disruptions</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Disruptions from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class disruptions(tflAPI):
+    &#34;&#34;&#34;Disruptions from Unified API&#34;&#34;&#34;
+
+    def getAllLifts(self):
+        &#34;&#34;&#34;
+        List of all currently disrupted lift routes, refreshed every 1 minute
+        &#34;&#34;&#34;
+        return super(disruptions, self).sendRequestUnified(
+            f&#34;/Disruptions/Lifts&#34;, {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.disruptions.getAllLifts"><code class="name flex">
+<span>def <span class="ident">getAllLifts</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>List of all currently disrupted lift routes, refreshed every 1 minute</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllLifts(self):
+    &#34;&#34;&#34;
+    List of all currently disrupted lift routes, refreshed every 1 minute
+    &#34;&#34;&#34;
+    return super(disruptions, self).sendRequestUnified(
+        f&#34;/Disruptions/Lifts&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.line"><code class="flex name class">
+<span>class <span class="ident">line</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Line from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class line(tflAPI):
+    &#34;&#34;&#34;Line from Unified API&#34;&#34;&#34;
+
+    def getModes(self):
+        &#34;&#34;&#34;Gets a list of valid modes&#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            &#34;/Line/Meta/Modes&#34;, {}
+        )
+
+    def getSeverityCodes(self):
+        &#34;&#34;&#34;Gets a list of valid severity codes&#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            &#34;/Line/Meta/Severity&#34;, {}
+        )
+
+    def getDisruptionCategories(self):
+        &#34;&#34;&#34;Gets a list of valid disruption categories&#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            &#34;/Line/Meta/DisruptionCatergories&#34;, {}
+        )
+
+    def getServiceTypes(self):
+        &#34;&#34;&#34;Gets a list of valid service types&#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            &#34;/Line/Meta/ServiceTypes&#34;, {}
+        )
+
+    def getAllStopPoints(self, line):
+        &#34;&#34;&#34;
+        Gets a list of the stations that serve the given line id
+        :param line: A line id e.g. victoria, circle, N133
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            F&#34;/Line/{line}/StopPoints&#34;, {}
+        )
+    
+
+    def getAllByModes(self, modes):
+        &#34;&#34;&#34;
+        Gets lines that serve the given modes
+        :param modes: An list of modes e.g. tube, tram
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/Mode/{self.arrayToCSV(modes)}&#34;, {}
+        )
+
+    def getStatusByLine(self, lines, detail = False, startDate = None, endDate = None):
+        &#34;&#34;&#34;
+        Gets the line status of for given line ids e.g Minor Delays
+
+        :param lines: A list of line ids e.g. victoria, circle, N133
+        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        &#34;&#34;&#34;
+        if startDate == None or endDate == None:
+            return super(line, self).sendRequestUnified(
+                f&#34;/Line/{self.arrayToCSV(lines)}/Status&#34;, { detail }
+            )
+        else:
+            return super(line, self).sendRequestUnified(
+                f&#34;/Line/{self.arrayToCSV(lines)}/Status/{self.getRFC3339(startDate)}/to/{self.getRFC3339(endDate)}&#34;, { detail }
+            )
+
+    def getStatusByModes(self, modes, detail = False, severityLevel = &#34;&#34;):
+        &#34;&#34;&#34;
+        Gets the line status of for all lines for the given modes
+
+        :param modes: An list of modes e.g. tube, tram
+        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        :param severityLevel: If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/Mode/{self.arrayToCSV(modes)}/Status&#34;, { detail, severityLevel }
+        )
+
+    def getTimetableFromTo(self, _line, _from, _to):
+        &#34;&#34;&#34;Gets the timetable for a specified station on the give line with specified destination&#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{_line}/Timetable/{_from}/to/{_to}&#34;
+        )
+
+    def getTimetableFromStation(self, _line, NaPTANID, direction):
+        &#34;&#34;&#34;
+        Gets the inbound timetable for a specified station on the give line
+
+        :param _line: Id of the line e.g. &#39;victoria&#39;
+        :param NaPTANID: Id of the stop (station naptan code e.g. 940GZZLUASL)
+        :param direction: Leave blank for outbound or &#34;inbound&#34;
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{_line}/Timetable/{NaPTANID}&#34;,
+            {&#39;direction&#39;: direction}
+        )
+
+    def getArrivalsByNaptan(self, lineids, naptan, destinationStationId, direction = &#34;all&#34;):
+        &#34;&#34;&#34;
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{self.arrayToCSV(lineids)}/Arrivals/{naptan}&#34;, {&#39;direction&#39;: direction, &#39;destinationStationId&#39;: destinationStationId }
+        )
+
+    def getAllValidRoutes(self, serviceTypes):
+        &#34;&#34;&#34;
+        Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.
+
+        :param serviceTypes:A comma seperated list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/Route&#34;, {
+                &#39;serviceTypes&#39;: serviceTypes}
+        )
+
+    def getStatusByID(self, lineids, detail: bool):
+        &#34;&#34;&#34;
+        Gets the line status of for all lines for the given modes
+
+        :param lineids: A comma-separated list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/Mode/{self.arrayToCSV(lineids)}/Status&#34;, {&#39;detail&#39;: detail}
+        )
+
+    def getRouteByIDs(self, lineids, serviceTypes):
+        &#34;&#34;&#34;
+        Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route
+
+        :param lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+        &#34;&#34;&#34;
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{self.arrayToCSV(lineids)}/Route&#34;, {
+                &#39;serviceTypes&#39;: serviceTypes}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.line.getAllByModes"><code class="name flex">
+<span>def <span class="ident">getAllByModes</span></span>(<span>self, modes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets lines that serve the given modes
+:param modes: An list of modes e.g. tube, tram</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllByModes(self, modes):
+    &#34;&#34;&#34;
+    Gets lines that serve the given modes
+    :param modes: An list of modes e.g. tube, tram
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/Mode/{self.arrayToCSV(modes)}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getAllStopPoints"><code class="name flex">
+<span>def <span class="ident">getAllStopPoints</span></span>(<span>self, line)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of the stations that serve the given line id
+:param line: A line id e.g. victoria, circle, N133</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllStopPoints(self, line):
+    &#34;&#34;&#34;
+    Gets a list of the stations that serve the given line id
+    :param line: A line id e.g. victoria, circle, N133
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        F&#34;/Line/{line}/StopPoints&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getAllValidRoutes"><code class="name flex">
+<span>def <span class="ident">getAllValidRoutes</span></span>(<span>self, serviceTypes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.</p>
+<p>:param serviceTypes:A comma seperated list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllValidRoutes(self, serviceTypes):
+    &#34;&#34;&#34;
+    Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.
+
+    :param serviceTypes:A comma seperated list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/Route&#34;, {
+            &#39;serviceTypes&#39;: serviceTypes}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getArrivalsByNaptan"><code class="name flex">
+<span>def <span class="ident">getArrivalsByNaptan</span></span>(<span>self, lineids, naptan, destinationStationId, direction='all')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getArrivalsByNaptan(self, lineids, naptan, destinationStationId, direction = &#34;all&#34;):
+    &#34;&#34;&#34;
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/{self.arrayToCSV(lineids)}/Arrivals/{naptan}&#34;, {&#39;direction&#39;: direction, &#39;destinationStationId&#39;: destinationStationId }
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getDisruptionCategories"><code class="name flex">
+<span>def <span class="ident">getDisruptionCategories</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid disruption categories</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getDisruptionCategories(self):
+    &#34;&#34;&#34;Gets a list of valid disruption categories&#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        &#34;/Line/Meta/DisruptionCatergories&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getModes"><code class="name flex">
+<span>def <span class="ident">getModes</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid modes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getModes(self):
+    &#34;&#34;&#34;Gets a list of valid modes&#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        &#34;/Line/Meta/Modes&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getRouteByIDs"><code class="name flex">
+<span>def <span class="ident">getRouteByIDs</span></span>(<span>self, lineids, serviceTypes)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route</p>
+<p>:param lineids: A list of line ids e.g. ['victoria', 'circle']
+:param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getRouteByIDs(self, lineids, serviceTypes):
+    &#34;&#34;&#34;
+    Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route
+
+    :param lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+    :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/{self.arrayToCSV(lineids)}/Route&#34;, {
+            &#39;serviceTypes&#39;: serviceTypes}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getServiceTypes"><code class="name flex">
+<span>def <span class="ident">getServiceTypes</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid service types</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getServiceTypes(self):
+    &#34;&#34;&#34;Gets a list of valid service types&#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        &#34;/Line/Meta/ServiceTypes&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getSeverityCodes"><code class="name flex">
+<span>def <span class="ident">getSeverityCodes</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid severity codes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getSeverityCodes(self):
+    &#34;&#34;&#34;Gets a list of valid severity codes&#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        &#34;/Line/Meta/Severity&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getStatusByID"><code class="name flex">
+<span>def <span class="ident">getStatusByID</span></span>(<span>self, lineids, detail: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the line status of for all lines for the given modes</p>
+<p>:param lineids: A comma-separated list of line ids e.g. ['victoria', 'circle']
+:param detail: Include details of the disruptions that are causing the line status including the affected stops and routes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStatusByID(self, lineids, detail: bool):
+    &#34;&#34;&#34;
+    Gets the line status of for all lines for the given modes
+
+    :param lineids: A comma-separated list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+    :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/Mode/{self.arrayToCSV(lineids)}/Status&#34;, {&#39;detail&#39;: detail}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getStatusByLine"><code class="name flex">
+<span>def <span class="ident">getStatusByLine</span></span>(<span>self, lines, detail=False, startDate=None, endDate=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the line status of for given line ids e.g Minor Delays</p>
+<p>:param lines: A list of line ids e.g. victoria, circle, N133
+:param detail: Include details of the disruptions that are causing the line status including the affected stops and routes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStatusByLine(self, lines, detail = False, startDate = None, endDate = None):
+    &#34;&#34;&#34;
+    Gets the line status of for given line ids e.g Minor Delays
+
+    :param lines: A list of line ids e.g. victoria, circle, N133
+    :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+    &#34;&#34;&#34;
+    if startDate == None or endDate == None:
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{self.arrayToCSV(lines)}/Status&#34;, { detail }
+        )
+    else:
+        return super(line, self).sendRequestUnified(
+            f&#34;/Line/{self.arrayToCSV(lines)}/Status/{self.getRFC3339(startDate)}/to/{self.getRFC3339(endDate)}&#34;, { detail }
+        )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getStatusByModes"><code class="name flex">
+<span>def <span class="ident">getStatusByModes</span></span>(<span>self, modes, detail=False, severityLevel='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the line status of for all lines for the given modes</p>
+<p>:param modes: An list of modes e.g. tube, tram
+:param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+:param severityLevel: If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStatusByModes(self, modes, detail = False, severityLevel = &#34;&#34;):
+    &#34;&#34;&#34;
+    Gets the line status of for all lines for the given modes
+
+    :param modes: An list of modes e.g. tube, tram
+    :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+    :param severityLevel: If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/Mode/{self.arrayToCSV(modes)}/Status&#34;, { detail, severityLevel }
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getTimetableFromStation"><code class="name flex">
+<span>def <span class="ident">getTimetableFromStation</span></span>(<span>self, _line, NaPTANID, direction)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the inbound timetable for a specified station on the give line</p>
+<p>:param _line: Id of the line e.g. 'victoria'
+:param NaPTANID: Id of the stop (station naptan code e.g. 940GZZLUASL)
+:param direction: Leave blank for outbound or "inbound"</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getTimetableFromStation(self, _line, NaPTANID, direction):
+    &#34;&#34;&#34;
+    Gets the inbound timetable for a specified station on the give line
+
+    :param _line: Id of the line e.g. &#39;victoria&#39;
+    :param NaPTANID: Id of the stop (station naptan code e.g. 940GZZLUASL)
+    :param direction: Leave blank for outbound or &#34;inbound&#34;
+    &#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/{_line}/Timetable/{NaPTANID}&#34;,
+        {&#39;direction&#39;: direction}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.line.getTimetableFromTo"><code class="name flex">
+<span>def <span class="ident">getTimetableFromTo</span></span>(<span>self, _line, _from, _to)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the timetable for a specified station on the give line with specified destination</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getTimetableFromTo(self, _line, _from, _to):
+    &#34;&#34;&#34;Gets the timetable for a specified station on the give line with specified destination&#34;&#34;&#34;
+    return super(line, self).sendRequestUnified(
+        f&#34;/Line/{_line}/Timetable/{_from}/to/{_to}&#34;
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.mode"><code class="flex name class">
+<span>class <span class="ident">mode</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Mode API, /mode</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class mode(tflAPI):
+    &#34;&#34;&#34;Mode API, /mode&#34;&#34;&#34;
+
+    def getActiveServiceTypes(self):
+        &#34;&#34;&#34;Returns the service type active for a mode, currently only supports tube&#34;&#34;&#34;
+
+        return super(mode, self).sendRequestUnified(
+            &#34;/Mode/ActiveServiceTypes&#34;, {}
+        )
+
+    def getAllArrivalPredictions(self, modes: str, count: str):
+        &#34;&#34;&#34;
+        Returns arrival predictions for all stops
+
+        :param modes: A mode name e.g. tube, dlr
+        :param count: A number of arrivals to return for each stop, -1 to return all available
+        &#34;&#34;&#34;
+
+        return super(mode, self).sendRequestUnified(
+            f&#34;/Mode/{modes}/Arrivals&#34;, {&#39;count&#39;: count}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.mode.getActiveServiceTypes"><code class="name flex">
+<span>def <span class="ident">getActiveServiceTypes</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the service type active for a mode, currently only supports tube</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getActiveServiceTypes(self):
+    &#34;&#34;&#34;Returns the service type active for a mode, currently only supports tube&#34;&#34;&#34;
+
+    return super(mode, self).sendRequestUnified(
+        &#34;/Mode/ActiveServiceTypes&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.mode.getAllArrivalPredictions"><code class="name flex">
+<span>def <span class="ident">getAllArrivalPredictions</span></span>(<span>self, modes: str, count: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns arrival predictions for all stops</p>
+<p>:param modes: A mode name e.g. tube, dlr
+:param count: A number of arrivals to return for each stop, -1 to return all available</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllArrivalPredictions(self, modes: str, count: str):
+    &#34;&#34;&#34;
+    Returns arrival predictions for all stops
+
+    :param modes: A mode name e.g. tube, dlr
+    :param count: A number of arrivals to return for each stop, -1 to return all available
+    &#34;&#34;&#34;
+
+    return super(mode, self).sendRequestUnified(
+        f&#34;/Mode/{modes}/Arrivals&#34;, {&#39;count&#39;: count}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.occupancy"><code class="flex name class">
+<span>class <span class="ident">occupancy</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Occupancy from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class occupancy(tflAPI):
+    &#34;&#34;&#34;Occupancy from Unified API&#34;&#34;&#34;
+
+    def getBikePointByIDs(self, ids):
+        &#34;&#34;&#34;
+        Gets the occupancy data for bike points
+
+        :param ids: Bike Point ID (Eg. BikePoints_208)
+        &#34;&#34;&#34;
+        return super(occupancy, self).sendRequestUnified(
+            f&#34;/Occupancy/BikePoints/{self.arrayToCSV(ids)}&#34;, {}
+        )
+
+    def getCarParkByID(self, id):
+        &#34;&#34;&#34;
+        Gets the occupancy for a car park with a given id
+        
+        :param id: Car Park ID (Eg. CarParks_800468)
+        &#34;&#34;&#34;
+        
+        return super(occupancy, self).sendRequestUnified(
+            f&#34;/Occupancy/CarPark/{id}&#34;, {}
+        )
+
+    def getChargeConnectorByID(self, id):
+        &#34;&#34;&#34;
+        Gets the occupancy for a charge connectors with a given id
+        
+        :param id: Charge Connector ID (Eg. ChargePointESB-UT06NW-1)
+        &#34;&#34;&#34;
+        
+        return super(occupancy, self).sendRequestUnified(
+            f&#34;/Occupancy/ChargeConnector/{id}&#34;, {}
+        )
+
+    def getAllCarParks(self):
+        &#34;&#34;&#34;Gets the occupancy for all car parks that have occupancy data&#34;&#34;&#34;
+        
+        return super(occupancy, self).sendRequestUnified(
+            f&#34;/Occupancy/CarPark&#34;, {}
+        )
+
+    def getAllChargeConnectors(self):
+        &#34;&#34;&#34;Gets the occupancy for all charge connectors&#34;&#34;&#34;
+        
+        return super(occupancy, self).sendRequestUnified(
+            f&#34;/Occupancy/ChargeConnector&#34;, {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.occupancy.getAllCarParks"><code class="name flex">
+<span>def <span class="ident">getAllCarParks</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the occupancy for all car parks that have occupancy data</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllCarParks(self):
+    &#34;&#34;&#34;Gets the occupancy for all car parks that have occupancy data&#34;&#34;&#34;
+    
+    return super(occupancy, self).sendRequestUnified(
+        f&#34;/Occupancy/CarPark&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.occupancy.getAllChargeConnectors"><code class="name flex">
+<span>def <span class="ident">getAllChargeConnectors</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the occupancy for all charge connectors</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllChargeConnectors(self):
+    &#34;&#34;&#34;Gets the occupancy for all charge connectors&#34;&#34;&#34;
+    
+    return super(occupancy, self).sendRequestUnified(
+        f&#34;/Occupancy/ChargeConnector&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.occupancy.getBikePointByIDs"><code class="name flex">
+<span>def <span class="ident">getBikePointByIDs</span></span>(<span>self, ids)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the occupancy data for bike points</p>
+<p>:param ids: Bike Point ID (Eg. BikePoints_208)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getBikePointByIDs(self, ids):
+    &#34;&#34;&#34;
+    Gets the occupancy data for bike points
+
+    :param ids: Bike Point ID (Eg. BikePoints_208)
+    &#34;&#34;&#34;
+    return super(occupancy, self).sendRequestUnified(
+        f&#34;/Occupancy/BikePoints/{self.arrayToCSV(ids)}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.occupancy.getCarParkByID"><code class="name flex">
+<span>def <span class="ident">getCarParkByID</span></span>(<span>self, id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the occupancy for a car park with a given id</p>
+<p>:param id: Car Park ID (Eg. CarParks_800468)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCarParkByID(self, id):
+    &#34;&#34;&#34;
+    Gets the occupancy for a car park with a given id
+    
+    :param id: Car Park ID (Eg. CarParks_800468)
+    &#34;&#34;&#34;
+    
+    return super(occupancy, self).sendRequestUnified(
+        f&#34;/Occupancy/CarPark/{id}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.occupancy.getChargeConnectorByID"><code class="name flex">
+<span>def <span class="ident">getChargeConnectorByID</span></span>(<span>self, id)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the occupancy for a charge connectors with a given id</p>
+<p>:param id: Charge Connector ID (Eg. ChargePointESB-UT06NW-1)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getChargeConnectorByID(self, id):
+    &#34;&#34;&#34;
+    Gets the occupancy for a charge connectors with a given id
+    
+    :param id: Charge Connector ID (Eg. ChargePointESB-UT06NW-1)
+    &#34;&#34;&#34;
+    
+    return super(occupancy, self).sendRequestUnified(
+        f&#34;/Occupancy/ChargeConnector/{id}&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.road"><code class="flex name class">
+<span>class <span class="ident">road</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Road from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class road(tflAPI):
+    &#34;&#34;&#34;Road from Unified API&#34;&#34;&#34;
+
+    def getCategories(self):
+        &#34;&#34;&#34;Gets a list of valid RoadDisruption categories&#34;&#34;&#34;
+        
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/Meta/Categories&#39;,
+            {}
+        )
+
+    def getSeverities(self):
+        &#34;&#34;&#34;Gets a list of valid RoadDisruption severity codes&#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/Meta/Severities&#39;,
+            {}
+        )
+
+    def getAll(self):
+        &#34;&#34;&#34;Get all roads managed by TfL&#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            &#39;/Road&#39;, {}
+        )
+
+    def getByID(self, ids):
+        &#34;&#34;&#34;
+        Get the road with the specified ID (Eg. A1)
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        &#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {}
+        )
+
+    def getStatusByID(self, ids, startDate, endDate):
+        &#34;&#34;&#34;
+        Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        :param startDate:
+        :param endDate:
+        &#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {&#39;startDate&#39;: self.getRFC3339(
+                startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+        )
+
+    def getAllStreetDisruption(self, startDate, endDate):
+        &#34;&#34;&#34;
+        Gets a list of disrupted streets
+
+        :param startDate: Optional, the start time to filter on
+        :param endDate: Optional, the end time to filter on
+        &#34;&#34;&#34;
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/all/Street/Disruption&#39;,
+            {&#39;startDate&#39;: self.getRFC3339(
+                startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+        )
+
+    def getAllDisruptionsByID(self, ids, stripContent: bool):
+        &#34;&#34;&#34;
+        Gets a list of disrupted streets
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+        &#34;&#34;&#34;
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
+            {&#39;stripContent&#39;: stripContent}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.road.getAll"><code class="name flex">
+<span>def <span class="ident">getAll</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all roads managed by TfL</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAll(self):
+    &#34;&#34;&#34;Get all roads managed by TfL&#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        &#39;/Road&#39;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getAllDisruptionsByID"><code class="name flex">
+<span>def <span class="ident">getAllDisruptionsByID</span></span>(<span>self, ids, stripContent: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of disrupted streets</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']
+:param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,
+startDate, endDate, corridor details, location and comments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllDisruptionsByID(self, ids, stripContent: bool):
+    &#34;&#34;&#34;
+    Gets a list of disrupted streets
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+    &#34;&#34;&#34;
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
+        {&#39;stripContent&#39;: stripContent}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getAllStreetDisruption"><code class="name flex">
+<span>def <span class="ident">getAllStreetDisruption</span></span>(<span>self, startDate, endDate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of disrupted streets</p>
+<p>:param startDate: Optional, the start time to filter on
+:param endDate: Optional, the end time to filter on</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllStreetDisruption(self, startDate, endDate):
+    &#34;&#34;&#34;
+    Gets a list of disrupted streets
+
+    :param startDate: Optional, the start time to filter on
+    :param endDate: Optional, the end time to filter on
+    &#34;&#34;&#34;
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/all/Street/Disruption&#39;,
+        {&#39;startDate&#39;: self.getRFC3339(
+            startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getByID"><code class="name flex">
+<span>def <span class="ident">getByID</span></span>(<span>self, ids)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the road with the specified ID (Eg. A1)</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getByID(self, ids):
+    &#34;&#34;&#34;
+    Get the road with the specified ID (Eg. A1)
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    &#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getCategories"><code class="name flex">
+<span>def <span class="ident">getCategories</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid RoadDisruption categories</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCategories(self):
+    &#34;&#34;&#34;Gets a list of valid RoadDisruption categories&#34;&#34;&#34;
+    
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/Meta/Categories&#39;,
+        {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getSeverities"><code class="name flex">
+<span>def <span class="ident">getSeverities</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid RoadDisruption severity codes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getSeverities(self):
+    &#34;&#34;&#34;Gets a list of valid RoadDisruption severity codes&#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/Meta/Severities&#39;,
+        {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getStatusByID"><code class="name flex">
+<span>def <span class="ident">getStatusByID</span></span>(<span>self, ids, startDate, endDate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']
+:param startDate:
+:param endDate:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStatusByID(self, ids, startDate, endDate):
+    &#34;&#34;&#34;
+    Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    :param startDate:
+    :param endDate:
+    &#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {&#39;startDate&#39;: self.getRFC3339(
+            startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="tflwrapper.road"><code class="flex name class">
+<span>class <span class="ident">stopPointtflAPI</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Road from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class road(tflAPI):
+    &#34;&#34;&#34;Road from Unified API&#34;&#34;&#34;
+
+    def getCategories(self):
+        &#34;&#34;&#34;Gets a list of valid RoadDisruption categories&#34;&#34;&#34;
+        
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/Meta/Categories&#39;,
+            {}
+        )
+
+    def getSeverities(self):
+        &#34;&#34;&#34;Gets a list of valid RoadDisruption severity codes&#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/Meta/Severities&#39;,
+            {}
+        )
+
+    def getAll(self):
+        &#34;&#34;&#34;Get all roads managed by TfL&#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            &#39;/Road&#39;, {}
+        )
+
+    def getByID(self, ids):
+        &#34;&#34;&#34;
+        Get the road with the specified ID (Eg. A1)
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        &#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {}
+        )
+
+    def getStatusByID(self, ids, startDate, endDate):
+        &#34;&#34;&#34;
+        Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        :param startDate:
+        :param endDate:
+        &#34;&#34;&#34;
+
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {&#39;startDate&#39;: self.getRFC3339(
+                startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+        )
+
+    def getAllStreetDisruption(self, startDate, endDate):
+        &#34;&#34;&#34;
+        Gets a list of disrupted streets
+
+        :param startDate: Optional, the start time to filter on
+        :param endDate: Optional, the end time to filter on
+        &#34;&#34;&#34;
+        return super(road, self).sendRequestUnified(
+            &#39;/Road/all/Street/Disruption&#39;,
+            {&#39;startDate&#39;: self.getRFC3339(
+                startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+        )
+
+    def getAllDisruptionsByID(self, ids, stripContent: bool):
+        &#34;&#34;&#34;
+        Gets a list of disrupted streets
+
+        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+        &#34;&#34;&#34;
+        return super(road, self).sendRequestUnified(
+            f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
+            {&#39;stripContent&#39;: stripContent}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.road.getAll"><code class="name flex">
+<span>def <span class="ident">getAll</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get all roads managed by TfL</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAll(self):
+    &#34;&#34;&#34;Get all roads managed by TfL&#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        &#39;/Road&#39;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getAllDisruptionsByID"><code class="name flex">
+<span>def <span class="ident">getAllDisruptionsByID</span></span>(<span>self, ids, stripContent: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of disrupted streets</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']
+:param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,
+startDate, endDate, corridor details, location and comments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllDisruptionsByID(self, ids, stripContent: bool):
+    &#34;&#34;&#34;
+    Gets a list of disrupted streets
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+    &#34;&#34;&#34;
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
+        {&#39;stripContent&#39;: stripContent}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getAllStreetDisruption"><code class="name flex">
+<span>def <span class="ident">getAllStreetDisruption</span></span>(<span>self, startDate, endDate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of disrupted streets</p>
+<p>:param startDate: Optional, the start time to filter on
+:param endDate: Optional, the end time to filter on</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllStreetDisruption(self, startDate, endDate):
+    &#34;&#34;&#34;
+    Gets a list of disrupted streets
+
+    :param startDate: Optional, the start time to filter on
+    :param endDate: Optional, the end time to filter on
+    &#34;&#34;&#34;
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/all/Street/Disruption&#39;,
+        {&#39;startDate&#39;: self.getRFC3339(
+            startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getByID"><code class="name flex">
+<span>def <span class="ident">getByID</span></span>(<span>self, ids)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the road with the specified ID (Eg. A1)</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getByID(self, ids):
+    &#34;&#34;&#34;
+    Get the road with the specified ID (Eg. A1)
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    &#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getCategories"><code class="name flex">
+<span>def <span class="ident">getCategories</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid RoadDisruption categories</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCategories(self):
+    &#34;&#34;&#34;Gets a list of valid RoadDisruption categories&#34;&#34;&#34;
+    
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/Meta/Categories&#39;,
+        {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getSeverities"><code class="name flex">
+<span>def <span class="ident">getSeverities</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets a list of valid RoadDisruption severity codes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getSeverities(self):
+    &#34;&#34;&#34;Gets a list of valid RoadDisruption severity codes&#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        &#39;/Road/Meta/Severities&#39;,
+        {}
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.road.getStatusByID"><code class="name flex">
+<span>def <span class="ident">getStatusByID</span></span>(<span>self, ids, startDate, endDate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.</p>
+<p>:param ids: ID(s) of the road(s). Eg. ['A1']
+:param startDate:
+:param endDate:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getStatusByID(self, ids, startDate, endDate):
+    &#34;&#34;&#34;
+    Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
+
+    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    :param startDate:
+    :param endDate:
+    &#34;&#34;&#34;
+
+    return super(road, self).sendRequestUnified(
+        f&#39;/Road/{self.arrayToCSV(ids)}&#39;, {&#39;startDate&#39;: self.getRFC3339(
+            startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.trackerNet"><code class="flex name class">
+<span>class <span class="ident">trackerNet</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>TrackerNet API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class trackerNet(tflAPI):
+    &#34;&#34;&#34;TrackerNet API&#34;&#34;&#34;
+
+    def getPredictionSummary(self, line: str):
+        &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/PredictionSummary/${line}&#34;
+        )
+
+    def getPredictionDetailed(self, line: str, stationCode: str):
+        &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/PredictionDetailed/{line}/{stationCode}&#34;
+        )
+
+    def getAllLinesStatus(self, incidentsOnly: bool):
+        &#34;&#34;&#34;
+        Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.
+
+        :param incidentsOnly: Get station status information for stations with incidents only
+        &#34;&#34;&#34;
+
+        incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/LineStatus{incidentsOnlyCheck}&#34;
+        )
+
+    def getAllStationStatus(self, incidentsOnly: bool):
+        &#34;&#34;&#34;
+        Get station status information for all stations
+
+        :param incidentsOnly: Get station status information for stations with incidents only
+        &#34;&#34;&#34;
+
+        incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+        return super(trackerNet, self).sendRequestTrackerNet(
+            f&#34;/StationStatus{incidentsOnlyCheck}&#34;
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.trackerNet.getAllLinesStatus"><code class="name flex">
+<span>def <span class="ident">getAllLinesStatus</span></span>(<span>self, incidentsOnly: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.</p>
+<p>:param incidentsOnly: Get station status information for stations with incidents only</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllLinesStatus(self, incidentsOnly: bool):
+    &#34;&#34;&#34;
+    Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.
+
+    :param incidentsOnly: Get station status information for stations with incidents only
+    &#34;&#34;&#34;
+
+    incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/LineStatus{incidentsOnlyCheck}&#34;
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.trackerNet.getAllStationStatus"><code class="name flex">
+<span>def <span class="ident">getAllStationStatus</span></span>(<span>self, incidentsOnly: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get station status information for all stations</p>
+<p>:param incidentsOnly: Get station status information for stations with incidents only</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getAllStationStatus(self, incidentsOnly: bool):
+    &#34;&#34;&#34;
+    Get station status information for all stations
+
+    :param incidentsOnly: Get station status information for stations with incidents only
+    &#34;&#34;&#34;
+
+    incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/StationStatus{incidentsOnlyCheck}&#34;
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.trackerNet.getPredictionDetailed"><code class="name flex">
+<span>def <span class="ident">getPredictionDetailed</span></span>(<span>self, line: str, stationCode: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getPredictionDetailed(self, line: str, stationCode: str):
+    &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/PredictionDetailed/{line}/{stationCode}&#34;
+    )</code></pre>
+</details>
+</dd>
+<dt id="tflwrapper.trackerNet.getPredictionSummary"><code class="name flex">
+<span>def <span class="ident">getPredictionSummary</span></span>(<span>self, line: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getPredictionSummary(self, line: str):
+    &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+
+    return super(trackerNet, self).sendRequestTrackerNet(
+        f&#34;/PredictionSummary/${line}&#34;
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="tflwrapper.travelTimes"><code class="flex name class">
+<span>class <span class="ident">travelTimes</span></span>
+<span>(</span><span>app_key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Travel Times from Unified API</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class travelTimes(tflAPI):
+    &#34;&#34;&#34;Travel Times from Unified API&#34;&#34;&#34;
+
+    def getOverlay(
+        self,
+        z,
+        pinLat,
+        pinLon,
+        mapCenterLat,
+        mapCenterLon,
+        scenarioTitle,
+        timeOfDayID,
+        modeID,
+        width,
+        height,
+        direction,
+        travelTimeInterval
+    ):
+        &#34;&#34;&#34;
+        Gets the TravelTime overlay
+        :param z: The zoom level
+        :param pinLat: The latitude of the pin
+        :param pinLon: The longitude of the pin
+        :param mapCenterLat: The map center latitude
+        :param mapCenterLon: The map center longitude
+        :param scenarioTitle: The title of the scenario
+        :param timeOfDayID: The id for the time of day (AM/INTER/PM)
+        :param modeID: The id of the mode
+        :param width: The width of the requested overlay
+        :param height: The height of the requested overlay
+        :param direction: The direction of travel
+        :param travelTimeInterval:
+        &#34;&#34;&#34;
+        return super(travelTimes, self).sendRequestUnified(
+            f&#34;/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}/&#34;, {}
+        )</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="tflwrapper.travelTimes.getOverlay"><code class="name flex">
+<span>def <span class="ident">getOverlay</span></span>(<span>self, z, pinLat, pinLon, mapCenterLat, mapCenterLon, scenarioTitle, timeOfDayID, modeID, width, height, direction, travelTimeInterval)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gets the TravelTime overlay
+:param z: The zoom level
+:param pinLat: The latitude of the pin
+:param pinLon: The longitude of the pin
+:param mapCenterLat: The map center latitude
+:param mapCenterLon: The map center longitude
+:param scenarioTitle: The title of the scenario
+:param timeOfDayID: The id for the time of day (AM/INTER/PM)
+:param modeID: The id of the mode
+:param width: The width of the requested overlay
+:param height: The height of the requested overlay
+:param direction: The direction of travel
+:param travelTimeInterval:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getOverlay(
+    self,
+    z,
+    pinLat,
+    pinLon,
+    mapCenterLat,
+    mapCenterLon,
+    scenarioTitle,
+    timeOfDayID,
+    modeID,
+    width,
+    height,
+    direction,
+    travelTimeInterval
+):
+    &#34;&#34;&#34;
+    Gets the TravelTime overlay
+    :param z: The zoom level
+    :param pinLat: The latitude of the pin
+    :param pinLon: The longitude of the pin
+    :param mapCenterLat: The map center latitude
+    :param mapCenterLon: The map center longitude
+    :param scenarioTitle: The title of the scenario
+    :param timeOfDayID: The id for the time of day (AM/INTER/PM)
+    :param modeID: The id of the mode
+    :param width: The width of the requested overlay
+    :param height: The height of the requested overlay
+    :param direction: The direction of travel
+    :param travelTimeInterval:
+    &#34;&#34;&#34;
+    return super(travelTimes, self).sendRequestUnified(
+        f&#34;/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}/&#34;, {}
+    )</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="tflwrapper.tfl.tflAPI" href="tfl.html#tflwrapper.tfl.tflAPI">tflAPI</a></b></code>:
+<ul class="hlist">
+<li><code><a title="tflwrapper.tfl.tflAPI.arrayToCSV" href="tfl.html#tflwrapper.tfl.tflAPI.arrayToCSV">arrayToCSV</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.getRFC3339" href="tfl.html#tflwrapper.tfl.tflAPI.getRFC3339">getRFC3339</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestTrackerNet" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestTrackerNet">sendRequestTrackerNet</a></code></li>
+<li><code><a title="tflwrapper.tfl.tflAPI.sendRequestUnified" href="tfl.html#tflwrapper.tfl.tflAPI.sendRequestUnified">sendRequestUnified</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="tflwrapper.stopPoint" href="stopPoint.html">tflwrapper.stopPoint</a></code></li>
+<li><code><a title="tflwrapper.tfl" href="tfl.html">tflwrapper.tfl</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="tflwrapper.accidentStats" href="#tflwrapper.accidentStats">accidentStats</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.accidentStats.getAllByYear" href="#tflwrapper.accidentStats.getAllByYear">getAllByYear</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.airQuality" href="#tflwrapper.airQuality">airQuality</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.airQuality.getAirQuality" href="#tflwrapper.airQuality.getAirQuality">getAirQuality</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.bikePoint" href="#tflwrapper.bikePoint">bikePoint</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.bikePoint.getAll" href="#tflwrapper.bikePoint.getAll">getAll</a></code></li>
+<li><code><a title="tflwrapper.bikePoint.getByID" href="#tflwrapper.bikePoint.getByID">getByID</a></code></li>
+<li><code><a title="tflwrapper.bikePoint.getByName" href="#tflwrapper.bikePoint.getByName">getByName</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.crowding" href="#tflwrapper.crowding">crowding</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.crowding.getAllByNaptan" href="#tflwrapper.crowding.getAllByNaptan">getAllByNaptan</a></code></li>
+<li><code><a title="tflwrapper.crowding.getByNaptanDay" href="#tflwrapper.crowding.getByNaptanDay">getByNaptanDay</a></code></li>
+<li><code><a title="tflwrapper.crowding.getLiveByNaptan" href="#tflwrapper.crowding.getLiveByNaptan">getLiveByNaptan</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.disruptions" href="#tflwrapper.disruptions">disruptions</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.disruptions.getAllLifts" href="#tflwrapper.disruptions.getAllLifts">getAllLifts</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.line" href="#tflwrapper.line">line</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.line.getAllByModes" href="#tflwrapper.line.getAllByModes">getAllByModes</a></code></li>
+<li><code><a title="tflwrapper.line.getAllStopPoints" href="#tflwrapper.line.getAllStopPoints">getAllStopPoints</a></code></li>
+<li><code><a title="tflwrapper.line.getAllValidRoutes" href="#tflwrapper.line.getAllValidRoutes">getAllValidRoutes</a></code></li>
+<li><code><a title="tflwrapper.line.getArrivalsByNaptan" href="#tflwrapper.line.getArrivalsByNaptan">getArrivalsByNaptan</a></code></li>
+<li><code><a title="tflwrapper.line.getDisruptionCategories" href="#tflwrapper.line.getDisruptionCategories">getDisruptionCategories</a></code></li>
+<li><code><a title="tflwrapper.line.getModes" href="#tflwrapper.line.getModes">getModes</a></code></li>
+<li><code><a title="tflwrapper.line.getRouteByIDs" href="#tflwrapper.line.getRouteByIDs">getRouteByIDs</a></code></li>
+<li><code><a title="tflwrapper.line.getServiceTypes" href="#tflwrapper.line.getServiceTypes">getServiceTypes</a></code></li>
+<li><code><a title="tflwrapper.line.getSeverityCodes" href="#tflwrapper.line.getSeverityCodes">getSeverityCodes</a></code></li>
+<li><code><a title="tflwrapper.line.getStatusByID" href="#tflwrapper.line.getStatusByID">getStatusByID</a></code></li>
+<li><code><a title="tflwrapper.line.getStatusByLine" href="#tflwrapper.line.getStatusByLine">getStatusByLine</a></code></li>
+<li><code><a title="tflwrapper.line.getStatusByModes" href="#tflwrapper.line.getStatusByModes">getStatusByModes</a></code></li>
+<li><code><a title="tflwrapper.line.getTimetableFromStation" href="#tflwrapper.line.getTimetableFromStation">getTimetableFromStation</a></code></li>
+<li><code><a title="tflwrapper.line.getTimetableFromTo" href="#tflwrapper.line.getTimetableFromTo">getTimetableFromTo</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.mode" href="#tflwrapper.mode">mode</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.mode.getActiveServiceTypes" href="#tflwrapper.mode.getActiveServiceTypes">getActiveServiceTypes</a></code></li>
+<li><code><a title="tflwrapper.mode.getAllArrivalPredictions" href="#tflwrapper.mode.getAllArrivalPredictions">getAllArrivalPredictions</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.occupancy" href="#tflwrapper.occupancy">occupancy</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.occupancy.getAllCarParks" href="#tflwrapper.occupancy.getAllCarParks">getAllCarParks</a></code></li>
+<li><code><a title="tflwrapper.occupancy.getAllChargeConnectors" href="#tflwrapper.occupancy.getAllChargeConnectors">getAllChargeConnectors</a></code></li>
+<li><code><a title="tflwrapper.occupancy.getBikePointByIDs" href="#tflwrapper.occupancy.getBikePointByIDs">getBikePointByIDs</a></code></li>
+<li><code><a title="tflwrapper.occupancy.getCarParkByID" href="#tflwrapper.occupancy.getCarParkByID">getCarParkByID</a></code></li>
+<li><code><a title="tflwrapper.occupancy.getChargeConnectorByID" href="#tflwrapper.occupancy.getChargeConnectorByID">getChargeConnectorByID</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.road" href="#tflwrapper.road">road</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.road.getAll" href="#tflwrapper.road.getAll">getAll</a></code></li>
+<li><code><a title="tflwrapper.road.getAllDisruptionsByID" href="#tflwrapper.road.getAllDisruptionsByID">getAllDisruptionsByID</a></code></li>
+<li><code><a title="tflwrapper.road.getAllStreetDisruption" href="#tflwrapper.road.getAllStreetDisruption">getAllStreetDisruption</a></code></li>
+<li><code><a title="tflwrapper.road.getByID" href="#tflwrapper.road.getByID">getByID</a></code></li>
+<li><code><a title="tflwrapper.road.getCategories" href="#tflwrapper.road.getCategories">getCategories</a></code></li>
+<li><code><a title="tflwrapper.road.getSeverities" href="#tflwrapper.road.getSeverities">getSeverities</a></code></li>
+<li><code><a title="tflwrapper.road.getStatusByID" href="#tflwrapper.road.getStatusByID">getStatusByID</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.road" href="#tflwrapper.road">road</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.road.getAll" href="#tflwrapper.road.getAll">getAll</a></code></li>
+<li><code><a title="tflwrapper.road.getAllDisruptionsByID" href="#tflwrapper.road.getAllDisruptionsByID">getAllDisruptionsByID</a></code></li>
+<li><code><a title="tflwrapper.road.getAllStreetDisruption" href="#tflwrapper.road.getAllStreetDisruption">getAllStreetDisruption</a></code></li>
+<li><code><a title="tflwrapper.road.getByID" href="#tflwrapper.road.getByID">getByID</a></code></li>
+<li><code><a title="tflwrapper.road.getCategories" href="#tflwrapper.road.getCategories">getCategories</a></code></li>
+<li><code><a title="tflwrapper.road.getSeverities" href="#tflwrapper.road.getSeverities">getSeverities</a></code></li>
+<li><code><a title="tflwrapper.road.getStatusByID" href="#tflwrapper.road.getStatusByID">getStatusByID</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.trackerNet" href="#tflwrapper.trackerNet">trackerNet</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.trackerNet.getAllLinesStatus" href="#tflwrapper.trackerNet.getAllLinesStatus">getAllLinesStatus</a></code></li>
+<li><code><a title="tflwrapper.trackerNet.getAllStationStatus" href="#tflwrapper.trackerNet.getAllStationStatus">getAllStationStatus</a></code></li>
+<li><code><a title="tflwrapper.trackerNet.getPredictionDetailed" href="#tflwrapper.trackerNet.getPredictionDetailed">getPredictionDetailed</a></code></li>
+<li><code><a title="tflwrapper.trackerNet.getPredictionSummary" href="#tflwrapper.trackerNet.getPredictionSummary">getPredictionSummary</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="tflwrapper.travelTimes" href="#tflwrapper.travelTimes">travelTimes</a></code></h4>
+<ul class="">
+<li><code><a title="tflwrapper.travelTimes.getOverlay" href="#tflwrapper.travelTimes.getOverlay">getOverlay</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
