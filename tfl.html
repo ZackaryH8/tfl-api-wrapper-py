@@ -73,10 +73,22 @@ class tflAPI(object):
 
     @staticmethod
     def arrayToCSV(array):
+        &#34;&#34;&#34;
+        Convert array to a comma-separated string
+
+        :param array: Array to convert to a comma-separated string
+        :returns: A comma-separated string
+        &#34;&#34;&#34;
         return &#34;,&#34;.join(array)
 
     @staticmethod
     def getRFC3339(date_object):
+        &#34;&#34;&#34;
+        Convert date object to RFC3339 standard
+
+        :param date_object: A date object to convert to RFC3339 standard
+        :returns: A RFC3339 formatted string
+        &#34;&#34;&#34;
         return date_object.isoformat(&#34;T&#34;) + &#34;Z&#34;</code></pre>
 </details>
 </section>
@@ -138,23 +150,38 @@ class tflAPI(object):
 
     @staticmethod
     def arrayToCSV(array):
+        &#34;&#34;&#34;
+        Convert array to a comma-separated string
+
+        :param array: Array to convert to a comma-separated string
+        :returns: A comma-separated string
+        &#34;&#34;&#34;
         return &#34;,&#34;.join(array)
 
     @staticmethod
     def getRFC3339(date_object):
+        &#34;&#34;&#34;
+        Convert date object to RFC3339 standard
+
+        :param date_object: A date object to convert to RFC3339 standard
+        :returns: A RFC3339 formatted string
+        &#34;&#34;&#34;
         return date_object.isoformat(&#34;T&#34;) + &#34;Z&#34;</code></pre>
 </details>
 <h3>Subclasses</h3>
 <ul class="hlist">
 <li>tflwrapper.accidentStats.accidentStats</li>
+<li>tflwrapper.airQuality.airQuality</li>
 <li>tflwrapper.bikePoint.bikePoint</li>
 <li>tflwrapper.crowding.crowding</li>
+<li>tflwrapper.disruptions.disruptions</li>
 <li>tflwrapper.line.line</li>
 <li>tflwrapper.mode.mode</li>
 <li>tflwrapper.occupancy.occupancy</li>
 <li>tflwrapper.road.road</li>
 <li><a title="tflwrapper.stopPoint.stopPoint" href="stopPoint.html#tflwrapper.stopPoint.stopPoint">stopPoint</a></li>
 <li>tflwrapper.trackerNet.trackerNet</li>
+<li>tflwrapper.travelTimes.travelTimes</li>
 </ul>
 <h3>Static methods</h3>
 <dl>
@@ -162,13 +189,21 @@ class tflAPI(object):
 <span>def <span class="ident">arrayToCSV</span></span>(<span>array)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Convert array to a comma-separated string</p>
+<p>:param array: Array to convert to a comma-separated string
+:returns: A comma-separated string</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
 def arrayToCSV(array):
+    &#34;&#34;&#34;
+    Convert array to a comma-separated string
+
+    :param array: Array to convert to a comma-separated string
+    :returns: A comma-separated string
+    &#34;&#34;&#34;
     return &#34;,&#34;.join(array)</code></pre>
 </details>
 </dd>
@@ -176,13 +211,21 @@ def arrayToCSV(array):
 <span>def <span class="ident">getRFC3339</span></span>(<span>date_object)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Convert date object to RFC3339 standard</p>
+<p>:param date_object: A date object to convert to RFC3339 standard
+:returns: A RFC3339 formatted string</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
 def getRFC3339(date_object):
+    &#34;&#34;&#34;
+    Convert date object to RFC3339 standard
+
+    :param date_object: A date object to convert to RFC3339 standard
+    :returns: A RFC3339 formatted string
+    &#34;&#34;&#34;
     return date_object.isoformat(&#34;T&#34;) + &#34;Z&#34;</code></pre>
 </details>
 </dd>
