@@ -22,10 +22,13 @@ class tflAPI(object):
         """
         fullURL = f"https://api.tfl.gov.uk:443{uri}?{urllib.parse.urlencode({'app_key': self.app_key})}"
 
+        # If params is specified then convert it to a url encoded string
         if params:
             fullURL += f"&{urllib.parse.urlencode(params)}"
 
+        # Send the request
         resource = urllib.request.urlopen(fullURL)
+        
         return json.loads(
             resource.read().decode(resource.headers.get_content_charset())
         )

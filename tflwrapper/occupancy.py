@@ -8,7 +8,8 @@ class occupancy(tflAPI):
         """
         Gets the occupancy data for bike points
 
-        :param ids: Bike Point ID (Eg. BikePoints_208)
+        Args:
+            ids: List of bike point IDs (Eg. ['BikePoints_208', 'BikePoints_209'])
         """
         return super(occupancy, self).sendRequestUnified(
             f"/Occupancy/BikePoints/{self.arrayToCSV(ids)}", {}
@@ -17,8 +18,9 @@ class occupancy(tflAPI):
     def getCarParkByID(self, id):
         """
         Gets the occupancy for a car park with a given id
-        
-        :param id: Car Park ID (Eg. CarParks_800468)
+
+        Args:
+            id: Car park ID (Eg. 'CarParks_800468')
         """
         
         return super(occupancy, self).sendRequestUnified(
@@ -28,8 +30,9 @@ class occupancy(tflAPI):
     def getChargeConnectorByID(self, id):
         """
         Gets the occupancy for a charge connectors with a given id
-        
-        :param id: Charge Connector ID (Eg. ChargePointESB-UT06NW-1)
+
+        Args:
+            id: Charge connector ID (Eg. 'ChargePointESB-UT06NW-1')
         """
         
         return super(occupancy, self).sendRequestUnified(

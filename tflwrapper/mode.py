@@ -15,8 +15,9 @@ class mode(tflAPI):
         """
         Returns arrival predictions for all stops
 
-        :param modes: A mode name e.g. tube, dlr
-        :param count: A number of arrivals to return for each stop, -1 to return all available
+        Args:
+            modes: The modes for which to return predictions e.g. tube, dlr
+            count: The number of predictions to return, -1 to return all available
         """
 
         return super(mode, self).sendRequestUnified(

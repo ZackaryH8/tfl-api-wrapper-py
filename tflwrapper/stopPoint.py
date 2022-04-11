@@ -28,8 +28,9 @@ class stopPoint(tflAPI):
         """
         Gets a list of StopPoints corresponding to the given list of stop ids
 
-        :param ids: A list of stop point ids (station naptan code e.g. 940GZZLUASL).
-        :param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}
+        Args:
+            ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+            includeCrowdingData: Specify true to return crowding data (static) for each stop point
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -40,7 +41,8 @@ class stopPoint(tflAPI):
         """
         Gets all stop points of a given type
 
-        :param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint
+        Args:
+            array: An array of stop point types e.g. ['NaptanPublicBusCoachTram']
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -51,9 +53,10 @@ class stopPoint(tflAPI):
         """
         Gets the service types for a given Stop Point
 
-        :param stopPointID:
-        :param lineIds:
-        :param modes:
+        Args:
+            stopPointID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+            lineIds: A list of Line ids (e.g. victoria)
+            modes: An array of modes e.g. ['tube', 'dlr']
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -65,8 +68,9 @@ class stopPoint(tflAPI):
         """
         Search StopPoints by their common name. Will not return a valid NaPTAN for HUB
 
-        :param name: Name of station
-        :param modes: Eg. ['tflwrapper', 'dlr']
+        Args:
+            name: The name of station to search for
+            modes: An array of modes e.g. ['tube', 'dlr']
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -78,7 +82,8 @@ class stopPoint(tflAPI):
         """
         Get all service arrivals
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -107,10 +112,11 @@ class stopPoint(tflAPI):
         """
         Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have
 
-        :param ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
-        :param getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
-        :param includeRouteBlockedStops:
-        :param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)
+        Args:
+            ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+            getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
+            includeRouteBlockedStops: Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.
+            flattenResponse: Specify true to return a flattened response, or false to return a nested response. Defaults to false.
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -122,8 +128,9 @@ class stopPoint(tflAPI):
         """
         Gets a distinct list of disrupted stop points for the given modes
 
-        :param modes: An array of modes e.g. ['tube', 'dlr']
-        :param includeRouteBlockedStops:
+        Args:
+            modes: An array of modes e.g. ['tube', 'dlr']
+            includeRouteBlockedStops: Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.
         """
         return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/Mode/{super(stopPoint, self).arrayToCSV(modes)}/Disruption",
@@ -134,9 +141,10 @@ class stopPoint(tflAPI):
         """
         Gets Stop points that are reachable from a station/line combination
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-        :param lineID: Line id of the line to filter by (e.g. victoria)
-        :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+            lineID: A Line id (e.g. victoria)
+            serviceTypes: An array of service types. Supported values: Regular, Night. Defaults to Regular.
         """
 
         if serviceTypes is None:
@@ -150,8 +158,9 @@ class stopPoint(tflAPI):
         """
         Get the route sections for all the lines that service the given stop point id#
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-        :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+            serviceTypes: An array of service types. Supported values: Regular, Night.
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -173,14 +182,15 @@ class stopPoint(tflAPI):
         """
         Gets a list of StopPoints within {radius} by the specified criteria
 
-        :param stopTypes: A list of stopTypes that should be returned
-        :param radius: The radius of the bounding circle in metres (default : 200)
-        :param useStopPointHierarchy: Re-arrange the output into a parent/child hierarchy.
-        :param modes: modes The list of modes to search eg. ['tube', 'dlr']
-        :param categories: an optional list of comma separated property categories to return in the StopPoint's property bag. If null or empty, all categories of property are returned. Pass the keyword "none" to return no properties.Pass the keyword "none" to return no properties.
-        :param returnLines: True to return the lines that each stop point serves as a nested resource.
-        :param latitude:
-        :param longitude:
+        Args:
+            stopTypes: An array of stop point types e.g. ['NaptanPublicBusCoachTram']
+            radius: The radius in metres. Defaults to 200.
+            useStopPointHierarchy: Specify true to return stop points in the hierarchy, or false to return stop points at the specified radius. Defaults to false.
+            modes: An array of modes e.g. ['tube', 'dlr']
+            categories: An array of categories e.g. ['tram', 'bus']
+            returnLines: Specify true to return the lines that service the stop point, or false to return the stop point itself. Defaults to false.
+            latitude: The latitude of the location to search from.
+            longitude: The longitude of the location to search from.
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -200,9 +210,10 @@ class stopPoint(tflAPI):
     def getBySMSCode(self, smsID: str, output: str):
         """
         Gets a StopPoint for a given sms code
-
-        :param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.
-        # :param output: If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
+        
+        Args:
+            smsID: A 5-digit sms code e.g. 73241, 50435, 5633.
+            output: If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -213,7 +224,8 @@ class stopPoint(tflAPI):
         """
         Gets a list of taxi ranks corresponding to the given stop point id
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         """
 
         return super(stopPoint, self).sendRequestUnified(
@@ -224,7 +236,8 @@ class stopPoint(tflAPI):
         """
         Get car parks corresponding to the given stop point id
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         """
 
         return super(stopPoint, self).sendRequestUnified(

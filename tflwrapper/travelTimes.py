@@ -21,18 +21,20 @@ class travelTimes(tflAPI):
     ):
         """
         Gets the TravelTime overlay
-        :param z: The zoom level
-        :param pinLat: The latitude of the pin
-        :param pinLon: The longitude of the pin
-        :param mapCenterLat: The map center latitude
-        :param mapCenterLon: The map center longitude
-        :param scenarioTitle: The title of the scenario
-        :param timeOfDayID: The id for the time of day (AM/INTER/PM)
-        :param modeID: The id of the mode
-        :param width: The width of the requested overlay
-        :param height: The height of the requested overlay
-        :param direction: The direction of travel
-        :param travelTimeInterval:
+
+        Args:
+            z: The zoom level of the map
+            pinLat: The latitude of the pin
+            pinLon: The longitude of the pin
+            mapCenterLat: The latitude of the map center
+            mapCenterLon: The longitude of the map center
+            scenarioTitle: The title of the scenario
+            timeOfDayID: The time of day ID. Supported values: AM, INTER, PM
+            modeID: The mode ID.
+            width: The width of the map
+            height: The height of the map
+            direction: The direction of the travel
+            travelTimeInterval: The travel time interval
         """
         return super(travelTimes, self).sendRequestUnified(
             f"/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}/", {}

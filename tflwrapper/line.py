@@ -31,7 +31,9 @@ class line(tflAPI):
     def getAllStopPoints(self, line):
         """
         Gets a list of the stations that serve the given line id
-        :param line: A line id e.g. victoria, circle, N133
+
+        Args:
+            line: The line id e.g. victoria, circle, N133        
         """
         return super(line, self).sendRequestUnified(
             F"/Line/{line}/StopPoints", {}
@@ -41,7 +43,9 @@ class line(tflAPI):
     def getAllByModes(self, modes):
         """
         Gets lines that serve the given modes
-        :param modes: An list of modes e.g. tube, tram
+        
+        Args:
+            modes: A list of modes e.g. tube, tram
         """
         return super(line, self).sendRequestUnified(
             f"/Line/Mode/{self.arrayToCSV(modes)}", {}
@@ -51,8 +55,9 @@ class line(tflAPI):
         """
         Gets the line status of for given line ids e.g Minor Delays
 
-        :param lines: A list of line ids e.g. victoria, circle, N133
-        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        Args:
+            lines: A list of line ids e.g. ['victoria', 'circle']
+            detail: Include details of the disruptions that are causing the line status including the affected stops and routes
         """
         if startDate == None or endDate == None:
             return super(line, self).sendRequestUnified(
@@ -67,16 +72,24 @@ class line(tflAPI):
         """
         Gets the line status of for all lines for the given modes
 
-        :param modes: An list of modes e.g. tube, tram
-        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
-        :param severityLevel: If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level
+        Args:
+            modes: A list of modes e.g. tube, tram
+            detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+            severityLevel: A list of severity codes to filter on. Supported values: Minor, Major, Severe
         """
         return super(line, self).sendRequestUnified(
             f"/Line/Mode/{self.arrayToCSV(modes)}/Status", { detail, severityLevel }
         )
 
     def getTimetableFromTo(self, _line, _from, _to):
-        """Gets the timetable for a specified station on the give line with specified destination"""
+        """
+        Gets the timetable for a specified station on the give line with specified destination
+        
+        Args:
+            _line: The line id e.g. victoria, circle, N133
+            _from: The station id e.g. 940GZZLUASL
+            _to: The destination station id e.g. 940GZZLUASL
+        """
         return super(line, self).sendRequestUnified(
             f"/Line/{_line}/Timetable/{_from}/to/{_to}"
         )
@@ -85,9 +98,10 @@ class line(tflAPI):
         """
         Gets the inbound timetable for a specified station on the give line
 
-        :param _line: Id of the line e.g. 'victoria'
-        :param NaPTANID: Id of the stop (station naptan code e.g. 940GZZLUASL)
-        :param direction: Leave blank for outbound or "inbound"
+        Args:
+            _line: The line id e.g. victoria, circle, N133
+            NaPTANID: The station id e.g. 940GZZLUASL
+            direction: The direction of the timetable. Supported values: inbound, outbound. Defaulted to 'outbound' if not specified
         """
         return super(line, self).sendRequestUnified(
             f"/Line/{_line}/Timetable/{NaPTANID}",
@@ -96,6 +110,13 @@ class line(tflAPI):
 
     def getArrivalsByNaptan(self, lineids, naptan, destinationStationId, direction = "all"):
         """
+        Gets the arrivals for a given station on the give line
+
+        Args:
+            lineids: A list of line ids e.g. ['victoria', 'circle']
+            naptan: The station id e.g. 940GZZLUASL
+            destinationStationId: The destination station id e.g. 940GZZLUASL
+            direction: The direction of the timetable. Supported values: inbound, outbound. Defaulted to 'all' if not specified
         """
         return super(line, self).sendRequestUnified(
             f"/Line/{self.arrayToCSV(lineids)}/Arrivals/{naptan}", {'direction': direction, 'destinationStationId': destinationStationId }
@@ -105,7 +126,8 @@ class line(tflAPI):
         """
         Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.
 
-        :param serviceTypes:A comma seperated list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified
+        Args:
+            serviceTypes: A list of service types e.g. 'tube, 'tram'. Supported values: Regular, Night. Defaulted to 'Regular' if not specified
         """
         return super(line, self).sendRequestUnified(
             f"/Line/Route", {
@@ -116,8 +138,9 @@ class line(tflAPI):
         """
         Gets the line status of for all lines for the given modes
 
-        :param lineids: A comma-separated list of line ids e.g. ['victoria', 'circle']
-        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        Args:
+            lineids: A list of line ids e.g. ['victoria', 'circle']
+            detail: Include details of the disruptions that are causing the line status including the affected stops and routes
         """
         return super(line, self).sendRequestUnified(
             f"/Line/Mode/{self.arrayToCSV(lineids)}/Status", {'detail': detail}
@@ -126,9 +149,9 @@ class line(tflAPI):
     def getRouteByIDs(self, lineids, serviceTypes):
         """
         Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route
-
-        :param lineids: A list of line ids e.g. ['victoria', 'circle']
-        :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified
+        Args:
+            lineids: A list of line ids e.g. ['victoria', 'circle']
+            serviceTypes: A list of service types e.g. 'tube, 'tram'. Supported values: Regular, Night. Defaulted to 'Regular' if not specified
         """
         return super(line, self).sendRequestUnified(
             f"/Line/{self.arrayToCSV(lineids)}/Route", {
