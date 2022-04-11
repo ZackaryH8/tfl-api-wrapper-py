@@ -90,7 +90,9 @@ __all__ = [
         &#34;&#34;&#34;
         Gets all accident details for accidents occuring in the specified year
 
-        :param year: The year for which to filter the accidents on.
+        Args:
+            year: The year for which to filter the accidents on.
+            year: The year for which to filter the accidents on.
         &#34;&#34;&#34;
         return super(accidentStats, self).sendRequestUnified(
             f&#34;/AccidentStats/{year}&#34;, {}
@@ -107,7 +109,13 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets all accident details for accidents occuring in the specified year</p>
-<p>:param year: The year for which to filter the accidents on.</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>year</code></strong></dt>
+<dd>The year for which to filter the accidents on.</dd>
+<dt><strong><code>year</code></strong></dt>
+<dd>The year for which to filter the accidents on.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -116,7 +124,9 @@ __all__ = [
     &#34;&#34;&#34;
     Gets all accident details for accidents occuring in the specified year
 
-    :param year: The year for which to filter the accidents on.
+    Args:
+        year: The year for which to filter the accidents on.
+        year: The year for which to filter the accidents on.
     &#34;&#34;&#34;
     return super(accidentStats, self).sendRequestUnified(
         f&#34;/AccidentStats/{year}&#34;, {}
@@ -214,13 +224,23 @@ __all__ = [
         )
 
     def getByID(self, ID):
-        &#34;&#34;&#34;Gets the bike point by the given id&#34;&#34;&#34;
+        &#34;&#34;&#34;
+        Gets the bike point by the given id
+
+        Args:
+            ID: The ID of the bike point
+        &#34;&#34;&#34;
         return super(bikePoint, self).sendRequestUnified(
             f&#34;/BikePoint/{ID}&#34;, {}
         )
 
     def getByName(self, name):
-        &#34;&#34;&#34;Search for bike points by their name&#34;&#34;&#34;
+        &#34;&#34;&#34;
+        Search for bike points by their name
+
+        Args:
+            name: The name of the bike point
+        &#34;&#34;&#34;
         return super(bikePoint, self).sendRequestUnified(
             f&#34;/BikePoint/Search&#34;, {&#39;query&#39;: name}
         )</code></pre>
@@ -251,13 +271,23 @@ __all__ = [
 <span>def <span class="ident">getByID</span></span>(<span>self, ID)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Gets the bike point by the given id</p></div>
+<div class="desc"><p>Gets the bike point by the given id</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ID</code></strong></dt>
+<dd>The ID of the bike point</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def getByID(self, ID):
-    &#34;&#34;&#34;Gets the bike point by the given id&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Gets the bike point by the given id
+
+    Args:
+        ID: The ID of the bike point
+    &#34;&#34;&#34;
     return super(bikePoint, self).sendRequestUnified(
         f&#34;/BikePoint/{ID}&#34;, {}
     )</code></pre>
@@ -267,13 +297,23 @@ __all__ = [
 <span>def <span class="ident">getByName</span></span>(<span>self, name)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Search for bike points by their name</p></div>
+<div class="desc"><p>Search for bike points by their name</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong></dt>
+<dd>The name of the bike point</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def getByName(self, name):
-    &#34;&#34;&#34;Search for bike points by their name&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Search for bike points by their name
+
+    Args:
+        name: The name of the bike point
+    &#34;&#34;&#34;
     return super(bikePoint, self).sendRequestUnified(
         f&#34;/BikePoint/Search&#34;, {&#39;query&#39;: name}
     )</code></pre>
@@ -308,7 +348,9 @@ __all__ = [
     def getAllByNaptan(self, id):
         &#34;&#34;&#34;
         Get crowding information for Naptan
-        :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+
+        Args:
+            id: NaPTAN ID of the stop (eg. 940GZZLUASL)
         &#34;&#34;&#34;
         return super(crowding, self).sendRequestUnified(
             f&#34;/Crowding/{id}&#34;, {}
@@ -317,8 +359,10 @@ __all__ = [
     def getByNaptanDay(self, id, day):
         &#34;&#34;&#34;
         Get crowding information for Naptan for a specified day of week
-        :param id: naptanID ID of the stop (eg. 940GZZLUASL)
-        :param day: The day of which you would like data to return (eg. MON, TUE)
+
+        Args:
+            id: NaPTAN ID of the stop (eg. 940GZZLUASL)
+            day: The day of which you would like data to return (eg. MON, TUE)
         &#34;&#34;&#34;
         return super(crowding, self).sendRequestUnified(
             f&#34;/Crowding/{id}/{day}&#34;, {}
@@ -327,7 +371,9 @@ __all__ = [
     def getLiveByNaptan(self, id):
         &#34;&#34;&#34;
         Get crowding information for Naptan for a specified day of week
-        :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+
+        Args:
+            id: NaPTAN ID of the stop (eg. 940GZZLUASL)
         &#34;&#34;&#34;
         return super(crowding, self).sendRequestUnified(
             f&#34;/Crowding/{id}/Live&#34;, {}
@@ -343,8 +389,12 @@ __all__ = [
 <span>def <span class="ident">getAllByNaptan</span></span>(<span>self, id)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get crowding information for Naptan
-:param id: naptanID ID of the stop (eg. 940GZZLUASL)</p></div>
+<div class="desc"><p>Get crowding information for Naptan</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>NaPTAN ID of the stop (eg. 940GZZLUASL)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -352,7 +402,9 @@ __all__ = [
 <pre><code class="python">def getAllByNaptan(self, id):
     &#34;&#34;&#34;
     Get crowding information for Naptan
-    :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+
+    Args:
+        id: NaPTAN ID of the stop (eg. 940GZZLUASL)
     &#34;&#34;&#34;
     return super(crowding, self).sendRequestUnified(
         f&#34;/Crowding/{id}&#34;, {}
@@ -363,9 +415,14 @@ __all__ = [
 <span>def <span class="ident">getByNaptanDay</span></span>(<span>self, id, day)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get crowding information for Naptan for a specified day of week
-:param id: naptanID ID of the stop (eg. 940GZZLUASL)
-:param day: The day of which you would like data to return (eg. MON, TUE)</p></div>
+<div class="desc"><p>Get crowding information for Naptan for a specified day of week</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>NaPTAN ID of the stop (eg. 940GZZLUASL)</dd>
+<dt><strong><code>day</code></strong></dt>
+<dd>The day of which you would like data to return (eg. MON, TUE)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -373,8 +430,10 @@ __all__ = [
 <pre><code class="python">def getByNaptanDay(self, id, day):
     &#34;&#34;&#34;
     Get crowding information for Naptan for a specified day of week
-    :param id: naptanID ID of the stop (eg. 940GZZLUASL)
-    :param day: The day of which you would like data to return (eg. MON, TUE)
+
+    Args:
+        id: NaPTAN ID of the stop (eg. 940GZZLUASL)
+        day: The day of which you would like data to return (eg. MON, TUE)
     &#34;&#34;&#34;
     return super(crowding, self).sendRequestUnified(
         f&#34;/Crowding/{id}/{day}&#34;, {}
@@ -385,8 +444,12 @@ __all__ = [
 <span>def <span class="ident">getLiveByNaptan</span></span>(<span>self, id)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get crowding information for Naptan for a specified day of week
-:param id: naptanID ID of the stop (eg. 940GZZLUASL)</p></div>
+<div class="desc"><p>Get crowding information for Naptan for a specified day of week</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>NaPTAN ID of the stop (eg. 940GZZLUASL)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -394,7 +457,9 @@ __all__ = [
 <pre><code class="python">def getLiveByNaptan(self, id):
     &#34;&#34;&#34;
     Get crowding information for Naptan for a specified day of week
-    :param id: naptanID ID of the stop (eg. 940GZZLUASL)
+
+    Args:
+        id: NaPTAN ID of the stop (eg. 940GZZLUASL)
     &#34;&#34;&#34;
     return super(crowding, self).sendRequestUnified(
         f&#34;/Crowding/{id}/Live&#34;, {}
@@ -512,7 +577,9 @@ __all__ = [
     def getAllStopPoints(self, line):
         &#34;&#34;&#34;
         Gets a list of the stations that serve the given line id
-        :param line: A line id e.g. victoria, circle, N133
+
+        Args:
+            line: The line id e.g. victoria, circle, N133        
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             F&#34;/Line/{line}/StopPoints&#34;, {}
@@ -522,7 +589,9 @@ __all__ = [
     def getAllByModes(self, modes):
         &#34;&#34;&#34;
         Gets lines that serve the given modes
-        :param modes: An list of modes e.g. tube, tram
+        
+        Args:
+            modes: A list of modes e.g. tube, tram
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/Mode/{self.arrayToCSV(modes)}&#34;, {}
@@ -532,8 +601,9 @@ __all__ = [
         &#34;&#34;&#34;
         Gets the line status of for given line ids e.g Minor Delays
 
-        :param lines: A list of line ids e.g. victoria, circle, N133
-        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        Args:
+            lines: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+            detail: Include details of the disruptions that are causing the line status including the affected stops and routes
         &#34;&#34;&#34;
         if startDate == None or endDate == None:
             return super(line, self).sendRequestUnified(
@@ -548,16 +618,24 @@ __all__ = [
         &#34;&#34;&#34;
         Gets the line status of for all lines for the given modes
 
-        :param modes: An list of modes e.g. tube, tram
-        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
-        :param severityLevel: If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level
+        Args:
+            modes: A list of modes e.g. tube, tram
+            detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+            severityLevel: A list of severity codes to filter on. Supported values: Minor, Major, Severe
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/Mode/{self.arrayToCSV(modes)}/Status&#34;, { detail, severityLevel }
         )
 
     def getTimetableFromTo(self, _line, _from, _to):
-        &#34;&#34;&#34;Gets the timetable for a specified station on the give line with specified destination&#34;&#34;&#34;
+        &#34;&#34;&#34;
+        Gets the timetable for a specified station on the give line with specified destination
+        
+        Args:
+            _line: The line id e.g. victoria, circle, N133
+            _from: The station id e.g. 940GZZLUASL
+            _to: The destination station id e.g. 940GZZLUASL
+        &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/{_line}/Timetable/{_from}/to/{_to}&#34;
         )
@@ -566,9 +644,10 @@ __all__ = [
         &#34;&#34;&#34;
         Gets the inbound timetable for a specified station on the give line
 
-        :param _line: Id of the line e.g. &#39;victoria&#39;
-        :param NaPTANID: Id of the stop (station naptan code e.g. 940GZZLUASL)
-        :param direction: Leave blank for outbound or &#34;inbound&#34;
+        Args:
+            _line: The line id e.g. victoria, circle, N133
+            NaPTANID: The station id e.g. 940GZZLUASL
+            direction: The direction of the timetable. Supported values: inbound, outbound. Defaulted to &#39;outbound&#39; if not specified
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/{_line}/Timetable/{NaPTANID}&#34;,
@@ -577,6 +656,13 @@ __all__ = [
 
     def getArrivalsByNaptan(self, lineids, naptan, destinationStationId, direction = &#34;all&#34;):
         &#34;&#34;&#34;
+        Gets the arrivals for a given station on the give line
+
+        Args:
+            lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+            naptan: The station id e.g. 940GZZLUASL
+            destinationStationId: The destination station id e.g. 940GZZLUASL
+            direction: The direction of the timetable. Supported values: inbound, outbound. Defaulted to &#39;all&#39; if not specified
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/{self.arrayToCSV(lineids)}/Arrivals/{naptan}&#34;, {&#39;direction&#39;: direction, &#39;destinationStationId&#39;: destinationStationId }
@@ -586,7 +672,8 @@ __all__ = [
         &#34;&#34;&#34;
         Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.
 
-        :param serviceTypes:A comma seperated list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+        Args:
+            serviceTypes: A list of service types e.g. &#39;tube, &#39;tram&#39;. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/Route&#34;, {
@@ -597,8 +684,9 @@ __all__ = [
         &#34;&#34;&#34;
         Gets the line status of for all lines for the given modes
 
-        :param lineids: A comma-separated list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
-        :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        Args:
+            lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+            detail: Include details of the disruptions that are causing the line status including the affected stops and routes
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/Mode/{self.arrayToCSV(lineids)}/Status&#34;, {&#39;detail&#39;: detail}
@@ -607,9 +695,9 @@ __all__ = [
     def getRouteByIDs(self, lineids, serviceTypes):
         &#34;&#34;&#34;
         Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route
-
-        :param lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
-        :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+        Args:
+            lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+            serviceTypes: A list of service types e.g. &#39;tube, &#39;tram&#39;. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
         &#34;&#34;&#34;
         return super(line, self).sendRequestUnified(
             f&#34;/Line/{self.arrayToCSV(lineids)}/Route&#34;, {
@@ -626,8 +714,12 @@ __all__ = [
 <span>def <span class="ident">getAllByModes</span></span>(<span>self, modes)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Gets lines that serve the given modes
-:param modes: An list of modes e.g. tube, tram</p></div>
+<div class="desc"><p>Gets lines that serve the given modes</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>modes</code></strong></dt>
+<dd>A list of modes e.g. tube, tram</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -635,7 +727,9 @@ __all__ = [
 <pre><code class="python">def getAllByModes(self, modes):
     &#34;&#34;&#34;
     Gets lines that serve the given modes
-    :param modes: An list of modes e.g. tube, tram
+    
+    Args:
+        modes: A list of modes e.g. tube, tram
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/Mode/{self.arrayToCSV(modes)}&#34;, {}
@@ -646,8 +740,12 @@ __all__ = [
 <span>def <span class="ident">getAllStopPoints</span></span>(<span>self, line)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Gets a list of the stations that serve the given line id
-:param line: A line id e.g. victoria, circle, N133</p></div>
+<div class="desc"><p>Gets a list of the stations that serve the given line id</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>line</code></strong></dt>
+<dd>The line id e.g. victoria, circle, N133</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -655,7 +753,9 @@ __all__ = [
 <pre><code class="python">def getAllStopPoints(self, line):
     &#34;&#34;&#34;
     Gets a list of the stations that serve the given line id
-    :param line: A line id e.g. victoria, circle, N133
+
+    Args:
+        line: The line id e.g. victoria, circle, N133        
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         F&#34;/Line/{line}/StopPoints&#34;, {}
@@ -667,7 +767,11 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.</p>
-<p>:param serviceTypes:A comma seperated list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>serviceTypes</code></strong></dt>
+<dd>A list of service types e.g. 'tube, 'tram'. Supported values: Regular, Night. Defaulted to 'Regular' if not specified</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -676,7 +780,8 @@ __all__ = [
     &#34;&#34;&#34;
     Get all valid routes for all lines, including the name and id of the originating and terminating stops for each route.
 
-    :param serviceTypes:A comma seperated list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+    Args:
+        serviceTypes: A list of service types e.g. &#39;tube, &#39;tram&#39;. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/Route&#34;, {
@@ -688,13 +793,31 @@ __all__ = [
 <span>def <span class="ident">getArrivalsByNaptan</span></span>(<span>self, lineids, naptan, destinationStationId, direction='all')</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Gets the arrivals for a given station on the give line</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lineids</code></strong></dt>
+<dd>A list of line ids e.g. ['victoria', 'circle']</dd>
+<dt><strong><code>naptan</code></strong></dt>
+<dd>The station id e.g. 940GZZLUASL</dd>
+<dt><strong><code>destinationStationId</code></strong></dt>
+<dd>The destination station id e.g. 940GZZLUASL</dd>
+<dt><strong><code>direction</code></strong></dt>
+<dd>The direction of the timetable. Supported values: inbound, outbound. Defaulted to 'all' if not specified</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def getArrivalsByNaptan(self, lineids, naptan, destinationStationId, direction = &#34;all&#34;):
     &#34;&#34;&#34;
+    Gets the arrivals for a given station on the give line
+
+    Args:
+        lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        naptan: The station id e.g. 940GZZLUASL
+        destinationStationId: The destination station id e.g. 940GZZLUASL
+        direction: The direction of the timetable. Supported values: inbound, outbound. Defaulted to &#39;all&#39; if not specified
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/{self.arrayToCSV(lineids)}/Arrivals/{naptan}&#34;, {&#39;direction&#39;: direction, &#39;destinationStationId&#39;: destinationStationId }
@@ -738,8 +861,13 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route</p>
-<p>:param lineids: A list of line ids e.g. ['victoria', 'circle']
-:param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to 'Regular' if not specified</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lineids</code></strong></dt>
+<dd>A list of line ids e.g. ['victoria', 'circle']</dd>
+<dt><strong><code>serviceTypes</code></strong></dt>
+<dd>A list of service types e.g. 'tube, 'tram'. Supported values: Regular, Night. Defaulted to 'Regular' if not specified</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -747,9 +875,9 @@ __all__ = [
 <pre><code class="python">def getRouteByIDs(self, lineids, serviceTypes):
     &#34;&#34;&#34;
     Get all valid routes for given line ids, including the name and id of the originating and terminating stops for each route
-
-    :param lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
-    :param detail: A list of service types to filter on. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
+    Args:
+        lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        serviceTypes: A list of service types e.g. &#39;tube, &#39;tram&#39;. Supported values: Regular, Night. Defaulted to &#39;Regular&#39; if not specified
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/{self.arrayToCSV(lineids)}/Route&#34;, {
@@ -794,8 +922,13 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the line status of for all lines for the given modes</p>
-<p>:param lineids: A comma-separated list of line ids e.g. ['victoria', 'circle']
-:param detail: Include details of the disruptions that are causing the line status including the affected stops and routes</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lineids</code></strong></dt>
+<dd>A list of line ids e.g. ['victoria', 'circle']</dd>
+<dt><strong><code>detail</code></strong></dt>
+<dd>Include details of the disruptions that are causing the line status including the affected stops and routes</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -804,8 +937,9 @@ __all__ = [
     &#34;&#34;&#34;
     Gets the line status of for all lines for the given modes
 
-    :param lineids: A comma-separated list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
-    :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+    Args:
+        lineids: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        detail: Include details of the disruptions that are causing the line status including the affected stops and routes
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/Mode/{self.arrayToCSV(lineids)}/Status&#34;, {&#39;detail&#39;: detail}
@@ -817,8 +951,13 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the line status of for given line ids e.g Minor Delays</p>
-<p>:param lines: A list of line ids e.g. victoria, circle, N133
-:param detail: Include details of the disruptions that are causing the line status including the affected stops and routes</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lines</code></strong></dt>
+<dd>A list of line ids e.g. ['victoria', 'circle']</dd>
+<dt><strong><code>detail</code></strong></dt>
+<dd>Include details of the disruptions that are causing the line status including the affected stops and routes</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -827,8 +966,9 @@ __all__ = [
     &#34;&#34;&#34;
     Gets the line status of for given line ids e.g Minor Delays
 
-    :param lines: A list of line ids e.g. victoria, circle, N133
-    :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+    Args:
+        lines: A list of line ids e.g. [&#39;victoria&#39;, &#39;circle&#39;]
+        detail: Include details of the disruptions that are causing the line status including the affected stops and routes
     &#34;&#34;&#34;
     if startDate == None or endDate == None:
         return super(line, self).sendRequestUnified(
@@ -845,9 +985,15 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the line status of for all lines for the given modes</p>
-<p>:param modes: An list of modes e.g. tube, tram
-:param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
-:param severityLevel: If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>modes</code></strong></dt>
+<dd>A list of modes e.g. tube, tram</dd>
+<dt><strong><code>detail</code></strong></dt>
+<dd>Include details of the disruptions that are causing the line status including the affected stops and routes</dd>
+<dt><strong><code>severityLevel</code></strong></dt>
+<dd>A list of severity codes to filter on. Supported values: Minor, Major, Severe</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -856,9 +1002,10 @@ __all__ = [
     &#34;&#34;&#34;
     Gets the line status of for all lines for the given modes
 
-    :param modes: An list of modes e.g. tube, tram
-    :param detail: Include details of the disruptions that are causing the line status including the affected stops and routes
-    :param severityLevel: If specified, ensures that only those line status(es) are returned within the lines that have disruptions with the matching severity level
+    Args:
+        modes: A list of modes e.g. tube, tram
+        detail: Include details of the disruptions that are causing the line status including the affected stops and routes
+        severityLevel: A list of severity codes to filter on. Supported values: Minor, Major, Severe
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/Mode/{self.arrayToCSV(modes)}/Status&#34;, { detail, severityLevel }
@@ -870,9 +1017,15 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the inbound timetable for a specified station on the give line</p>
-<p>:param _line: Id of the line e.g. 'victoria'
-:param NaPTANID: Id of the stop (station naptan code e.g. 940GZZLUASL)
-:param direction: Leave blank for outbound or "inbound"</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>_line</code></strong></dt>
+<dd>The line id e.g. victoria, circle, N133</dd>
+<dt><strong><code>NaPTANID</code></strong></dt>
+<dd>The station id e.g. 940GZZLUASL</dd>
+<dt><strong><code>direction</code></strong></dt>
+<dd>The direction of the timetable. Supported values: inbound, outbound. Defaulted to 'outbound' if not specified</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -881,9 +1034,10 @@ __all__ = [
     &#34;&#34;&#34;
     Gets the inbound timetable for a specified station on the give line
 
-    :param _line: Id of the line e.g. &#39;victoria&#39;
-    :param NaPTANID: Id of the stop (station naptan code e.g. 940GZZLUASL)
-    :param direction: Leave blank for outbound or &#34;inbound&#34;
+    Args:
+        _line: The line id e.g. victoria, circle, N133
+        NaPTANID: The station id e.g. 940GZZLUASL
+        direction: The direction of the timetable. Supported values: inbound, outbound. Defaulted to &#39;outbound&#39; if not specified
     &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/{_line}/Timetable/{NaPTANID}&#34;,
@@ -895,13 +1049,29 @@ __all__ = [
 <span>def <span class="ident">getTimetableFromTo</span></span>(<span>self, _line, _from, _to)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Gets the timetable for a specified station on the give line with specified destination</p></div>
+<div class="desc"><p>Gets the timetable for a specified station on the give line with specified destination</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>_line</code></strong></dt>
+<dd>The line id e.g. victoria, circle, N133</dd>
+<dt><strong><code>_from</code></strong></dt>
+<dd>The station id e.g. 940GZZLUASL</dd>
+<dt><strong><code>_to</code></strong></dt>
+<dd>The destination station id e.g. 940GZZLUASL</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def getTimetableFromTo(self, _line, _from, _to):
-    &#34;&#34;&#34;Gets the timetable for a specified station on the give line with specified destination&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Gets the timetable for a specified station on the give line with specified destination
+    
+    Args:
+        _line: The line id e.g. victoria, circle, N133
+        _from: The station id e.g. 940GZZLUASL
+        _to: The destination station id e.g. 940GZZLUASL
+    &#34;&#34;&#34;
     return super(line, self).sendRequestUnified(
         f&#34;/Line/{_line}/Timetable/{_from}/to/{_to}&#34;
     )</code></pre>
@@ -944,8 +1114,9 @@ __all__ = [
         &#34;&#34;&#34;
         Returns arrival predictions for all stops
 
-        :param modes: A mode name e.g. tube, dlr
-        :param count: A number of arrivals to return for each stop, -1 to return all available
+        Args:
+            modes: The modes for which to return predictions e.g. tube, dlr
+            count: The number of predictions to return, -1 to return all available
         &#34;&#34;&#34;
 
         return super(mode, self).sendRequestUnified(
@@ -980,8 +1151,13 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Returns arrival predictions for all stops</p>
-<p>:param modes: A mode name e.g. tube, dlr
-:param count: A number of arrivals to return for each stop, -1 to return all available</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>modes</code></strong></dt>
+<dd>The modes for which to return predictions e.g. tube, dlr</dd>
+<dt><strong><code>count</code></strong></dt>
+<dd>The number of predictions to return, -1 to return all available</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -990,8 +1166,9 @@ __all__ = [
     &#34;&#34;&#34;
     Returns arrival predictions for all stops
 
-    :param modes: A mode name e.g. tube, dlr
-    :param count: A number of arrivals to return for each stop, -1 to return all available
+    Args:
+        modes: The modes for which to return predictions e.g. tube, dlr
+        count: The number of predictions to return, -1 to return all available
     &#34;&#34;&#34;
 
     return super(mode, self).sendRequestUnified(
@@ -1029,7 +1206,8 @@ __all__ = [
         &#34;&#34;&#34;
         Gets the occupancy data for bike points
 
-        :param ids: Bike Point ID (Eg. BikePoints_208)
+        Args:
+            ids: List of bike point IDs (Eg. [&#39;BikePoints_208&#39;, &#39;BikePoints_209&#39;])
         &#34;&#34;&#34;
         return super(occupancy, self).sendRequestUnified(
             f&#34;/Occupancy/BikePoints/{self.arrayToCSV(ids)}&#34;, {}
@@ -1038,8 +1216,9 @@ __all__ = [
     def getCarParkByID(self, id):
         &#34;&#34;&#34;
         Gets the occupancy for a car park with a given id
-        
-        :param id: Car Park ID (Eg. CarParks_800468)
+
+        Args:
+            id: Car park ID (Eg. &#39;CarParks_800468&#39;)
         &#34;&#34;&#34;
         
         return super(occupancy, self).sendRequestUnified(
@@ -1049,8 +1228,9 @@ __all__ = [
     def getChargeConnectorByID(self, id):
         &#34;&#34;&#34;
         Gets the occupancy for a charge connectors with a given id
-        
-        :param id: Charge Connector ID (Eg. ChargePointESB-UT06NW-1)
+
+        Args:
+            id: Charge connector ID (Eg. &#39;ChargePointESB-UT06NW-1&#39;)
         &#34;&#34;&#34;
         
         return super(occupancy, self).sendRequestUnified(
@@ -1116,7 +1296,11 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the occupancy data for bike points</p>
-<p>:param ids: Bike Point ID (Eg. BikePoints_208)</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>List of bike point IDs (Eg. ['BikePoints_208', 'BikePoints_209'])</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1125,7 +1309,8 @@ __all__ = [
     &#34;&#34;&#34;
     Gets the occupancy data for bike points
 
-    :param ids: Bike Point ID (Eg. BikePoints_208)
+    Args:
+        ids: List of bike point IDs (Eg. [&#39;BikePoints_208&#39;, &#39;BikePoints_209&#39;])
     &#34;&#34;&#34;
     return super(occupancy, self).sendRequestUnified(
         f&#34;/Occupancy/BikePoints/{self.arrayToCSV(ids)}&#34;, {}
@@ -1137,7 +1322,11 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the occupancy for a car park with a given id</p>
-<p>:param id: Car Park ID (Eg. CarParks_800468)</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>Car park ID (Eg. 'CarParks_800468')</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1145,8 +1334,9 @@ __all__ = [
 <pre><code class="python">def getCarParkByID(self, id):
     &#34;&#34;&#34;
     Gets the occupancy for a car park with a given id
-    
-    :param id: Car Park ID (Eg. CarParks_800468)
+
+    Args:
+        id: Car park ID (Eg. &#39;CarParks_800468&#39;)
     &#34;&#34;&#34;
     
     return super(occupancy, self).sendRequestUnified(
@@ -1159,7 +1349,11 @@ __all__ = [
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the occupancy for a charge connectors with a given id</p>
-<p>:param id: Charge Connector ID (Eg. ChargePointESB-UT06NW-1)</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>id</code></strong></dt>
+<dd>Charge connector ID (Eg. 'ChargePointESB-UT06NW-1')</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1167,8 +1361,9 @@ __all__ = [
 <pre><code class="python">def getChargeConnectorByID(self, id):
     &#34;&#34;&#34;
     Gets the occupancy for a charge connectors with a given id
-    
-    :param id: Charge Connector ID (Eg. ChargePointESB-UT06NW-1)
+
+    Args:
+        id: Charge connector ID (Eg. &#39;ChargePointESB-UT06NW-1&#39;)
     &#34;&#34;&#34;
     
     return super(occupancy, self).sendRequestUnified(
@@ -1228,8 +1423,8 @@ __all__ = [
     def getByID(self, ids):
         &#34;&#34;&#34;
         Get the road with the specified ID (Eg. A1)
-
-        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        Args:
+            ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
         &#34;&#34;&#34;
 
         return super(road, self).sendRequestUnified(
@@ -1239,10 +1434,10 @@ __all__ = [
     def getStatusByID(self, ids, startDate, endDate):
         &#34;&#34;&#34;
         Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
-
-        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
-        :param startDate:
-        :param endDate:
+        Args:
+            ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+            startDate: Optional, the start time to filter on
+            endDate: Optional, the end time to filter on
         &#34;&#34;&#34;
 
         return super(road, self).sendRequestUnified(
@@ -1254,8 +1449,9 @@ __all__ = [
         &#34;&#34;&#34;
         Gets a list of disrupted streets
 
-        :param startDate: Optional, the start time to filter on
-        :param endDate: Optional, the end time to filter on
+        Args:
+            startDate: Optional, the start time to filter on
+            endDate: Optional, the end time to filter on
         &#34;&#34;&#34;
         return super(road, self).sendRequestUnified(
             &#39;/Road/all/Street/Disruption&#39;,
@@ -1263,12 +1459,13 @@ __all__ = [
                 startDate), &#39;endDate&#39;: self.getRFC3339(endDate)}
         )
 
-    def getAllDisruptionsByID(self, ids, stripContent: bool):
+    def getAllDisruptionsByID(self, ids, stripContent: bool = False):
         &#34;&#34;&#34;
         Gets a list of disrupted streets
 
-        :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
-        :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+        Args:
+            ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+            stripContent: Optional, if true, the content of the disruption will be stripped from the response
         &#34;&#34;&#34;
         return super(road, self).sendRequestUnified(
             f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
@@ -1299,23 +1496,28 @@ __all__ = [
 </details>
 </dd>
 <dt id="tflwrapper.road.getAllDisruptionsByID"><code class="name flex">
-<span>def <span class="ident">getAllDisruptionsByID</span></span>(<span>self, ids, stripContent: bool)</span>
+<span>def <span class="ident">getAllDisruptionsByID</span></span>(<span>self, ids, stripContent: bool = False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets a list of disrupted streets</p>
-<p>:param ids: ID(s) of the road(s). Eg. ['A1']
-:param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,
-startDate, endDate, corridor details, location and comments.</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>ID(s) of the road(s). Eg. ['A1']</dd>
+<dt><strong><code>stripContent</code></strong></dt>
+<dd>Optional, if true, the content of the disruption will be stripped from the response</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def getAllDisruptionsByID(self, ids, stripContent: bool):
+<pre><code class="python">def getAllDisruptionsByID(self, ids, stripContent: bool = False):
     &#34;&#34;&#34;
     Gets a list of disrupted streets
 
-    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
-    :param stripContent: When true, removes every property/node except for id, point, severity, severityDescription,  startDate, endDate, corridor details, location and comments.
+    Args:
+        ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        stripContent: Optional, if true, the content of the disruption will be stripped from the response
     &#34;&#34;&#34;
     return super(road, self).sendRequestUnified(
         f&#39;/Road/all/Disruption/{self.arrayToCSV(ids)}&#39;,
@@ -1328,8 +1530,13 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets a list of disrupted streets</p>
-<p>:param startDate: Optional, the start time to filter on
-:param endDate: Optional, the end time to filter on</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>startDate</code></strong></dt>
+<dd>Optional, the start time to filter on</dd>
+<dt><strong><code>endDate</code></strong></dt>
+<dd>Optional, the end time to filter on</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1338,8 +1545,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets a list of disrupted streets
 
-    :param startDate: Optional, the start time to filter on
-    :param endDate: Optional, the end time to filter on
+    Args:
+        startDate: Optional, the start time to filter on
+        endDate: Optional, the end time to filter on
     &#34;&#34;&#34;
     return super(road, self).sendRequestUnified(
         &#39;/Road/all/Street/Disruption&#39;,
@@ -1353,7 +1561,11 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Get the road with the specified ID (Eg. A1)</p>
-<p>:param ids: ID(s) of the road(s). Eg. ['A1']</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>ID(s) of the road(s). Eg. ['A1']</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1361,8 +1573,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
 <pre><code class="python">def getByID(self, ids):
     &#34;&#34;&#34;
     Get the road with the specified ID (Eg. A1)
-
-    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+    Args:
+        ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
     &#34;&#34;&#34;
 
     return super(road, self).sendRequestUnified(
@@ -1411,9 +1623,15 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.</p>
-<p>:param ids: ID(s) of the road(s). Eg. ['A1']
-:param startDate:
-:param endDate:</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>ID(s) of the road(s). Eg. ['A1']</dd>
+<dt><strong><code>startDate</code></strong></dt>
+<dd>Optional, the start time to filter on</dd>
+<dt><strong><code>endDate</code></strong></dt>
+<dd>Optional, the end time to filter on</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1421,10 +1639,10 @@ startDate, endDate, corridor details, location and comments.</p></div>
 <pre><code class="python">def getStatusByID(self, ids, startDate, endDate):
     &#34;&#34;&#34;
     Gets the specified roads with the status aggregated over the date range specified, or now until the end of today if no dates are passed.
-
-    :param ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
-    :param startDate:
-    :param endDate:
+    Args:
+        ids: ID(s) of the road(s). Eg. [&#39;A1&#39;]
+        startDate: Optional, the start time to filter on
+        endDate: Optional, the end time to filter on
     &#34;&#34;&#34;
 
     return super(road, self).sendRequestUnified(
@@ -1483,8 +1701,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets a list of StopPoints corresponding to the given list of stop ids
 
-        :param ids: A list of stop point ids (station naptan code e.g. 940GZZLUASL).
-        :param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}
+        Args:
+            ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+            includeCrowdingData: Specify true to return crowding data (static) for each stop point
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1495,7 +1714,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets all stop points of a given type
 
-        :param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint
+        Args:
+            array: An array of stop point types e.g. [&#39;NaptanPublicBusCoachTram&#39;]
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1506,9 +1726,10 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets the service types for a given Stop Point
 
-        :param stopPointID:
-        :param lineIds:
-        :param modes:
+        Args:
+            stopPointID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+            lineIds: A list of Line ids (e.g. victoria)
+            modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1520,8 +1741,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Search StopPoints by their common name. Will not return a valid NaPTAN for HUB
 
-        :param name: Name of station
-        :param modes: Eg. [&#39;tflwrapper&#39;, &#39;dlr&#39;]
+        Args:
+            name: The name of station to search for
+            modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1533,7 +1755,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Get all service arrivals
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1562,10 +1785,11 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have
 
-        :param ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
-        :param getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
-        :param includeRouteBlockedStops:
-        :param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)
+        Args:
+            ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+            getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
+            includeRouteBlockedStops: Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.
+            flattenResponse: Specify true to return a flattened response, or false to return a nested response. Defaults to false.
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1577,8 +1801,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets a distinct list of disrupted stop points for the given modes
 
-        :param modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
-        :param includeRouteBlockedStops:
+        Args:
+            modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
+            includeRouteBlockedStops: Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.
         &#34;&#34;&#34;
         return super(stopPoint, self).sendRequestUnified(
             f&#34;/StopPoint/Mode/{super(stopPoint, self).arrayToCSV(modes)}/Disruption&#34;,
@@ -1589,9 +1814,10 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets Stop points that are reachable from a station/line combination
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-        :param lineID: Line id of the line to filter by (e.g. victoria)
-        :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+            lineID: A Line id (e.g. victoria)
+            serviceTypes: An array of service types. Supported values: Regular, Night. Defaults to Regular.
         &#34;&#34;&#34;
 
         if serviceTypes is None:
@@ -1605,8 +1831,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Get the route sections for all the lines that service the given stop point id#
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-        :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+            serviceTypes: An array of service types. Supported values: Regular, Night.
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1628,14 +1855,15 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets a list of StopPoints within {radius} by the specified criteria
 
-        :param stopTypes: A list of stopTypes that should be returned
-        :param radius: The radius of the bounding circle in metres (default : 200)
-        :param useStopPointHierarchy: Re-arrange the output into a parent/child hierarchy.
-        :param modes: modes The list of modes to search eg. [&#39;tube&#39;, &#39;dlr&#39;]
-        :param categories: an optional list of comma separated property categories to return in the StopPoint&#39;s property bag. If null or empty, all categories of property are returned. Pass the keyword &#34;none&#34; to return no properties.Pass the keyword &#34;none&#34; to return no properties.
-        :param returnLines: True to return the lines that each stop point serves as a nested resource.
-        :param latitude:
-        :param longitude:
+        Args:
+            stopTypes: An array of stop point types e.g. [&#39;NaptanPublicBusCoachTram&#39;]
+            radius: The radius in metres. Defaults to 200.
+            useStopPointHierarchy: Specify true to return stop points in the hierarchy, or false to return stop points at the specified radius. Defaults to false.
+            modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
+            categories: An array of categories e.g. [&#39;tram&#39;, &#39;bus&#39;]
+            returnLines: Specify true to return the lines that service the stop point, or false to return the stop point itself. Defaults to false.
+            latitude: The latitude of the location to search from.
+            longitude: The longitude of the location to search from.
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1655,9 +1883,10 @@ startDate, endDate, corridor details, location and comments.</p></div>
     def getBySMSCode(self, smsID: str, output: str):
         &#34;&#34;&#34;
         Gets a StopPoint for a given sms code
-
-        :param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.
-        # :param output: If set to &#34;web&#34;, a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
+        
+        Args:
+            smsID: A 5-digit sms code e.g. 73241, 50435, 5633.
+            output: If set to &#34;web&#34;, a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1668,7 +1897,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Gets a list of taxi ranks corresponding to the given stop point id
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1679,7 +1909,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         Get car parks corresponding to the given stop point id
 
-        :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        Args:
+            naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
         &#34;&#34;&#34;
 
         return super(stopPoint, self).sendRequestUnified(
@@ -1697,7 +1928,11 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets all stop points of a given type</p>
-<p>:param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>array</code></strong></dt>
+<dd>An array of stop point types e.g. ['NaptanPublicBusCoachTram']</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1706,7 +1941,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets all stop points of a given type
 
-    :param array: A list of valid stop types can be obtained from the StopPoint/meta/stoptypes endpoint
+    Args:
+        array: An array of stop point types e.g. [&#39;NaptanPublicBusCoachTram&#39;]
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -1719,8 +1955,13 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets a list of StopPoints corresponding to the given list of stop ids</p>
-<p>:param ids: A list of stop point ids (station naptan code e.g. 940GZZLUASL).
-:param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)</dd>
+<dt><strong><code>includeCrowdingData</code></strong></dt>
+<dd>Specify true to return crowding data (static) for each stop point</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1729,8 +1970,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets a list of StopPoints corresponding to the given list of stop ids
 
-    :param ids: A list of stop point ids (station naptan code e.g. 940GZZLUASL).
-    :param includeCrowdingData: Include the crowding data (static). To Filter further use: /StopPoint/{ids}/Crowding/{line}
+    Args:
+        ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+        includeCrowdingData: Specify true to return crowding data (static) for each stop point
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -1743,8 +1985,13 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets a StopPoint for a given sms code</p>
-<p>:param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.</p>
-<h1 id="param-output-if-set-to-web-a-302-redirect-to-relevant-website-bus-stop-page-is-returned-all-other-values-are-ignored">:param output: If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.</h1></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>smsID</code></strong></dt>
+<dd>A 5-digit sms code e.g. 73241, 50435, 5633.</dd>
+<dt><strong><code>output</code></strong></dt>
+<dd>If set to "web", a 302 redirect to relevant website bus stop page is returned. All other values are ignored.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1752,9 +1999,10 @@ startDate, endDate, corridor details, location and comments.</p></div>
 <pre><code class="python">def getBySMSCode(self, smsID: str, output: str):
     &#34;&#34;&#34;
     Gets a StopPoint for a given sms code
-
-    :param smsID: A 5-digit Countdown Bus Stop Code e.g. 73241, 50435, 56334.
-    # :param output: If set to &#34;web&#34;, a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
+    
+    Args:
+        smsID: A 5-digit sms code e.g. 73241, 50435, 5633.
+        output: If set to &#34;web&#34;, a 302 redirect to relevant website bus stop page is returned. All other values are ignored.
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -1767,7 +2015,11 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Get car parks corresponding to the given stop point id</p>
-<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>naptanID</code></strong></dt>
+<dd>A StopPoint id (station naptan code e.g. 940GZZLUAS)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1776,7 +2028,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Get car parks corresponding to the given stop point id
 
-    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    Args:
+        naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -1805,10 +2058,17 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have</p>
-<p>:param ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
-:param getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
-:param includeRouteBlockedStops:
-:param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ids</code></strong></dt>
+<dd>A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)</dd>
+<dt><strong><code>getFamily</code></strong></dt>
+<dd>Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.</dd>
+<dt><strong><code>includeRouteBlockedStops</code></strong></dt>
+<dd>Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.</dd>
+<dt><strong><code>flattenResponse</code></strong></dt>
+<dd>Specify true to return a flattened response, or false to return a nested response. Defaults to false.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1823,10 +2083,11 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets all disruptions for the specified StopPointId, plus disruptions for any child Naptan records it may have
 
-    :param ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
-    :param getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
-    :param includeRouteBlockedStops:
-    :param flattenResponse: Specify true to associate all disruptions with parent stop point. (Only applicable when getFamily is true)
+    Args:
+        ids: A list of StopPoint ids (station naptan code e.g. 940GZZLUAS)
+        getFamily: Specify true to return disruptions for entire family, or false to return disruptions for just this stop point. Defaults to false.
+        includeRouteBlockedStops: Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.
+        flattenResponse: Specify true to return a flattened response, or false to return a nested response. Defaults to false.
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -1840,8 +2101,13 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets a distinct list of disrupted stop points for the given modes</p>
-<p>:param modes: An array of modes e.g. ['tube', 'dlr']
-:param includeRouteBlockedStops:</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>modes</code></strong></dt>
+<dd>An array of modes e.g. ['tube', 'dlr']</dd>
+<dt><strong><code>includeRouteBlockedStops</code></strong></dt>
+<dd>Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1850,8 +2116,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets a distinct list of disrupted stop points for the given modes
 
-    :param modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
-    :param includeRouteBlockedStops:
+    Args:
+        modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
+        includeRouteBlockedStops: Specify true to return disruptions for route blocked stops, or false to return disruptions for all stops. Defaults to false.
     &#34;&#34;&#34;
     return super(stopPoint, self).sendRequestUnified(
         f&#34;/StopPoint/Mode/{super(stopPoint, self).arrayToCSV(modes)}/Disruption&#34;,
@@ -1864,14 +2131,25 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets a list of StopPoints within {radius} by the specified criteria</p>
-<p>:param stopTypes: A list of stopTypes that should be returned
-:param radius: The radius of the bounding circle in metres (default : 200)
-:param useStopPointHierarchy: Re-arrange the output into a parent/child hierarchy.
-:param modes: modes The list of modes to search eg. ['tube', 'dlr']
-:param categories: an optional list of comma separated property categories to return in the StopPoint's property bag. If null or empty, all categories of property are returned. Pass the keyword "none" to return no properties.Pass the keyword "none" to return no properties.
-:param returnLines: True to return the lines that each stop point serves as a nested resource.
-:param latitude:
-:param longitude:</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>stopTypes</code></strong></dt>
+<dd>An array of stop point types e.g. ['NaptanPublicBusCoachTram']</dd>
+<dt><strong><code>radius</code></strong></dt>
+<dd>The radius in metres. Defaults to 200.</dd>
+<dt><strong><code>useStopPointHierarchy</code></strong></dt>
+<dd>Specify true to return stop points in the hierarchy, or false to return stop points at the specified radius. Defaults to false.</dd>
+<dt><strong><code>modes</code></strong></dt>
+<dd>An array of modes e.g. ['tube', 'dlr']</dd>
+<dt><strong><code>categories</code></strong></dt>
+<dd>An array of categories e.g. ['tram', 'bus']</dd>
+<dt><strong><code>returnLines</code></strong></dt>
+<dd>Specify true to return the lines that service the stop point, or false to return the stop point itself. Defaults to false.</dd>
+<dt><strong><code>latitude</code></strong></dt>
+<dd>The latitude of the location to search from.</dd>
+<dt><strong><code>longitude</code></strong></dt>
+<dd>The longitude of the location to search from.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1890,14 +2168,15 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets a list of StopPoints within {radius} by the specified criteria
 
-    :param stopTypes: A list of stopTypes that should be returned
-    :param radius: The radius of the bounding circle in metres (default : 200)
-    :param useStopPointHierarchy: Re-arrange the output into a parent/child hierarchy.
-    :param modes: modes The list of modes to search eg. [&#39;tube&#39;, &#39;dlr&#39;]
-    :param categories: an optional list of comma separated property categories to return in the StopPoint&#39;s property bag. If null or empty, all categories of property are returned. Pass the keyword &#34;none&#34; to return no properties.Pass the keyword &#34;none&#34; to return no properties.
-    :param returnLines: True to return the lines that each stop point serves as a nested resource.
-    :param latitude:
-    :param longitude:
+    Args:
+        stopTypes: An array of stop point types e.g. [&#39;NaptanPublicBusCoachTram&#39;]
+        radius: The radius in metres. Defaults to 200.
+        useStopPointHierarchy: Specify true to return stop points in the hierarchy, or false to return stop points at the specified radius. Defaults to false.
+        modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
+        categories: An array of categories e.g. [&#39;tram&#39;, &#39;bus&#39;]
+        returnLines: Specify true to return the lines that service the stop point, or false to return the stop point itself. Defaults to false.
+        latitude: The latitude of the location to search from.
+        longitude: The longitude of the location to search from.
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -1937,9 +2216,15 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets Stop points that are reachable from a station/line combination</p>
-<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-:param lineID: Line id of the line to filter by (e.g. victoria)
-:param serviceTypes: List of service types to filter on. Supported values: Regular, Night.</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>naptanID</code></strong></dt>
+<dd>A StopPoint id (station naptan code e.g. 940GZZLUAS)</dd>
+<dt><strong><code>lineID</code></strong></dt>
+<dd>A Line id (e.g. victoria)</dd>
+<dt><strong><code>serviceTypes</code></strong></dt>
+<dd>An array of service types. Supported values: Regular, Night. Defaults to Regular.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1948,9 +2233,10 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets Stop points that are reachable from a station/line combination
 
-    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-    :param lineID: Line id of the line to filter by (e.g. victoria)
-    :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+    Args:
+        naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        lineID: A Line id (e.g. victoria)
+        serviceTypes: An array of service types. Supported values: Regular, Night. Defaults to Regular.
     &#34;&#34;&#34;
 
     if serviceTypes is None:
@@ -1966,8 +2252,13 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Get the route sections for all the lines that service the given stop point id#</p>
-<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-:param serviceTypes: List of service types to filter on. Supported values: Regular, Night.</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>naptanID</code></strong></dt>
+<dd>A StopPoint id (station naptan code e.g. 940GZZLUAS)</dd>
+<dt><strong><code>serviceTypes</code></strong></dt>
+<dd>An array of service types. Supported values: Regular, Night.</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1976,8 +2267,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Get the route sections for all the lines that service the given stop point id#
 
-    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
-    :param serviceTypes: List of service types to filter on. Supported values: Regular, Night.
+    Args:
+        naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        serviceTypes: An array of service types. Supported values: Regular, Night.
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -1991,9 +2283,15 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the service types for a given Stop Point</p>
-<p>:param stopPointID:
-:param lineIds:
-:param modes:</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>stopPointID</code></strong></dt>
+<dd>A StopPoint id (station naptan code e.g. 940GZZLUAS)</dd>
+<dt><strong><code>lineIds</code></strong></dt>
+<dd>A list of Line ids (e.g. victoria)</dd>
+<dt><strong><code>modes</code></strong></dt>
+<dd>An array of modes e.g. ['tube', 'dlr']</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2002,9 +2300,10 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets the service types for a given Stop Point
 
-    :param stopPointID:
-    :param lineIds:
-    :param modes:
+    Args:
+        stopPointID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+        lineIds: A list of Line ids (e.g. victoria)
+        modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -2018,7 +2317,11 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Get all service arrivals</p>
-<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>naptanID</code></strong></dt>
+<dd>A StopPoint id (station naptan code e.g. 940GZZLUAS)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2027,7 +2330,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Get all service arrivals
 
-    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    Args:
+        naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -2040,7 +2344,11 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets a list of taxi ranks corresponding to the given stop point id</p>
-<p>:param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>naptanID</code></strong></dt>
+<dd>A StopPoint id (station naptan code e.g. 940GZZLUAS)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2049,7 +2357,8 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Gets a list of taxi ranks corresponding to the given stop point id
 
-    :param naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
+    Args:
+        naptanID: A StopPoint id (station naptan code e.g. 940GZZLUAS)
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -2079,8 +2388,13 @@ startDate, endDate, corridor details, location and comments.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Search StopPoints by their common name. Will not return a valid NaPTAN for HUB</p>
-<p>:param name: Name of station
-:param modes: Eg. ['tflwrapper', 'dlr']</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong></dt>
+<dd>The name of station to search for</dd>
+<dt><strong><code>modes</code></strong></dt>
+<dd>An array of modes e.g. ['tube', 'dlr']</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2089,8 +2403,9 @@ startDate, endDate, corridor details, location and comments.</p></div>
     &#34;&#34;&#34;
     Search StopPoints by their common name. Will not return a valid NaPTAN for HUB
 
-    :param name: Name of station
-    :param modes: Eg. [&#39;tflwrapper&#39;, &#39;dlr&#39;]
+    Args:
+        name: The name of station to search for
+        modes: An array of modes e.g. [&#39;tube&#39;, &#39;dlr&#39;]
     &#34;&#34;&#34;
 
     return super(stopPoint, self).sendRequestUnified(
@@ -2138,10 +2453,13 @@ startDate, endDate, corridor details, location and comments.</p></div>
         &#34;&#34;&#34;
         fullURL = f&#34;https://api.tfl.gov.uk:443{uri}?{urllib.parse.urlencode({&#39;app_key&#39;: self.app_key})}&#34;
 
+        # If params is specified then convert it to a url encoded string
         if params:
             fullURL += f&#34;&amp;{urllib.parse.urlencode(params)}&#34;
 
+        # Send the request
         resource = urllib.request.urlopen(fullURL)
+        
         return json.loads(
             resource.read().decode(resource.headers.get_content_charset())
         )
@@ -2288,10 +2606,13 @@ def sendRequestTrackerNet(uri: str):
     &#34;&#34;&#34;
     fullURL = f&#34;https://api.tfl.gov.uk:443{uri}?{urllib.parse.urlencode({&#39;app_key&#39;: self.app_key})}&#34;
 
+    # If params is specified then convert it to a url encoded string
     if params:
         fullURL += f&#34;&amp;{urllib.parse.urlencode(params)}&#34;
 
+    # Send the request
     resource = urllib.request.urlopen(fullURL)
+    
     return json.loads(
         resource.read().decode(resource.headers.get_content_charset())
     )</code></pre>
@@ -2313,14 +2634,25 @@ def sendRequestTrackerNet(uri: str):
     &#34;&#34;&#34;TrackerNet API&#34;&#34;&#34;
 
     def getPredictionSummary(self, line: str):
-        &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+        &#34;&#34;&#34;
+        Get detailed train prediction information for a nominated station on a nominated line within 100 minute range
+        
+        Args:
+            line: The line code for the line (eg. C)
+        &#34;&#34;&#34;
 
         return super(trackerNet, self).sendRequestTrackerNet(
             f&#34;/PredictionSummary/{line}&#34;
         )
 
     def getPredictionDetailed(self, line: str, stationCode: str):
-        &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+        &#34;&#34;&#34;
+        Get detailed train prediction information for a nominated station on a nominated line within 100 minute range
+        
+        Args:
+            line: The line code for the line (eg. C)
+            stationCode: The station code for the station (eg. BNK)
+        &#34;&#34;&#34;
 
         return super(trackerNet, self).sendRequestTrackerNet(
             f&#34;/PredictionDetailed/{line}/{stationCode}&#34;
@@ -2330,7 +2662,8 @@ def sendRequestTrackerNet(uri: str):
         &#34;&#34;&#34;
         Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.
 
-        :param incidentsOnly: Get station status information for stations with incidents only
+        Args:
+            incidentsOnly: Get line status information for lines with incidents only
         &#34;&#34;&#34;
 
         incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
@@ -2342,7 +2675,8 @@ def sendRequestTrackerNet(uri: str):
         &#34;&#34;&#34;
         Get station status information for all stations
 
-        :param incidentsOnly: Get station status information for stations with incidents only
+        Args:
+            incidentsOnly: Get station status information for stations with incidents only
         &#34;&#34;&#34;
 
         incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
@@ -2361,7 +2695,11 @@ def sendRequestTrackerNet(uri: str):
 </code></dt>
 <dd>
 <div class="desc"><p>Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.</p>
-<p>:param incidentsOnly: Get station status information for stations with incidents only</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>incidentsOnly</code></strong></dt>
+<dd>Get line status information for lines with incidents only</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2370,7 +2708,8 @@ def sendRequestTrackerNet(uri: str):
     &#34;&#34;&#34;
     Get the status of all lines on the network indicating any delays, disruptions or suspensions on the lines.
 
-    :param incidentsOnly: Get station status information for stations with incidents only
+    Args:
+        incidentsOnly: Get line status information for lines with incidents only
     &#34;&#34;&#34;
 
     incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
@@ -2384,7 +2723,11 @@ def sendRequestTrackerNet(uri: str):
 </code></dt>
 <dd>
 <div class="desc"><p>Get station status information for all stations</p>
-<p>:param incidentsOnly: Get station status information for stations with incidents only</p></div>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>incidentsOnly</code></strong></dt>
+<dd>Get station status information for stations with incidents only</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2393,7 +2736,8 @@ def sendRequestTrackerNet(uri: str):
     &#34;&#34;&#34;
     Get station status information for all stations
 
-    :param incidentsOnly: Get station status information for stations with incidents only
+    Args:
+        incidentsOnly: Get station status information for stations with incidents only
     &#34;&#34;&#34;
 
     incidentsOnlyCheck = &#39;/IncidentsOnly&#39; if incidentsOnly else &#39;&#39;
@@ -2406,13 +2750,26 @@ def sendRequestTrackerNet(uri: str):
 <span>def <span class="ident">getPredictionDetailed</span></span>(<span>self, line: str, stationCode: str)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p></div>
+<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>line</code></strong></dt>
+<dd>The line code for the line (eg. C)</dd>
+<dt><strong><code>stationCode</code></strong></dt>
+<dd>The station code for the station (eg. BNK)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def getPredictionDetailed(self, line: str, stationCode: str):
-    &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Get detailed train prediction information for a nominated station on a nominated line within 100 minute range
+    
+    Args:
+        line: The line code for the line (eg. C)
+        stationCode: The station code for the station (eg. BNK)
+    &#34;&#34;&#34;
 
     return super(trackerNet, self).sendRequestTrackerNet(
         f&#34;/PredictionDetailed/{line}/{stationCode}&#34;
@@ -2423,13 +2780,23 @@ def sendRequestTrackerNet(uri: str):
 <span>def <span class="ident">getPredictionSummary</span></span>(<span>self, line: str)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p></div>
+<div class="desc"><p>Get detailed train prediction information for a nominated station on a nominated line within 100 minute range</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>line</code></strong></dt>
+<dd>The line code for the line (eg. C)</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def getPredictionSummary(self, line: str):
-    &#34;&#34;&#34;Get detailed train prediction information for a nominated station on a nominated line within 100 minute range&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Get detailed train prediction information for a nominated station on a nominated line within 100 minute range
+    
+    Args:
+        line: The line code for the line (eg. C)
+    &#34;&#34;&#34;
 
     return super(trackerNet, self).sendRequestTrackerNet(
         f&#34;/PredictionSummary/{line}&#34;
@@ -2479,18 +2846,20 @@ def sendRequestTrackerNet(uri: str):
     ):
         &#34;&#34;&#34;
         Gets the TravelTime overlay
-        :param z: The zoom level
-        :param pinLat: The latitude of the pin
-        :param pinLon: The longitude of the pin
-        :param mapCenterLat: The map center latitude
-        :param mapCenterLon: The map center longitude
-        :param scenarioTitle: The title of the scenario
-        :param timeOfDayID: The id for the time of day (AM/INTER/PM)
-        :param modeID: The id of the mode
-        :param width: The width of the requested overlay
-        :param height: The height of the requested overlay
-        :param direction: The direction of travel
-        :param travelTimeInterval:
+
+        Args:
+            z: The zoom level of the map
+            pinLat: The latitude of the pin
+            pinLon: The longitude of the pin
+            mapCenterLat: The latitude of the map center
+            mapCenterLon: The longitude of the map center
+            scenarioTitle: The title of the scenario
+            timeOfDayID: The time of day ID. Supported values: AM, INTER, PM
+            modeID: The mode ID.
+            width: The width of the map
+            height: The height of the map
+            direction: The direction of the travel
+            travelTimeInterval: The travel time interval
         &#34;&#34;&#34;
         return super(travelTimes, self).sendRequestUnified(
             f&#34;/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}/&#34;, {}
@@ -2506,19 +2875,34 @@ def sendRequestTrackerNet(uri: str):
 <span>def <span class="ident">getOverlay</span></span>(<span>self, z, pinLat, pinLon, mapCenterLat, mapCenterLon, scenarioTitle, timeOfDayID, modeID, width, height, direction, travelTimeInterval)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Gets the TravelTime overlay
-:param z: The zoom level
-:param pinLat: The latitude of the pin
-:param pinLon: The longitude of the pin
-:param mapCenterLat: The map center latitude
-:param mapCenterLon: The map center longitude
-:param scenarioTitle: The title of the scenario
-:param timeOfDayID: The id for the time of day (AM/INTER/PM)
-:param modeID: The id of the mode
-:param width: The width of the requested overlay
-:param height: The height of the requested overlay
-:param direction: The direction of travel
-:param travelTimeInterval:</p></div>
+<div class="desc"><p>Gets the TravelTime overlay</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>z</code></strong></dt>
+<dd>The zoom level of the map</dd>
+<dt><strong><code>pinLat</code></strong></dt>
+<dd>The latitude of the pin</dd>
+<dt><strong><code>pinLon</code></strong></dt>
+<dd>The longitude of the pin</dd>
+<dt><strong><code>mapCenterLat</code></strong></dt>
+<dd>The latitude of the map center</dd>
+<dt><strong><code>mapCenterLon</code></strong></dt>
+<dd>The longitude of the map center</dd>
+<dt><strong><code>scenarioTitle</code></strong></dt>
+<dd>The title of the scenario</dd>
+<dt><strong><code>timeOfDayID</code></strong></dt>
+<dd>The time of day ID. Supported values: AM, INTER, PM</dd>
+<dt><strong><code>modeID</code></strong></dt>
+<dd>The mode ID.</dd>
+<dt><strong><code>width</code></strong></dt>
+<dd>The width of the map</dd>
+<dt><strong><code>height</code></strong></dt>
+<dd>The height of the map</dd>
+<dt><strong><code>direction</code></strong></dt>
+<dd>The direction of the travel</dd>
+<dt><strong><code>travelTimeInterval</code></strong></dt>
+<dd>The travel time interval</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2540,18 +2924,20 @@ def sendRequestTrackerNet(uri: str):
 ):
     &#34;&#34;&#34;
     Gets the TravelTime overlay
-    :param z: The zoom level
-    :param pinLat: The latitude of the pin
-    :param pinLon: The longitude of the pin
-    :param mapCenterLat: The map center latitude
-    :param mapCenterLon: The map center longitude
-    :param scenarioTitle: The title of the scenario
-    :param timeOfDayID: The id for the time of day (AM/INTER/PM)
-    :param modeID: The id of the mode
-    :param width: The width of the requested overlay
-    :param height: The height of the requested overlay
-    :param direction: The direction of travel
-    :param travelTimeInterval:
+
+    Args:
+        z: The zoom level of the map
+        pinLat: The latitude of the pin
+        pinLon: The longitude of the pin
+        mapCenterLat: The latitude of the map center
+        mapCenterLon: The longitude of the map center
+        scenarioTitle: The title of the scenario
+        timeOfDayID: The time of day ID. Supported values: AM, INTER, PM
+        modeID: The mode ID.
+        width: The width of the map
+        height: The height of the map
+        direction: The direction of the travel
+        travelTimeInterval: The travel time interval
     &#34;&#34;&#34;
     return super(travelTimes, self).sendRequestUnified(
         f&#34;/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}/&#34;, {}
