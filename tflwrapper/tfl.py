@@ -12,7 +12,7 @@ class tflAPI(object):
     def __init__(self, app_key):
         self.app_key = app_key
 
-    def sendRequestUnified(self, uri: str, params):
+    def sendRequestUnified(self, uri: str, params = {}):
         """
         Send a HTTP GET request to the TFL Unified API using your API Key
 

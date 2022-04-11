@@ -12,7 +12,7 @@ class crowding(tflAPI):
             id: NaPTAN ID of the stop (eg. 940GZZLUASL)
         """
         return super(crowding, self).sendRequestUnified(
-            f"/Crowding/{id}", {}
+            f"/Crowding/{id}"
         )
 
     def getByNaptanDay(self, id, day):
@@ -24,7 +24,7 @@ class crowding(tflAPI):
             day: The day of which you would like data to return (eg. MON, TUE)
         """
         return super(crowding, self).sendRequestUnified(
-            f"/Crowding/{id}/{day}", {}
+            f"/Crowding/{id}/{day}"
         )
 
     def getLiveByNaptan(self, id):
@@ -35,5 +35,5 @@ class crowding(tflAPI):
             id: NaPTAN ID of the stop (eg. 940GZZLUASL)
         """
         return super(crowding, self).sendRequestUnified(
-            f"/Crowding/{id}/Live", {}
+            f"/Crowding/{id}/Live"
         )

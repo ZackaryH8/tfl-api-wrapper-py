@@ -9,5 +9,5 @@ class airQuality(tflAPI):
         Get all current and future air quality forecast
         """
         return super(airQuality, self).sendRequestUnified(
-            f"/AirQuality", {}
+            f"/AirQuality"
         )

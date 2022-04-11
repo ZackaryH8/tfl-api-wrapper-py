@@ -7,21 +7,21 @@ class stopPoint(tflAPI):
     def getCategories(self):
         """Gets the list of available StopPoint additional information categories"""
         return super(stopPoint, self).sendRequestUnified(
-            "/StopPoint/Meta/Categories", {}
+            "/StopPoint/Meta/Categories"
         )
 
     def getTypes(self):
         """Gets the list of available StopPoint types"""
 
         return super(stopPoint, self).sendRequestUnified(
-            "/StopPoint/Meta/StopTypes", {}
+            "/StopPoint/Meta/StopTypes"
         )
 
     def getModes(self):
         """Gets the list of available StopPoint modes"""
 
         return super(stopPoint, self).sendRequestUnified(
-            "/StopPoint/Meta/Modes", {}
+            "/StopPoint/Meta/Modes"
         )
 
     def getByIDs(self, ids, includeCrowdingData: bool):
@@ -46,7 +46,7 @@ class stopPoint(tflAPI):
         """
 
         return super(stopPoint, self).sendRequestUnified(
-            f"/StopPoint/{super(stopPoint, self).arrayToCSV(array)}", {}
+            f"/StopPoint/{super(stopPoint, self).arrayToCSV(array)}"
         )
 
     def getServiceTypesByID(self, stopPointID: str, lineIds, modes):
@@ -87,7 +87,7 @@ class stopPoint(tflAPI):
         """
 
         return super(stopPoint, self).sendRequestUnified(
-            f"/StopPoint/{naptanID}/Arrivals", {}
+            f"/StopPoint/{naptanID}/Arrivals"
         )
 
     # def getArrivalsDepartures(self, naptanID: str, lineIds):
@@ -229,7 +229,7 @@ class stopPoint(tflAPI):
         """
 
         return super(stopPoint, self).sendRequestUnified(
-            f"/StopPoint/{naptanID}/TaxiRanks", {}
+            f"/StopPoint/{naptanID}/TaxiRanks"
         )
 
     def getCarParksByID(self, naptanID: str):
@@ -241,5 +241,5 @@ class stopPoint(tflAPI):
         """
 
         return super(stopPoint, self).sendRequestUnified(
-            f"/StopPoint/{naptanID}/CarParks", {}
+            f"/StopPoint/{naptanID}/CarParks"
         )

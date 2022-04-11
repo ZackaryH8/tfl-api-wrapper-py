@@ -8,7 +8,7 @@ class mode(tflAPI):
         """Returns the service type active for a mode, currently only supports tube"""
 
         return super(mode, self).sendRequestUnified(
-            "/Mode/ActiveServiceTypes", {}
+            "/Mode/ActiveServiceTypes"
         )
 
     def getAllArrivalPredictions(self, modes: str, count: str):

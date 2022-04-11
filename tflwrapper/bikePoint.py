@@ -7,7 +7,7 @@ class bikePoint(tflAPI):
     def getAll(self):
         """Gets all bike point locations"""
         return super(bikePoint, self).sendRequestUnified(
-            "/BikePoint", {}
+            "/BikePoint"
         )
 
     def getByID(self, ID):
@@ -18,7 +18,7 @@ class bikePoint(tflAPI):
             ID: The ID of the bike point
         """
         return super(bikePoint, self).sendRequestUnified(
-            f"/BikePoint/{ID}", {}
+            f"/BikePoint/{ID}"
         )
 
     def getByName(self, name):

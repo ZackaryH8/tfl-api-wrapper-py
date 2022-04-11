@@ -24,7 +24,7 @@ class road(tflAPI):
         """Get all roads managed by TfL"""
 
         return super(road, self).sendRequestUnified(
-            '/Road', {}
+            '/Road'
         )
 
     def getByID(self, ids):
@@ -35,7 +35,7 @@ class road(tflAPI):
         """
 
         return super(road, self).sendRequestUnified(
-            f'/Road/{self.arrayToCSV(ids)}', {}
+            f'/Road/{self.arrayToCSV(ids)}'
         )
 
     def getStatusByID(self, ids, startDate, endDate):

@@ -37,5 +37,5 @@ class travelTimes(tflAPI):
             travelTimeInterval: The travel time interval
         """
         return super(travelTimes, self).sendRequestUnified(
-            f"/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}/", {}
+            f"/TravelTimes/overlay/{z}/mapcenter/{mapCenterLat}/{mapCenterLon}/pinlocation/{pinLat}/{pinLon}/dimensions/{width}/{height}/"
         )

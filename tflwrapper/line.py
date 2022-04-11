@@ -7,25 +7,25 @@ class line(tflAPI):
     def getModes(self):
         """Gets a list of valid modes"""
         return super(line, self).sendRequestUnified(
-            "/Line/Meta/Modes", {}
+            "/Line/Meta/Modes"
         )
 
     def getSeverityCodes(self):
         """Gets a list of valid severity codes"""
         return super(line, self).sendRequestUnified(
-            "/Line/Meta/Severity", {}
+            "/Line/Meta/Severity"
         )
 
     def getDisruptionCategories(self):
         """Gets a list of valid disruption categories"""
         return super(line, self).sendRequestUnified(
-            "/Line/Meta/DisruptionCatergories", {}
+            "/Line/Meta/DisruptionCatergories"
         )
 
     def getServiceTypes(self):
         """Gets a list of valid service types"""
         return super(line, self).sendRequestUnified(
-            "/Line/Meta/ServiceTypes", {}
+            "/Line/Meta/ServiceTypes"
         )
 
     def getAllStopPoints(self, line):
@@ -36,7 +36,7 @@ class line(tflAPI):
             line: The line id e.g. victoria, circle, N133        
         """
         return super(line, self).sendRequestUnified(
-            F"/Line/{line}/StopPoints", {}
+            F"/Line/{line}/StopPoints"
         )
     
 
@@ -48,7 +48,7 @@ class line(tflAPI):
             modes: A list of modes e.g. tube, tram
         """
         return super(line, self).sendRequestUnified(
-            f"/Line/Mode/{self.arrayToCSV(modes)}", {}
+            f"/Line/Mode/{self.arrayToCSV(modes)}"
         )
 
     def getStatusByLine(self, lines, detail = False, startDate = None, endDate = None):
