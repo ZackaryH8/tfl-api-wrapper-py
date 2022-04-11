@@ -22,7 +22,7 @@ __all__ = [
     'mode',
     'occupancy',
     'road',
-    'stopPoint'
+    'stopPoint',
     'tflAPI',
     'trackerNet',
     'travelTimes'
