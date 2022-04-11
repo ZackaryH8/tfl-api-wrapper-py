@@ -69,7 +69,6 @@ class tflAPI(object):
 
         data = urllib.request.urlopen(
             f&#34;http://cloud.tfl.gov.uk/TrackerNet{uri}&#34;).read()
-        print(json.dumps(xmltodict.parse(data)))
 
     @staticmethod
     def arrayToCSV(array):
@@ -146,7 +145,6 @@ class tflAPI(object):
 
         data = urllib.request.urlopen(
             f&#34;http://cloud.tfl.gov.uk/TrackerNet{uri}&#34;).read()
-        print(json.dumps(xmltodict.parse(data)))
 
     @staticmethod
     def arrayToCSV(array):
@@ -179,7 +177,7 @@ class tflAPI(object):
 <li>tflwrapper.mode.mode</li>
 <li>tflwrapper.occupancy.occupancy</li>
 <li>tflwrapper.road.road</li>
-<li><a title="tflwrapper.stopPoint.stopPoint" href="stopPoint.html#tflwrapper.stopPoint.stopPoint">stopPoint</a></li>
+<li>tflwrapper.stopPoint.stopPoint</li>
 <li>tflwrapper.trackerNet.trackerNet</li>
 <li>tflwrapper.travelTimes.travelTimes</li>
 </ul>
@@ -250,8 +248,7 @@ def sendRequestTrackerNet(uri: str):
     &#34;&#34;&#34;
 
     data = urllib.request.urlopen(
-        f&#34;http://cloud.tfl.gov.uk/TrackerNet{uri}&#34;).read()
-    print(json.dumps(xmltodict.parse(data)))</code></pre>
+        f&#34;http://cloud.tfl.gov.uk/TrackerNet{uri}&#34;).read()</code></pre>
 </details>
 </dd>
 </dl>
