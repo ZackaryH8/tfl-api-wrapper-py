@@ -16,9 +16,12 @@ class tflAPI(object):
         """
         Send a HTTP GET request to the TFL Unified API using your API Key
 
-        :param uri: The url which will be prepended to unifiedAPI
-        :param params: An object containg any extra parameters
-        :returns: API Data from TfL Unified API
+        Args:
+            uri: The URI to send the request to
+            params: The parameters to send with the request
+        
+        Returns:
+            The response from the TFL Unified API
         """
         fullURL = f"https://api.tfl.gov.uk:443{uri}?{urllib.parse.urlencode({'app_key': self.app_key})}"
 
@@ -38,8 +41,11 @@ class tflAPI(object):
         """
         Send a HTTP GET request to the TrackerNet API
 
-        :param uri: The url which will be prepended to trackerNetAPI
-        :returns: API Data from TfL Unified API
+        Args:
+            uri: The URI to send the request to
+        
+        Returns:
+            The response from the TrackerNet API
         """
 
         data = urllib.request.urlopen(
@@ -49,9 +55,12 @@ class tflAPI(object):
     def arrayToCSV(array):
         """
         Convert array to a comma-separated string
-
-        :param array: Array to convert to a comma-separated string
-        :returns: A comma-separated string
+        
+        Args:
+            array: The array to convert to a comma-separated string
+        
+        returns:
+            The comma-separated string
         """
         return ",".join(array)
 
@@ -59,8 +68,11 @@ class tflAPI(object):
     def getRFC3339(date_object):
         """
         Convert date object to RFC3339 standard
-
-        :param date_object: A date object to convert to RFC3339 standard
-        :returns: A RFC3339 formatted string
+        
+        Args:
+            date_object: The date object to convert
+        
+        Returns:
+            The RFC3339 formatted string
         """
         return date_object.isoformat("T") + "Z"
