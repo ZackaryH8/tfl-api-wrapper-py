@@ -41,7 +41,6 @@ class tflAPI(object):
 
         data = urllib.request.urlopen(
             f"http://cloud.tfl.gov.uk/TrackerNet{uri}").read()
-        print(json.dumps(xmltodict.parse(data)))
 
     @staticmethod
     def arrayToCSV(array):
