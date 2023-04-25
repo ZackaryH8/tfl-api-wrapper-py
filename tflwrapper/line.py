@@ -61,11 +61,11 @@ class line(tflAPI):
         """
         if startDate == None or endDate == None:
             return super(line, self).sendRequestUnified(
-                f"/Line/{self.arrayToCSV(lines)}/Status", { detail }
+                f"/Line/{self.arrayToCSV(lines)}/Status", {'detail': detail }
             )
         else:
             return super(line, self).sendRequestUnified(
-                f"/Line/{self.arrayToCSV(lines)}/Status/{self.getRFC3339(startDate)}/to/{self.getRFC3339(endDate)}", { detail }
+                f"/Line/{self.arrayToCSV(lines)}/Status/{self.getRFC3339(startDate)}/to/{self.getRFC3339(endDate)}", {'detail': detail }
             )
 
     def getStatusByModes(self, modes, detail = False, severityLevel = ""):
@@ -78,7 +78,7 @@ class line(tflAPI):
             severityLevel: A list of severity codes to filter on. Supported values: Minor, Major, Severe
         """
         return super(line, self).sendRequestUnified(
-            f"/Line/Mode/{self.arrayToCSV(modes)}/Status", { detail, severityLevel }
+            f"/Line/Mode/{self.arrayToCSV(modes)}/Status", {'detail': detail, 'severityLevel': severityLevel }
         )
 
     def getTimetableFromTo(self, _line, _from, _to):
