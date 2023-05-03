@@ -34,7 +34,7 @@ class stopPoint(tflAPI):
         """
 
         return super(stopPoint, self).sendRequestUnified(
-            f"/StopPoint/{','.join(ids)}", {includeCrowdingData}
+            f"/StopPoint/{','.join(ids)}", {'includeCrowdingData': includeCrowdingData}
         )
 
     def getAllByStopType(self, array):
@@ -99,7 +99,7 @@ class stopPoint(tflAPI):
     #     """
 
     #     return super(stopPoint, self).sendRequestUnified(
-    #         f"StopPoint/${naptanID}/ArrivalsDepartures", {lineIds}
+    #         f"StopPoint/${naptanID}/ArrivalsDepartures", {'lineIds': lineIds}
     #     )
 
     def getDisruptionsByID(
@@ -121,7 +121,7 @@ class stopPoint(tflAPI):
 
         return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/{super(stopPoint, self).arrayToCSV(ids)}/Disruption",
-            {getFamily, includeRouteBlockedStops, flattenResponse},
+            {'getFamily': getFamily, 'includeRouteBlockedStops': includeRouteBlockedStops, 'flattenResponse': flattenResponse},
         )
 
     def getDisruptionsByMode(self, modes, includeRouteBlockedStops: bool):
@@ -134,7 +134,7 @@ class stopPoint(tflAPI):
         """
         return super(stopPoint, self).sendRequestUnified(
             f"/StopPoint/Mode/{super(stopPoint, self).arrayToCSV(modes)}/Disruption",
-            {includeRouteBlockedStops},
+            {'includeRouteBlockedStops': includeRouteBlockedStops},
         )
 
     def getReachableStationsByID(self, naptanID: str, lineID: str, serviceTypes=None):
@@ -217,7 +217,7 @@ class stopPoint(tflAPI):
         """
 
         return super(stopPoint, self).sendRequestUnified(
-            f"/StopPoint/Sms/{smsID}", {output}
+            f"/StopPoint/Sms/{smsID}", {'output': output}
         )
 
     def getTaxiRanksByID(self, naptanID: str):
