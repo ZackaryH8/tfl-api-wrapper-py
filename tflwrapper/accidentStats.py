@@ -10,7 +10,6 @@ class accidentStats(tflAPI):
 
         Args:
             year: The year for which to filter the accidents on.
-            year: The year for which to filter the accidents on.
         """
         return super(accidentStats, self).sendRequestUnified(
             f"/AccidentStats/{year}"
