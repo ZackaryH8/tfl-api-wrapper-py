@@ -12,7 +12,7 @@ setup(
     author="zackaryh8",
     license="MIT",
     author_email="zackary12389@yahoo.co.uk",
-    url="https://github.com/you/tfl-api-wrapper-py",
+    url="https://github.com/ZackaryH8/tfl-api-wrapper-py",
     install_requires=[
         "xmltodict"
     ],
