@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="200" src="https://blog.tfl.gov.uk/wp-content/uploads/2018/05/cropped-logo_roundel-2.png" alt="TfL Logo">
+    <img width="200" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/TfL_roundel_%28no_text%29.svg" alt="TfL Logo">
     <h1 align="center">TfL API Wrapper</h1>
     <p align="center">An API wrapper for the TfL Unified API, made with Python.</p>
     <p align="center">Read the <a href="https://zackaryh8.github.io/tfl-api-wrapper-py/">Documentation</a></p>
@@ -18,8 +18,8 @@ pip install tflwrapper
 
 There are many ways to contribute to this repo.
 
-- [Submit bugs](https://github.com/ZackaryH8/tfl-api-wrapper-py/issues) and help us verify fixes as they are checked in.
-- Review the [source code changes](https://github.com/ZackaryH8/tfl-api-wrapper-py/pulls).
+-   [Submit bugs](https://github.com/ZackaryH8/tfl-api-wrapper-py/issues) and help us verify fixes as they are checked in.
+-   Review the [source code changes](https://github.com/ZackaryH8/tfl-api-wrapper-py/pulls).
 
 ## Example Usage
 
