@@ -28,7 +28,7 @@ class line(tflAPI):
             "/Line/Meta/ServiceTypes"
         )
 
-    def getAllStopPoints(self, line):
+    def getAllStopPoints(self, _line):
         """
         Gets a list of the stations that serve the given line id
 
@@ -36,7 +36,7 @@ class line(tflAPI):
             line: The line id e.g. victoria, circle, N133        
         """
         return super(line, self).sendRequestUnified(
-            F"/Line/{line}/StopPoints"
+            F"/Line/{_line}/StopPoints"
         )
     
 
