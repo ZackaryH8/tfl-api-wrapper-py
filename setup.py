@@ -5,7 +5,7 @@ HERE = pathlib.Path(__file__).parent
 
 setup(
     name="tflwrapper",
-    version="1.1.7",
+    version="1.1.8",
     description="A wrapper for the Transport for London Unified API and TrackerNet",
     long_description=(HERE / "README.md").read_text(),
     long_description_content_type="text/markdown",
