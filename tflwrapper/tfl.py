@@ -36,8 +36,7 @@ class tflAPI(object):
             resource.read().decode(resource.headers.get_content_charset())
         )
 
-    @staticmethod
-    def sendRequestTrackerNet(uri: str):
+    def sendRequestTrackerNet(self, uri: str):
         """
         Send a HTTP GET request to the TrackerNet API
 
@@ -49,7 +48,9 @@ class tflAPI(object):
         """
 
         data = urllib.request.urlopen(
-            f"http://cloud.tfl.gov.uk/TrackerNet{uri}").read()
+            f"https://api.tfl.gov.uk:443/trackernet{uri}?{urllib.parse.urlencode({'app_key': self.app_key})}").read()
+
+        return xmltodict.parse(data)
 
     @staticmethod
     def arrayToCSV(array):
