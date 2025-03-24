@@ -27,8 +27,8 @@ jobs:
             git fetch origin gh-pages
             git checkout gh-pages
             git pull origin gh-pages
-                  - name: Track new files
-        run: git add -A
+      - name: Track new files
+        run: git add -A  # This line was incorrectly indented
       - name: Commit files
         run: |
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
